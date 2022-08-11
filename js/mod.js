@@ -1,7 +1,7 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
+	name: "Symbolenture",
+	id: "13",
+	author: "Bilboy",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -34,7 +34,7 @@ function getStartPoints(){
 
 // Determines if it should show points/sec
 function canGenPoints(){
-	return true
+	return false
 }
 
 // Calculate points/sec!
@@ -48,6 +48,75 @@ function getPointGen() {
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
+	dateTime: 0,
+	prev: '.',
+	Sprev: '.',
+	Lprev: ',',
+	reset: false,
+	interva: false,
+	timeX: 0,
+	intervae: false,
+	intervaea: false,
+	intervaeae: false,
+	North: 0,
+	East: 0,
+	West: 0,
+	South: 0,
+	Zone: 1,
+	ML: false,
+	MR: false,
+	MU: false,
+	MD: false,
+	One:  C1_LIST[0],
+	Two:  C1_LIST[0],
+	Three:  C1_LIST[0],
+	Four:  C1_LIST[0],
+	Five:  C1_LIST[0],
+	Six:  C1_LIST[0],
+	Seven:  C1_LIST[0],
+	Eight:  C1_LIST[0],
+	Nine:  C1_LIST[0],
+	Ten:  C1_LIST[0],
+	Eleven:  C1_LIST[0],
+	Twelve:  C2_LIST[0],
+	Thirteen:  C2_LIST[0],
+	Fourteen:  C2_LIST[0],
+	Fifteen:  C2_LIST[0],
+	Sixteen:  C1_LIST[4],
+	Seventeen:  C2_LIST[0],
+	Eighteen:  C2_LIST[0],
+	Nineteen:  C1_LIST[0],
+	Twenty:  C2_LIST[0],
+	Twentyone:  C1_LIST[0],
+	Twentytwo:  C1_LIST[0],
+	Twentythree:  C2_LIST[2],
+	Twentyfour:  C2_LIST[0],
+	Twentyfive:  C1_LIST[1],
+	Twentysix:  C1_LIST[1],
+	Twentyseven:  C1_LIST[1],
+	Twentyeight:  C2_LIST[0],
+	Twentynine:  C2_LIST[0],
+	Thirty:  C2_LIST[0],
+	Thirtyone:  C1_LIST[0],
+	Thirtytwo:  C1_LIST[3],
+	Thirtythree:  C2_LIST[0],
+	Thirtyfour:  C1_LIST[1],
+	Thirtyfive:  C1_LIST[1],
+	Thirtysix:  C1_LIST[1],
+	Thirtyseven:  C1_LIST[1],
+	Thirtyeight:  C1_LIST[1],
+	Thirtynine:  C1_LIST[1],
+	Fourty:  C2_LIST[0],
+	Fourtyone:  C1_LIST[1],
+	Fourtytwo:  C1_LIST[1],
+	Fourtythree:  C1_LIST[1],
+	Fourtyfour:  C1_LIST[1],
+	Fourtyfive:  C1_LIST[1],
+	Fourtysix:  C1_LIST[1],
+	Fourtyseven:  C1_LIST[1],
+	Fourtyeight:  C1_LIST[1],
+	Fourtynine:  C1_LIST[1],
+	Fifty:  C1_LIST[1]
 }}
 
 // Display extra things at the top of the page

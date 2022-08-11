@@ -386,11 +386,13 @@ function gameLoop(diff) {
 function hardReset(resetOptions) {
 	if (!confirm("Are you sure you want to do this? You will lose all your progress!")) return
 	player = null
+	localStorage.setItem('1', null)
+	localStorage.setItem('2', null)
+	localStorage.setItem('3', null)
 	if(resetOptions) options = null
 	save(true);
 	window.location.reload();
 }
-
 var ticking = false
 
 var interval = setInterval(function() {

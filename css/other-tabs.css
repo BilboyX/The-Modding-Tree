@@ -12,6 +12,10 @@
 	transform: rotate(360deg);
 }
 
+#compass:hover {
+	transform: rotate(1080deg);
+}
+
 #info {
 	font-size: 20px;
 	color: white;

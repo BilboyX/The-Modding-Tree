@@ -306,6 +306,8 @@ shiftDown = false
 ctrlDown = false
 
 document.onkeydown = function (e) {
+	player.interva = false
+	player.intervae = false
 	if (player === undefined) return;
 	shiftDown = e.shiftKey
 	ctrlDown = e.ctrlKey
@@ -324,6 +326,10 @@ document.onkeydown = function (e) {
 document.onkeyup = function (e) {
 	shiftDown = e.shiftKey
 	ctrlDown = e.ctrlKey
+	player.interva = false
+	player.intervae = false
+	player.intervaea = false
+	player.intervaeae = false
 }
 
 var onFocused = false

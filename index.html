@@ -2,6 +2,7 @@
 
 <head>
 
+	<link rel="shortcut icon" type="image/png" href="resources/genericParticle.png"/>
 	<link rel="stylesheet" type="text/css" href="css/system-style.css" />
 	<link rel="stylesheet" type="text/css" href="css/bars.css" />
 	<link rel="stylesheet" type="text/css" href="css/components.css" />
@@ -10,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/other-tabs.css" />
 	<link rel="stylesheet" type="text/css" href="css/popup.css" />
 	<link rel="stylesheet" type="text/css" href="css/tree-node.css" />
+	<link rel="stylesheet" type="text/css" href="css/grid.css" />
 
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
@@ -34,6 +36,7 @@
 	<script src="js/utils/options.js"></script>
 	<script src="js/utils/save.js"></script>
 	<script src="js/utils/themes.js"></script>
+	<script src="js/map.js"></script>
 
 </head>
 
@@ -107,6 +110,19 @@
 			<layer-tab :layer="player.navTab == 'none' ? player.tab : player.navTab" :key="'left'"></layer-tab>
 			<bg :layer="player.navTab == 'none' ? player.tab : player.navTab" ></bg>
 		</div>
+
+		<div v-if="player.tab === 'none' && tmp.gameEnded == false" style="position: absolute; right: 85px; top: 20px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
+			<span style="color: #ffffff">North:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.North)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
+			</div>
+			<div v-if="player.tab === 'none' && tmp.gameEnded == false" style="position: absolute; right: 4px; top: 40px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
+				<span style="color: #ffffff">West:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.West)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
+				<img id= "compass" src = "https://i.postimg.cc/6567Dxdh/compass-rose-vector-clipart.png"
+				 width = "100" />
+				 <span style="color: #ffffff">East:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.East)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
+				</div>
+				<div v-if="player.tab === 'none' && tmp.gameEnded == false" style="position: absolute; right: 85px; top: 140px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
+					<span style="color: #ffffff">South:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.South)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
+					</div>
 
 		<!-- Popups -->
 		<div class="popup-container">

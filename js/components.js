@@ -9,6 +9,153 @@ function loadVue() {
 		`
 	})
 
+	Vue.component('Map-row0', {
+		props: ['layer', 'data'],
+		template: `
+		<div class="wrapper">
+		<blank :layer="layer" :data="['20px', '17px']"/>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+	</div>
+		`
+	})
+
+	Vue.component('Map-row1', {
+		props: ['layer', 'data'],
+		template: `
+		<div class="wrapper">
+		<blank :layer="layer" :data="['20px', '17px']"/>
+		<span>┃</span>
+		<display-text :layer="layer" :data="player.One"/>
+		<display-text :layer="layer" :data="player.Two"/>
+		<display-text :layer="layer" :data="player.Three"/>
+		<display-text :layer="layer" :data="player.Four"/>
+		<display-text :layer="layer" :data="player.Five"/>
+		<display-text :layer="layer" :data="player.Six"/>
+		<display-text :layer="layer" :data="player.Seven"/>
+		<display-text :layer="layer" :data="player.Eight"/>
+		<display-text :layer="layer" :data="player.Nine"/>
+		<display-text :layer="layer" :data="player.Ten"/>
+		<span>┃</span>
+	</div>
+		`
+	})
+
+	Vue.component('Map-row2', {
+		props: ['layer', 'data'],
+		template: `
+		<div class="wrapper">
+		<blank :layer="layer" :data="['20px', '17px']"/>
+		<span>┃</span>
+		<display-text :layer="layer" :data="player.Eleven"/>
+		<display-text :layer="layer" :data="player.Twelve"/>
+		<display-text :layer="layer" :data="player.Thirteen"/>
+		<display-text :layer="layer" :data="player.Fourteen"/>
+		<display-text :layer="layer" :data="player.Fifteen"/>
+		<display-text :layer="layer" :data="player.Sixteen"/>
+		<display-text :layer="layer" :data="player.Seventeen"/>
+		<display-text :layer="layer" :data="player.Eighteen"/>
+		<display-text :layer="layer" :data="player.Nineteen"/>
+		<display-text :layer="layer" :data="player.Twenty"/>
+		<span>┃</span>
+	</div>
+		`
+	})
+
+	Vue.component('Map-row3', {
+		props: ['layer', 'data'],
+		template: `
+		<div class="wrapper">
+		<blank :layer="layer" :data="['20px', '17px']"/>
+		<span>┃</span>
+		<display-text :layer="layer" :data="player.Twentyone"/>
+		<display-text :layer="layer" :data="player.Twentytwo"/>
+		<display-text :layer="layer" :data="player.Twentythree"/>
+		<display-text :layer="layer" :data="player.Twentyfour"/>
+		<display-text :layer="layer" :data="player.Twentyfive"/>
+		<display-text :layer="layer" :data="player.Twentysix"/>
+		<display-text :layer="layer" :data="player.Twentyseven"/>
+		<display-text :layer="layer" :data="player.Twentyeight"/>
+		<display-text :layer="layer" :data="player.Twentynine"/>
+		<display-text :layer="layer" :data="player.Thirty"/>
+		<span>┃</span>
+	</div>
+		`
+	})
+
+	Vue.component('Map-row4', {
+		props: ['layer', 'data'],
+		template: `
+		<div class="wrapper">
+		<blank :layer="layer" :data="['20px', '17px']"/>
+		<span>┃</span>
+		<display-text :layer="layer" :data="player.Thirtyone"/>
+		<display-text :layer="layer" :data="player.Thirtytwo"/>
+		<display-text :layer="layer" :data="player.Thirtythree"/>
+		<display-text :layer="layer" :data="player.Thirtyfour"/>
+		<display-text :layer="layer" :data="player.Thirtyfive"/>
+		<display-text :layer="layer" :data="player.Thirtysix"/>
+		<display-text :layer="layer" :data="player.Thirtyseven"/>
+		<display-text :layer="layer" :data="player.Thirtyeight"/>
+		<display-text :layer="layer" :data="player.Thirtynine"/>
+		<display-text :layer="layer" :data="player.Fourty"/>
+		<span>┃</span>
+	</div>
+		`
+	})
+
+	Vue.component('Map-row5', {
+		props: ['layer', 'data'],
+		template: `
+		<div class="wrapper">
+		<blank :layer="layer" :data="['20px', '17px']"/>
+		<span>┃</span>
+		<display-text :layer="layer" :data="player.Fourtyone"/>
+		<display-text :layer="layer" :data="player.Fourtytwo"/>
+		<display-text :layer="layer" :data="player.Fourtythree"/>
+		<display-text :layer="layer" :data="player.Fourtyfour"/>
+		<display-text :layer="layer" :data="player.Fourtyfive"/>
+		<display-text :layer="layer" :data="player.Fourtysix"/>
+		<display-text :layer="layer" :data="player.Fourtyseven"/>
+		<display-text :layer="layer" :data="player.Fourtyeight"/>
+		<display-text :layer="layer" :data="player.Fourtynine"/>
+		<display-text :layer="layer" :data="player.Fifty"/>
+		<span>┃</span>
+	</div>
+		`
+	})
+
+	Vue.component('Map-row6', {
+		props: ['layer', 'data'],
+		template: `
+		<div class="wrapper">
+		<blank :layer="layer" :data="['20px', '17px']"/>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+		<span>-</span>
+	</div>
+		`
+	})
+
 // data = a function returning the content (actually HTML)
 	Vue.component('raw-html', {
 			props: ['layer', 'data'],
