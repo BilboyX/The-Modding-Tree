@@ -21,6 +21,12 @@ function import1() {
         versionCheck();
         NaNcheck(save)
         player.intervae = false
+        if (localStorage.getItem('prev1') === '1') player.Fourty = C1_LIST[3]
+        else player.Fourty = C2_LIST[0]
+        if (localStorage.getItem('prev1') === '2') player.Thirty = C1_LIST[3]
+        else player.Thirty = C2_LIST[0]
+        if (localStorage.getItem('prev1') === '3') player.Twenty = C1_LIST[3]
+        else player.Twenty = C2_LIST[0]
         save();
         window.location.reload();}
     if (player.Zone === 2){player = Object.assign(getStartPlayer(), JSON.parse(localStorage.getItem('2')));
@@ -29,6 +35,12 @@ function import1() {
         versionCheck();
         NaNcheck(save)
         player.interva = false
+        if (localStorage.getItem('prev') === '1') player.Thirtyone = C1_LIST[3]
+        else player.Thirtyone = C2_LIST[0]
+        if (localStorage.getItem('prev') === '2') player.Twentyone = C1_LIST[3]
+        else player.Twentyone = C2_LIST[0]
+        if (localStorage.getItem('prev') === '3') player.Eleven = C1_LIST[3]
+        else player.Eleven = C2_LIST[0]
         if (player.Twentyone === C1_LIST[3] && player.prev === C2_LIST[2]) player.Twentytwo = C2_LIST[2], player.prev = '.'
         save();
         window.location.reload();}
@@ -959,10 +971,13 @@ addLayer("tree-tab", {
             player.Fourtyeight = C2_LIST[0],
             player.Fourtynine = C2_LIST[0],
             player.Fifty = C2_LIST[0]}}
-
         if (player.Zone === 1 && player.intervae == true && player.timeX >= 2){
         if (player.Fourty === C1_LIST[3] || player.Thirty === C1_LIST[3] || player.Twenty === C1_LIST[3]){
             save1()
+            if (player.Fourty === C1_LIST[3]) localStorage.setItem('prev', 1)
+            if (player.Thirty === C1_LIST[3]) localStorage.setItem('prev', 2)
+            if (player.Twenty === C1_LIST[3]) localStorage.setItem('prev', 3)
+          
             if (localStorage.getItem('2') !== null && localStorage.getItem('2') !== 'null') return player.Zone = 2, import1()
             if (player.Fourty === C1_LIST[3]) player.Thirtyone = C1_LIST[3]
             else player.Thirtyone = C2_LIST[0]
@@ -1026,6 +1041,9 @@ addLayer("tree-tab", {
             if (player.Twentyone === C1_LIST[3] || player.Eleven === C1_LIST[3] || player.Thirtyone === C1_LIST[3]){
                 player.Zone = 2
                   save1()
+                  if (player.Thirtyone === C1_LIST[3]) localStorage.setItem('prev1', 1)
+                  if (player.Twentyone === C1_LIST[3]) localStorage.setItem('prev1', 2)
+                  if (player.Eleven === C1_LIST[3]) localStorage.setItem('prev1', 3)
                 player.Zone = 1
                 import1()}
             }

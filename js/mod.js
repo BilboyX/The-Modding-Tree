@@ -116,7 +116,7 @@ function addedPlayerData() { return {
 	Fourtyseven:  C1_LIST[1],
 	Fourtyeight:  C1_LIST[1],
 	Fourtynine:  C1_LIST[1],
-	Fifty:  C1_LIST[1]
+	Fifty:  C1_LIST[1],
 }}
 
 // Display extra things at the top of the page

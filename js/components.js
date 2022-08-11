@@ -56,7 +56,8 @@ function loadVue() {
 		template: `
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
-		<span>┃</span>
+		<span  v-if="player.Zone === 2" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone !== 2">┃</span>
 		<display-text :layer="layer" :data="player.Eleven"/>
 		<display-text :layer="layer" :data="player.Twelve"/>
 		<display-text :layer="layer" :data="player.Thirteen"/>
@@ -67,7 +68,8 @@ function loadVue() {
 		<display-text :layer="layer" :data="player.Eighteen"/>
 		<display-text :layer="layer" :data="player.Nineteen"/>
 		<display-text :layer="layer" :data="player.Twenty"/>
-		<span>┃</span>
+		<span  v-if="player.Zone === 1" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone !== 1">┃</span>
 	</div>
 		`
 	})
@@ -77,7 +79,8 @@ function loadVue() {
 		template: `
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
-		<span>┃</span>
+		<span  v-if="player.Zone === 2" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone !== 2">┃</span>
 		<display-text :layer="layer" :data="player.Twentyone"/>
 		<display-text :layer="layer" :data="player.Twentytwo"/>
 		<display-text :layer="layer" :data="player.Twentythree"/>
@@ -88,7 +91,8 @@ function loadVue() {
 		<display-text :layer="layer" :data="player.Twentyeight"/>
 		<display-text :layer="layer" :data="player.Twentynine"/>
 		<display-text :layer="layer" :data="player.Thirty"/>
-		<span>┃</span>
+		<span  v-if="player.Zone === 1 || player.Zone === 2" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone !== 1 && player.Zone !== 2">┃</span>
 	</div>
 		`
 	})
@@ -98,7 +102,8 @@ function loadVue() {
 		template: `
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
-		<span>┃</span>
+		<span  v-if="player.Zone === 2" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone !== 2">┃</span>
 		<display-text :layer="layer" :data="player.Thirtyone"/>
 		<display-text :layer="layer" :data="player.Thirtytwo"/>
 		<display-text :layer="layer" :data="player.Thirtythree"/>
@@ -109,7 +114,8 @@ function loadVue() {
 		<display-text :layer="layer" :data="player.Thirtyeight"/>
 		<display-text :layer="layer" :data="player.Thirtynine"/>
 		<display-text :layer="layer" :data="player.Fourty"/>
-		<span>┃</span>
+		<span  v-if="player.Zone === 1" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone !== 1">┃</span>
 	</div>
 		`
 	})

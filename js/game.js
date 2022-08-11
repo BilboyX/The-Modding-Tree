@@ -386,6 +386,8 @@ function gameLoop(diff) {
 function hardReset(resetOptions) {
 	if (!confirm("Are you sure you want to do this? You will lose all your progress!")) return
 	player = null
+	localStorage.setItem('prev', null)
+	localStorage.setItem('prev1', null)
 	localStorage.setItem('1', null)
 	localStorage.setItem('2', null)
 	localStorage.setItem('3', null)
