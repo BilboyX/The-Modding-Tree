@@ -79,9 +79,10 @@ function loadVue() {
 		template: `
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
-		<span  v-if="player.Zone === 2" style='color: #70716B'>┃</span>
-		<span  v-if="player.Zone !== 2">┃</span>
-		<display-text :layer="layer" :data="player.Twentyone"/>
+		<span  v-if="player.Zone === 2 || player.Zone === 3" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone !== 2 && player.Zone !== 3">┃</span>
+		<div v-if="player.Zone !== -1 || player.Twentytwo !== C1_LIST[3]"><display-text :layer="layer" :data="player.Twentyone"/></div>
+		<div v-if="player.Zone === -1 && player.Twentytwo === C1_LIST[3]" class="tooltipBox"><display-text :layer="layer" :data="player.Twentyone"/><div class="tooltip">→ Gerdio<div>The evergreen forest of Gerdio was once home to many wild inhabitants including moose and black bears. Lately however, their populations have been dwindling towards extinction.</div></div></div>
 		<display-text :layer="layer" :data="player.Twentytwo"/>
 		<display-text :layer="layer" :data="player.Twentythree"/>
 		<display-text :layer="layer" :data="player.Twentyfour"/>
@@ -125,7 +126,8 @@ function loadVue() {
 		template: `
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
-		<span>┃</span>
+		<span v-if="player.Zone === 1" style='color: #70716B'>┃</span>
+		<span v-if="player.Zone !== 1">┃</span>
 		<display-text :layer="layer" :data="player.Fourtyone"/>
 		<display-text :layer="layer" :data="player.Fourtytwo"/>
 		<display-text :layer="layer" :data="player.Fourtythree"/>
@@ -136,7 +138,8 @@ function loadVue() {
 		<display-text :layer="layer" :data="player.Fourtyeight"/>
 		<display-text :layer="layer" :data="player.Fourtynine"/>
 		<display-text :layer="layer" :data="player.Fifty"/>
-		<span>┃</span>
+		<span  v-if="player.Zone === -1" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone !== -1">┃</span>
 	</div>
 		`
 	})
@@ -146,18 +149,18 @@ function loadVue() {
 		template: `
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
+		<span><display-text :layer="layer" :data="player.L1"/></span>
+		<span><display-text :layer="layer" :data="player.L2"/></span>
+		<span><display-text :layer="layer" :data="player.L3"/></span>
+		<span><display-text :layer="layer" :data="player.L4"/></span>
+		<span><display-text :layer="layer" :data="player.L5"/></span>
+		<span><display-text :layer="layer" :data="player.L6"/></span>
+		<span><display-text :layer="layer" :data="player.L7"/></span>
+		<span><display-text :layer="layer" :data="player.L8"/></span>
+		<span><display-text :layer="layer" :data="player.L9"/></span>
+		<span><display-text :layer="layer" :data="player.L10"/></span>
+		<span><display-text :layer="layer" :data="player.L11"/></span>
+		<span><display-text :layer="layer" :data="player.L12"/></span>
 	</div>
 		`
 	})
@@ -505,7 +508,7 @@ function loadVue() {
 				if (!this.interval && layers[this.layer].clickables[this.data].onHold) {
 					this.interval = setInterval((function() {
 						let c = layers[this.layer].clickables[this.data]
-						if(this.time >= 5 && run(c.canClick, c)) {
+						if(this.time >= 1 && run(c.canClick, c)) {
 							run(c.onHold, c)
 						}	
 						this.time = this.time+1
@@ -514,6 +517,10 @@ function loadVue() {
 			stop() {
 				clearInterval(this.interval)
 				this.interval = false
+				player.interva = false
+				player.intervae = false
+				player.intervaea = false
+				player.intervaeae = false
 			  	this.time = 0
 			}
 		},

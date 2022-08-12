@@ -201,6 +201,7 @@ function load() {
 			player.offTime = { remain: 0 };
 		player.offTime.remain += (Date.now() - player.time) / 1000;
 	}
+	if (localStorage.getItem('gameStarted') === null) localStorage.setItem('gameStarted', false)
 	player.time = Date.now();
 	versionCheck();
 	changeTheme();

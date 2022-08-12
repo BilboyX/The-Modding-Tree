@@ -43,13 +43,13 @@
 
 <body onload="load()" onmousemove="updateMouse(event)">
 	<div id="app">
-		<canvas id="treeCanvas" class="canvas" v-if="!(tmp.gameEnded && !player.keepGoing)"></canvas>
+		<canvas id="treeCanvas" class="canvas" v-if="!(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true'"></canvas>
 
 		<div v-if="false" id="loadingSection" class="fullWidth">
 			<h1>Loading... (If this takes too long it means there was a serious error!)←</h1>
 		</div>
-		<div class="vl" v-if="player.navTab !== 'none' && tmp.other.splitScreen && player.tab!='none' && !(tmp.gameEnded && !player.keepGoing)"></div>
-		<div v-if="(tmp.gameEnded && !player.keepGoing)" class="fullWidth">
+		<div class="vl" v-if="player.navTab !== 'none' && tmp.other.splitScreen && player.tab!='none' && !(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true'"></div>
+		<div v-if="(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true'" class="fullWidth">
 			<br>
 			<h2>{{modInfo.name}} {{VERSION.withoutName}}</h2><br><br>
 			<h3 v-html="modInfo.winText"></h3><br>
@@ -68,7 +68,21 @@
 			<br><br>
 		</div>
 
-		<div id="treeOverlay" v-if="!(tmp.gameEnded && !player.keepGoing) && (player.tab === 'none' || tmp.other.splitScreen || !readData(layoutInfo.showTree))" class="treeOverlay" onscroll="resizeCanvas()"
+		<div class="vl" v-if="player.navTab !== 'none' && tmp.other.splitScreen && player.tab!='none' && !(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true'"></div>
+		<div v-if="localStorage.getItem('gameStarted') === 'false' && localStorage.getItem('gameStarted') !==  'true'" class="fullWidth">
+			<br>
+			<h1 id= "title">㋡</h1>
+			<br>
+			<img src = "https://i.postimg.cc/26YBDv33/Symbo-lenture-1-removebg-preview-1.png"
+			width = "500" />
+			<br>
+			<h3>Select a mode</h3><br><br>
+			<button class="longUpg can" onclick="localStorage.setItem('Mode', 1), localStorage.setItem('gameStarted', true), localStorage.setItem('Area', 1), location.reload(true)">WASD</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
+				class="longUpg can" onclick="localStorage.setItem('Mode', 2), localStorage.setItem('gameStarted', true), localStorage.setItem('Area', 1), location.reload(true)">Arrow Keys</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
+				class="longUpg can" onclick="localStorage.setItem('Mode', 3), localStorage.setItem('gameStarted', true), localStorage.setItem('Are', 1), location.reload(true)">Mobile EW</button>
+		</div>
+
+		<div id="treeOverlay" v-if="!(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true' && (player.tab === 'none' || tmp.other.splitScreen || !readData(layoutInfo.showTree))" class="treeOverlay" onscroll="resizeCanvas()"
 			v-bind:class="{ 
 			fullWidth: (player.tab == 'none' || player.navTab == 'none'), 
 			col: (player.tab !== 'none' && player.navTab !== 'none'), 
@@ -94,7 +108,7 @@
 							v-bind:style="{'font-size': '16px'}">Main Prestige Tree server</a></li>
 				</ul>
 			</div>
-			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing)"></overlay-head>
+			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true'"></overlay-head>
 			<div class="sideLayers">
 				<div v-for="(node, index) in OTHER_LAYERS['side']">
 					<tree-node :layer='node' :abb='tmp[node].symbol' :size="'small'" :key="'side' + index"></tree-node>
@@ -102,7 +116,7 @@
 			</div>
 		</div>
 		
-		<div v-if="!(tmp.gameEnded && !player.keepGoing) && (player.tab === 'none' || tmp.other.splitScreen)" id="treeTab"  onscroll="resizeCanvas()" 
+		<div v-if="!(tmp.gameEnded && !player.keepGoing) && (player.tab === 'none' || tmp.other.splitScreen) && localStorage.getItem('gameStarted') ===  'true'" id="treeTab"  onscroll="resizeCanvas()" 
 			v-bind:class="{ fullWidth: (player.tab == 'none' || player.navTab == 'none'), col: (player.tab !== 'none' && player.navTab !== 'none'), left: (player.tab !== 'none' && player.navTab !== 'none')}">
 			<br><br><br><br>
 			<overlay-head id="fakeHead" style="visibility: hidden;">
@@ -111,16 +125,16 @@
 			<bg :layer="player.navTab == 'none' ? player.tab : player.navTab" ></bg>
 		</div>
 
-		<div v-if="player.tab === 'none' && tmp.gameEnded == false" style="position: absolute; right: 85px; top: 20px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
+		<div v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') ===  'true'" style="position: absolute; right: 85px; top: 20px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
 			<span style="color: #ffffff">North:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.North)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
 			</div>
-			<div v-if="player.tab === 'none' && tmp.gameEnded == false" style="position: absolute; right: 4px; top: 40px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
+			<div v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') ===  'true'" style="position: absolute; right: 4px; top: 40px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
 				<span style="color: #ffffff">West:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.West)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
 				<img id= "compass" src = "https://i.postimg.cc/6567Dxdh/compass-rose-vector-clipart.png"
 				 width = "100" />
 				 <span style="color: #ffffff">East:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.East)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
 				</div>
-				<div v-if="player.tab === 'none' && tmp.gameEnded == false" style="position: absolute; right: 85px; top: 140px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
+				<div v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') ===  'true'" style="position: absolute; right: 85px; top: 140px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
 					<span style="color: #ffffff">South:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.South)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
 					</div>
 

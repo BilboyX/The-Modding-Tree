@@ -13,16 +13,16 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "0.1",
+	name: "Gerdio",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+	<h3>v0.1</h3><br>
+		- Added Trees.<br>
+		- Added Rocks.`
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+let winText = `Congratulations! You have reached the end and beaten the demo, there may be one secret area unexplored, but for now...`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -49,8 +49,11 @@ function getPointGen() {
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
 	dateTime: 0,
-	prev: '.',
-	Sprev: '.',
+	Area: 0,
+	prevC: '',
+	prevU: '',
+	prev: `<span style='color: #74663b'>.</span>`,
+	Sprev: `<span style='color: #74663b'>.</span>`,
 	Lprev: ',',
 	reset: false,
 	interva: false,
@@ -58,11 +61,13 @@ function addedPlayerData() { return {
 	intervae: false,
 	intervaea: false,
 	intervaeae: false,
+	Level: 1,
 	North: 0,
 	East: 0,
 	West: 0,
 	South: 0,
 	Zone: 1,
+	prevZone: 1,
 	ML: false,
 	MR: false,
 	MU: false,
@@ -85,7 +90,7 @@ function addedPlayerData() { return {
 	Sixteen:  C1_LIST[4],
 	Seventeen:  C2_LIST[0],
 	Eighteen:  C2_LIST[0],
-	Nineteen:  C1_LIST[0],
+	Nineteen:  C2_LIST[0],
 	Twenty:  C2_LIST[0],
 	Twentyone:  C1_LIST[0],
 	Twentytwo:  C1_LIST[0],
@@ -93,7 +98,7 @@ function addedPlayerData() { return {
 	Twentyfour:  C2_LIST[0],
 	Twentyfive:  C1_LIST[1],
 	Twentysix:  C1_LIST[1],
-	Twentyseven:  C1_LIST[1],
+	Twentyseven:  C1_LIST[0],
 	Twentyeight:  C2_LIST[0],
 	Twentynine:  C2_LIST[0],
 	Thirty:  C2_LIST[0],
@@ -103,9 +108,9 @@ function addedPlayerData() { return {
 	Thirtyfour:  C1_LIST[1],
 	Thirtyfive:  C1_LIST[1],
 	Thirtysix:  C1_LIST[1],
-	Thirtyseven:  C1_LIST[1],
-	Thirtyeight:  C1_LIST[1],
-	Thirtynine:  C1_LIST[1],
+	Thirtyseven:  C1_LIST[0],
+	Thirtyeight:  C1_LIST[0],
+	Thirtynine:  C1_LIST[0],
 	Fourty:  C2_LIST[0],
 	Fourtyone:  C1_LIST[1],
 	Fourtytwo:  C1_LIST[1],
@@ -115,8 +120,20 @@ function addedPlayerData() { return {
 	Fourtysix:  C1_LIST[1],
 	Fourtyseven:  C1_LIST[1],
 	Fourtyeight:  C1_LIST[1],
-	Fourtynine:  C1_LIST[1],
-	Fifty:  C1_LIST[1],
+	Fourtynine:  C1_LIST[0],
+	Fifty:  C1_LIST[0],
+	L1: C3_LIST[0],
+	L2: C3_LIST[0],
+	L3: C3_LIST[0],
+	L4: C3_LIST[0],
+	L5: C3_LIST[0],
+	L6: C3_LIST[0],
+	L7: C3_LIST[0],
+	L8: C3_LIST[0],
+	L9: C3_LIST[1],
+	L10: C3_LIST[1],
+	L11: C3_LIST[1],
+	L12: C3_LIST[2],
 }}
 
 // Display extra things at the top of the page
@@ -125,7 +142,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return player.Zone === 3 && player.Fourtyseven === C1_LIST[3]
 }
 
 

@@ -151,14 +151,9 @@ var systemComponents = {
                 <td><button class="opt" onclick="toggleOpt('autosave')">Autosave: {{ options.autosave?"ON":"OFF" }}</button></td>
                 <td><button class="opt" onclick="hardReset()">HARD RESET</button></td>
             </tr>
-            <tr>
-			<td><button class="opt" onclick="switchTheme()">Theme: {{ getThemeName() }}</button></td>
-			<td><button class="opt" onclick="adjustMSDisp()">Show Milestones: {{ MS_DISPLAYS[MS_SETTINGS.indexOf(options.msDisplay)]}}</button></td>
-			<td><button class="opt" onclick="toggleOpt('offlineProd')">Offline Prod: {{ options.offlineProd?"ON":"OFF" }}</button></td>
-            </tr>
-            <tr>
-			<td><button class="opt" onclick="toggleOpt('hideChallenges')">Completed Challenges: {{ options.hideChallenges?"HIDDEN":"SHOWN" }}</button></td>
-            </tr>
+			<tr> 
+			<td><button class="opt" onclick="toggleOpt('SFX')">SFX: {{ options.SFX?"ON":"OFF" }}</button></td>
+			</tr>
         </table>`
     },
 

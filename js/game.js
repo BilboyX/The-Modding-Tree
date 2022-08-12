@@ -386,11 +386,21 @@ function gameLoop(diff) {
 function hardReset(resetOptions) {
 	if (!confirm("Are you sure you want to do this? You will lose all your progress!")) return
 	player = null
+	localStorage.setItem('Area', null),
+	localStorage.setItem('saveU', null),
+	localStorage.setItem('save', null),
+	localStorage.setItem('log1', null),
+	localStorage.setItem('log', null),
+	localStorage.setItem('prevTab', null)
+	localStorage.setItem('prevZone', 1)
 	localStorage.setItem('prev', null)
 	localStorage.setItem('prev1', null)
+	localStorage.setItem('-1', null)
 	localStorage.setItem('1', null)
 	localStorage.setItem('2', null)
 	localStorage.setItem('3', null)
+	localStorage.setItem('gameStarted', false)
+	options.theme = themes[0]
 	if(resetOptions) options = null
 	save(true);
 	window.location.reload();

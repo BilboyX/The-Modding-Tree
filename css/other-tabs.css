@@ -16,6 +16,30 @@
 	transform: rotate(1080deg);
 }
 
+#title  {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	animation-name: title;
+	animation-duration: 4s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+  }
+
+@keyframes title {
+	0%   {right: 10px;}
+	10%  {right: 30px;}
+	20%  {right: 60px;}
+	30% {right: 90px;}
+	40%  {right: 60px;}
+	50% {right: 30px;}
+	60%  {right: 10px;}
+	70% {right: -10px;}
+	80% {right: -30px}
+	90%  {right: -60px;}
+	100% {right: -90px;}
+  }
+
 #info {
 	font-size: 20px;
 	color: white;
