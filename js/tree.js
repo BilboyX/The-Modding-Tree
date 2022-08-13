@@ -991,7 +991,7 @@ addLayer("tree-tab", {
             player.inOpen = false
         })
         .catch(error => {
-            console.info('User has not interacted with document yet.');
+          
         });
     }
 
@@ -1000,7 +1000,7 @@ addLayer("tree-tab", {
             tmp['tree-tab'].Nature = false
         })
         .catch(error => {
-            console.info('User has not interacted with document yet.');
+          
         });
 
 
@@ -1283,7 +1283,7 @@ addLayer("tree-tab", {
         player.Thirtythree = C2_LIST[0],
         player.Thirtyfour = C1_LIST[1],
         player.Thirtyfive = C1_LIST[1],
-        player.Thirtysix = C1_LIST[1],
+        Thirtysix = C2_LIST[4],
         player.Thirtyseven = C1_LIST[0],
         player.Thirtyeight = C1_LIST[0],
         player.Thirtynine = C1_LIST[0],

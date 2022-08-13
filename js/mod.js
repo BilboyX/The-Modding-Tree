@@ -113,7 +113,7 @@ function addedPlayerData() { return {
 	Thirtythree:  C2_LIST[0],
 	Thirtyfour:  C1_LIST[1],
 	Thirtyfive:  C1_LIST[1],
-	Thirtysix:  C1_LIST[1],
+	Thirtysix:  C2_LIST[4],
 	Thirtyseven:  C1_LIST[0],
 	Thirtyeight:  C1_LIST[0],
 	Thirtynine:  C1_LIST[0],
