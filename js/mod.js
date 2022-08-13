@@ -50,6 +50,7 @@ function getPointGen() {
 function addedPlayerData() { return {
 	dateTime: 0,
 	Area: 0,
+	Undo: [],
 	Zones: [],
 	prevC: '',
 	prevU: '',

@@ -13,7 +13,7 @@ https://i.postimg.cc/3xqgrbzd/Screenshot-2022-08-12-215229-removebg-preview.png
 https://i.postimg.cc/brYG9Q47/Screenshot-2022-08-12-215327-removebg-preview.png
 https://i.postimg.cc/pdZn7WKb/Screenshot-2022-08-12-222843-removebg-preview.png
 https://i.postimg.cc/3NSrZ2Fc/Screenshot-2022-08-12-205243-removebg-preview.png`
-C2_LIST = C_2.split("\n") //Brown dot, Box, Wood, Brown ~~, White dot
+C2_LIST = C_2.split("\n") //Brown dot, Box, Wood, Island, Brown ~~, White dot
 
 C_3 =`https://i.postimg.cc/3NT37YKY/Screenshot-2022-08-12-220912-removebg-preview.png
 https://i.postimg.cc/BnJqLS9z/Screenshot-2022-08-12-215936-removebg-preview.png
