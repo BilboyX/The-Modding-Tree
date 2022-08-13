@@ -153,6 +153,7 @@ var systemComponents = {
             </tr>
 			<tr> 
 			<td><button class="opt" onclick="toggleOpt('SFX')">SFX: {{ options.SFX?"ON":"OFF" }}</button></td>
+			<td><button class="opt" onclick="toggleOpt('Music')">Music: {{ options.Music?"ON":"OFF" }}</button></td>
 			</tr>
         </table>`
     },

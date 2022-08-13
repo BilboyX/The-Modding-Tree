@@ -13,11 +13,15 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.1",
-	name: "Gerdio",
+	num: "0.11",
+	name: "Gerdio: More Green",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+<h3>v0.11</h3><br>
+- Added More SFX.<br>
+- Added Undo++.<br>
+- Added Error protection?<br>
 	<h3>v0.1</h3><br>
 		- Added Trees.<br>
 		- Added Rocks.`
@@ -50,11 +54,10 @@ function getPointGen() {
 function addedPlayerData() { return {
 	dateTime: 0,
 	Area: 0,
+	inOpen: true,
 	Undo: [],
-	SFX: false,
 	Zones: [],
-	prevC: '',
-	prevU: '',
+	portal: false,
 	prev: `https://i.postimg.cc/brG8QgqV/Screenshot-2022-08-12-221408-removebg-preview-1.png`,
 	Sprev: `https://i.postimg.cc/brG8QgqV/Screenshot-2022-08-12-221408-removebg-preview-1.png`,
 	Lprev: ',',

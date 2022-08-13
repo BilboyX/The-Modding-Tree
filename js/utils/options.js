@@ -15,6 +15,7 @@ function getStartOptions() {
 		oldStyle: false,
 		tooltipForcing: true,
 		SFX: true,
+		Music: true,
 	}
 }
 
@@ -27,6 +28,9 @@ function toggleOpt(name) {
 		changeTreeQuality();
 	if (name == "oldStyle")
 		updateStyle();
+
+
+	if	(options.Music == true && localStorage.getItem('Area') === '1') tmp['tree-tab'].Nature = true
 }
 var styleCooldown = 0;
 function updateStyle() {
