@@ -77,18 +77,22 @@ player.portal = true
 
          player.Sprev = player.Zones[0].Sprev, player.prev = player.Zones[0].prev, player.East = player.Zones[0].East, player.West = player.Zones[0].West, player.North = player.Zones[0].North, player.South = player.Zones[0].South, player.Zone = player.Zones[0].Zone, player.One = player.Zones[0].One, player.Two = player.Zones[0].Two, player.Three = player.Zones[0].Three, player.Four = player.Zones[0].Four, player.Five = player.Zones[0].Five, player.Six = player.Zones[0].Six, player.Seven = player.Zones[0].Seven, player.Eight = player.Zones[0].Eight, player.Nine = player.Zones[0].Nine, player.Ten = player.Zones[0].Ten, player.Eleven = player.Zones[0].Eleven, player.Twelve = player.Zones[0].Twelve, player.Thirteen = player.Zones[0].Thirteen, player.Fourteen = player.Zones[0].Fourteen, player.Fifteen = player.Zones[0].Fifteen, player.Sixteen = player.Zones[0].Sixteen, player.Seventeen = player.Zones[0].Seventeen, player.Eighteen = player.Zones[0].Eighteen, player.Nineteen = player.Zones[0].Nineteen, player.Twenty = player.Zones[0].Twenty, player.Twentyone = player.Zones[0].Twentyone, player.Twentytwo = player.Zones[0].Twentytwo, player.Twentythree = player.Zones[0].Twentythree, player.Twentyfour = player.Zones[0].Twentyfour, player.Twentyfive = player.Zones[0].Twentyfive, player.Twentysix = player.Zones[0].Twentysix, player.Twentyseven = player.Zones[0].Twentyseven, player.Twentyeight = player.Zones[0].Twentyeight, player.Twentynine = player.Zones[0].Twentynine, player.Thirty = player.Zones[0].Thirty, player.Thirtyone = player.Zones[0].Thirtyone, player.Thirtytwo = player.Zones[0].Thirtytwo, player.Thirtythree = player.Zones[0].Thirtythree, player.Thirtyseven = player.Zones[0].Thirtyseven, player.Thirtyfive = player.Zones[0].Thirtyfive, player.Thirtysix = player.Zones[0].Thirtysix, player.Thirtyfour = player.Zones[0].Thirtyfour, player.Thirtyeight = player.Zones[0].Thirtyeight, player.Thirtynine = player.Zones[0].Thirtynine, player.Fourty = player.Zones[0].Fourty, player.Fourtyone = player.Zones[0].Fourtyone, player.Fourtytwo = player.Zones[0].Fourtytwo, player.Fourtythree = player.Zones[0].Fourtythree, player.Fourtyfour = player.Zones[0].Fourtyfour, player.Fourtyfive = player.Zones[0].Fourtyfive, player.Fourtysix = player.Zones[0].Fourtysix, player.Fourtyseven = player.Zones[0].Fourtyseven, player.Fourtyeight = player.Zones[0].Fourtyeight, player.Fourtynine = player.Zones[0].Fourtynine, player.Fifty = player.Zones[0].Fifty, player.L1 = player.Zones[0].L1, player.L2 = player.Zones[0].L2, player.L3 = player.Zones[0].L3, player.L4 = player.Zones[0].L4, player.L5 = player.Zones[0].L5, player.L6 = player.Zones[0].L6, player.L7 = player.Zones[0].L7, player.L8 = player.Zones[0].L8, player.L9 = player.Zones[0].L9, player.L10 = player.Zones[0].L10, player.L11 = player.Zones[0].L11, player.L12 = player.Zones[0].L12
         if (player.Thirty === C2_LIST[2] && localStorage.getItem('prev1') === '2') player.Twentynine = C2_LIST[2]
+        if (localStorage.getItem('prev1') === '3' && player.Twenty === C2_LIST[2]) player.prev = C2_LIST[2]
+        if (localStorage.getItem('prev1') === '1' && player.Fourty === C2_LIST[2]) player.prev = C2_LIST[2]
 
         if (localStorage.getItem('prev1') === '1') player.Fourty = C1_LIST[3], player.North = 0, player.South = 0
-        if (localStorage.getItem('prev1') !== '1') player.Fourty = C2_LIST[0]
-
+        if (localStorage.getItem('prev1') !== '1'  && player.Fourty !== C2_LIST[2]) player.Fourty = C2_LIST[0]
+       
         if (localStorage.getItem('prev1') === '2') player.Thirty = C1_LIST[3], player.North = 1, player.South = -1
         if (localStorage.getItem('prev1') !== '2' && player.Thirty !== C2_LIST[2]) player.Thirty = C2_LIST[0]
 
         if (localStorage.getItem('prev1') === '3') player.Twenty = C1_LIST[3], player.North = 2, player.South = -2
-        if (localStorage.getItem('prev1') !== '3') player.Twenty = C2_LIST[0]
+        if (localStorage.getItem('prev1') !== '3' && player.Twenty !== C2_LIST[2]) player.Twenty = C2_LIST[0]
+
+     
 
         if (localStorage.getItem('prev1') === '4') player.L11 = C1_LIST[3], player.North = -1, player.South = 1, player.prev = C3_LIST[1]
-        if (localStorage.getItem('prev1') !== '4') player.L11 = C3_LIST[1], player.prev = C2_LIST[0]
+        if (localStorage.getItem('prev1') !== '4') player.L11 = C3_LIST[1]
 
         if (localStorage.getItem('prev1') === '5') player.Fourtyone = C1_LIST[3], player.prev = C1_LIST[1], player.North = -1, player.South = 1
         if (localStorage.getItem('prev1') !== '5') player.Fourtyone = C1_LIST[1]
@@ -117,6 +121,9 @@ player.portal = true
 
         if (localStorage.getItem('prev') === '4') player.L2 = C1_LIST[3], player.North = -1, player.South = 1, player.prev = C3_LIST[1]
         if (localStorage.getItem('prev') !== '4') player.L2 = C3_LIST[1], player.prev = C2_LIST[0]
+
+        if (localStorage.getItem('prevTab') === '10' && localStorage.getItem('prev') === '3') player.prev = C2_LIST[2]
+        if (localStorage.getItem('prevTab') === '10' && localStorage.getItem('prev') !== '3') player.Eleven = C2_LIST[2]
 
         if (localStorage.getItem('prevTab') === '1' && localStorage.getItem('prev') === '2') player.Twentytwo = C2_LIST[2], localStorage.setItem('prevTab', null)
         if (localStorage.getItem('prevTab') === '1' && localStorage.getItem('prev') !== '2') player.Twentyone = C2_LIST[2], localStorage.setItem('prevTab', null)
@@ -411,6 +418,7 @@ function moveRight(){
     if (player.Thirtyone === C1_LIST[3] && player.Thirtytwo !== C1_LIST[0]) player.Thirtyone = player.prev, player.prev = player.Thirtytwo, player.Thirtytwo = C1_LIST[3], player.East += 1,  player.West -= 1, audio(), save2()
 
     if (player.Twentynine == C1_LIST[3] && player.Thirty === C2_LIST[2] && player.Zone === 2) localStorage.setItem('prevTab', 1), localStorage.setItem('log1', 1), player.Thirty = C2_LIST[0]
+    if (player.Nineteen == C1_LIST[3] && player.Twenty === C2_LIST[2] && player.Zone === 1) localStorage.setItem('prevTab', 10), localStorage.setItem('log', 2), player.Twenty = C2_LIST[0]
     if (player.Twentynine == C1_LIST[3] && player.Thirty === C2_LIST[2] && player.Zone === 1) localStorage.setItem('prevTab', 1), localStorage.setItem('log', 2), player.Thirty = C2_LIST[0]
     if (player.Twentynine === C1_LIST[3] && player.Thirty !== C1_LIST[0]) player.Twentynine = player.prev, player.prev = player.Thirty, player.Thirty = C1_LIST[3], player.East += 1,  player.West -= 1, audio(), save2()
     if (player.Twentynine === C2_LIST[2] && player.Twentyeight === C1_LIST[3] && player.Thirty !== C2_LIST[2]){ 
@@ -1239,6 +1247,7 @@ addLayer("tree-tab", {
         player.L12 = C3_LIST[0]
         localStorage.setItem('log1', 1),
         player.Undo.length = 0
+        localStorage.setItem('prevTab', null)
         save2()
     player.reset = false}}
 
