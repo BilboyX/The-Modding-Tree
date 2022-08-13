@@ -51,6 +51,7 @@ function addedPlayerData() { return {
 	dateTime: 0,
 	Area: 0,
 	Undo: [],
+	SFX: false,
 	Zones: [],
 	prevC: '',
 	prevU: '',
