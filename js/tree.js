@@ -104,8 +104,10 @@ function import1() {
         fixSave();
         versionCheck();
         NaNcheck(save)
-        player.interva = false
-        player.intervae = false
+        player.intervaeae = false
+    player.intervaea = false
+    player.intervae = false
+    player.interva = false
         
         if (localStorage.getItem('prevZone') === '1'){
       
@@ -137,8 +139,10 @@ function import1() {
         fixSave();
         versionCheck();
         NaNcheck(save)
-        player.interva = false
-        player.intervae = false
+        player.intervaeae = false
+    player.intervaea = false
+    player.intervae = false
+    player.interva = false
 
         if (localStorage.getItem('prevTab') === '1') player.Twentytwo = C2_LIST[2], localStorage.setItem('prevTab', null)
         save();
@@ -859,6 +863,14 @@ addLayer("tree-tab", {
         audioSand: new Audio('resources/Sand.wav'),
         audioWater: new Audio('resources/Water.wav'),
         
+        achievements: {
+            11: {
+                name: "Gerdio: The Forest Of Monotonous Desolation",
+                textStyle: { "color": "#000000" },
+                style: { "background-size": "100% 100%", "background-position": "center center"},
+                done() { return player.Zone === -1 && player.Twentytwo === C1_LIST[3]},
+            },
+        },
     clickables: {
         11: {
             unlocked(){
