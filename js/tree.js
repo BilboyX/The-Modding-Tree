@@ -9,7 +9,7 @@ var layoutInfo = {
 }
 
 function audio() {
-    if (options.SFX == false) return 
+    if (options.SFX == false) return
     if (player.prev === C1_LIST[1]){ player['tree-tab'].audioR = Math.floor(Math.random()*3)
     if (player['tree-tab'].audioR === 0) tmp['tree-tab'].audioRock1.loop = false, tmp['tree-tab'].audioRock1.play()
     if (player['tree-tab'].audioR === 1) tmp['tree-tab'].audioRock2.loop = false, tmp['tree-tab'].audioRock2.play()

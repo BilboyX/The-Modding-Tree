@@ -2,6 +2,6 @@
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     gap: 0px;
-    grid-auto-rows: minmax(10px, auto);
+    grid-auto-rows: minmax(100px, auto);
     font-size: 60px;
   }
