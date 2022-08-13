@@ -81,6 +81,8 @@
 				class="longUpg can" onclick="localStorage.setItem('Mode', 2), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">Arrow Keys</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
 				class="longUpg can" onclick="localStorage.setItem('Mode', 3), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">Mobile EW</button>
 				<br><br><h3>Click anywhere but the buttons for the song (I hate google autoplay rules)</h3><br><br>
+				<img src = "https://i.postimg.cc/R0kG9kd0/slazzer-edit-image-removebg-preview.png"
+				height = "250" width = "270" /><br><br>
 		</div>
 
 		<div id="treeOverlay" v-if="!(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true' && (player.tab === 'none' || tmp.other.splitScreen || !readData(layoutInfo.showTree))" class="treeOverlay" onscroll="resizeCanvas()"
