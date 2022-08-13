@@ -29,10 +29,10 @@ function audio() {
 }
 
 function save1() {
-if (player.Zone === -1) localStorage.setItem('-1', JSON.stringify(player));
-if (player.Zone === 1) localStorage.setItem('1', JSON.stringify(player));
-if (player.Zone === 2) localStorage.setItem('2', JSON.stringify(player));
-if (player.Zone === 3) localStorage.setItem('3', JSON.stringify(player));
+if (player.Zone === -1) player.Zones[-1] = {Sprev: player.Sprev, prev: player.prev, East: player.East, West: player.West, North: player.North, South: player.South, Zone: player.Zone, One: player.One, Two: player.Two, Three: player.Three, Four: player.Four, Five: player.Five, Six: player.Six, Seven: player.Seven, Eight: player.Eight, Nine: player.Nine, Ten: player.Ten, Eleven: player.Eleven, Twelve: player.Twelve, Thirteen: player.Thirteen, Fourteen: player.Fourteen, Fifteen: player.Fifteen, Sixteen: player.Sixteen, Seventeen: player.Seventeen, Eighteen: player.Eighteen, Nineteen: player.Nineteen, Twenty: player.Twenty, Twentyone: player.Twentyone, Twentytwo: player.Twentytwo, Twentythree: player.Twentythree, Twentyfour: player.Twentyfour, Twentyfive: player.Twentyfive, Twentysix: player.Twentysix, Twentyseven: player.Twentyseven, Twentyeight: player.Twentyeight, Twentynine: player.Twentynine, Thirty: player.Thirty, Thirtyone: player.Thirtyone, Thirtytwo: player.Thirtytwo, Thirtythree: player.Thirtythree, Thirtyseven: player.Thirtyseven, Thirtyfive: player.Thirtyfive, Thirtysix: player.Thirtysix, Thirtyfour: player.Thirtyfour, Thirtyeight: player.Thirtyeight, Thirtynine: player.Thirtynine, Fourty: player.Fourty, Fourtyone: player.Fourtyone, Fourtytwo: player.Fourtytwo, Fourtythree: player.Fourtythree, Fourtyfour: player.Fourtyfour, Fourtyfive: player.Fourtyfive, Fourtysix: player.Fourtysix, Fourtyseven: player.Fourtyseven, Fourtyeight: player.Fourtyeight, Fourtynine: player.Fourtynine, Fifty: player.Fifty, L1: player.L1, L2: player.L2, L3: player.L3, L4: player.L4, L5: player.L5, L6: player.L6, L7: player.L7, L8: player.L8, L9: player.L9, L10: player.L10, L11: player.L11, L12: player.L12}
+if (player.Zone === 1) player.Zones[0] = {Sprev: player.Sprev, prev: player.prev, East: player.East, West: player.West, North: player.North, South: player.South, Zone: player.Zone, One: player.One, Two: player.Two, Three: player.Three, Four: player.Four, Five: player.Five, Six: player.Six, Seven: player.Seven, Eight: player.Eight, Nine: player.Nine, Ten: player.Ten, Eleven: player.Eleven, Twelve: player.Twelve, Thirteen: player.Thirteen, Fourteen: player.Fourteen, Fifteen: player.Fifteen, Sixteen: player.Sixteen, Seventeen: player.Seventeen, Eighteen: player.Eighteen, Nineteen: player.Nineteen, Twenty: player.Twenty, Twentyone: player.Twentyone, Twentytwo: player.Twentytwo, Twentythree: player.Twentythree, Twentyfour: player.Twentyfour, Twentyfive: player.Twentyfive, Twentysix: player.Twentysix, Twentyseven: player.Twentyseven, Twentyeight: player.Twentyeight, Twentynine: player.Twentynine, Thirty: player.Thirty, Thirtyone: player.Thirtyone, Thirtytwo: player.Thirtytwo, Thirtythree: player.Thirtythree, Thirtyseven: player.Thirtyseven, Thirtyfive: player.Thirtyfive, Thirtysix: player.Thirtysix, Thirtyfour: player.Thirtyfour, Thirtyeight: player.Thirtyeight, Thirtynine: player.Thirtynine, Fourty: player.Fourty, Fourtyone: player.Fourtyone, Fourtytwo: player.Fourtytwo, Fourtythree: player.Fourtythree, Fourtyfour: player.Fourtyfour, Fourtyfive: player.Fourtyfive, Fourtysix: player.Fourtysix, Fourtyseven: player.Fourtyseven, Fourtyeight: player.Fourtyeight, Fourtynine: player.Fourtynine, Fifty: player.Fifty, L1: player.L1, L2: player.L2, L3: player.L3, L4: player.L4, L5: player.L5, L6: player.L6, L7: player.L7, L8: player.L8, L9: player.L9, L10: player.L10, L11: player.L11, L12: player.L12}
+if (player.Zone === 2) player.Zones[1] = {Sprev: player.Sprev, prev: player.prev, East: player.East, West: player.West, North: player.North, South: player.South, Zone: player.Zone, One: player.One, Two: player.Two, Three: player.Three, Four: player.Four, Five: player.Five, Six: player.Six, Seven: player.Seven, Eight: player.Eight, Nine: player.Nine, Ten: player.Ten, Eleven: player.Eleven, Twelve: player.Twelve, Thirteen: player.Thirteen, Fourteen: player.Fourteen, Fifteen: player.Fifteen, Sixteen: player.Sixteen, Seventeen: player.Seventeen, Eighteen: player.Eighteen, Nineteen: player.Nineteen, Twenty: player.Twenty, Twentyone: player.Twentyone, Twentytwo: player.Twentytwo, Twentythree: player.Twentythree, Twentyfour: player.Twentyfour, Twentyfive: player.Twentyfive, Twentysix: player.Twentysix, Twentyseven: player.Twentyseven, Twentyeight: player.Twentyeight, Twentynine: player.Twentynine, Thirty: player.Thirty, Thirtyone: player.Thirtyone, Thirtytwo: player.Thirtytwo, Thirtythree: player.Thirtythree, Thirtyseven: player.Thirtyseven, Thirtyfive: player.Thirtyfive, Thirtysix: player.Thirtysix, Thirtyfour: player.Thirtyfour, Thirtyeight: player.Thirtyeight, Thirtynine: player.Thirtynine, Fourty: player.Fourty, Fourtyone: player.Fourtyone, Fourtytwo: player.Fourtytwo, Fourtythree: player.Fourtythree, Fourtyfour: player.Fourtyfour, Fourtyfive: player.Fourtyfive, Fourtysix: player.Fourtysix, Fourtyseven: player.Fourtyseven, Fourtyeight: player.Fourtyeight, Fourtynine: player.Fourtynine, Fifty: player.Fifty, L1: player.L1, L2: player.L2, L3: player.L3, L4: player.L4, L5: player.L5, L6: player.L6, L7: player.L7, L8: player.L8, L9: player.L9, L10: player.L10, L11: player.L11, L12: player.L12}
+if (player.Zone === 3) player.Zones[2] = {Sprev: player.Sprev, prev: player.prev, East: player.East, West: player.West, North: player.North, South: player.South, Zone: player.Zone, One: player.One, Two: player.Two, Three: player.Three, Four: player.Four, Five: player.Five, Six: player.Six, Seven: player.Seven, Eight: player.Eight, Nine: player.Nine, Ten: player.Ten, Eleven: player.Eleven, Twelve: player.Twelve, Thirteen: player.Thirteen, Fourteen: player.Fourteen, Fifteen: player.Fifteen, Sixteen: player.Sixteen, Seventeen: player.Seventeen, Eighteen: player.Eighteen, Nineteen: player.Nineteen, Twenty: player.Twenty, Twentyone: player.Twentyone, Twentytwo: player.Twentytwo, Twentythree: player.Twentythree, Twentyfour: player.Twentyfour, Twentyfive: player.Twentyfive, Twentysix: player.Twentysix, Twentyseven: player.Twentyseven, Twentyeight: player.Twentyeight, Twentynine: player.Twentynine, Thirty: player.Thirty, Thirtyone: player.Thirtyone, Thirtytwo: player.Thirtytwo, Thirtythree: player.Thirtythree, Thirtyseven: player.Thirtyseven, Thirtyfive: player.Thirtyfive, Thirtysix: player.Thirtysix, Thirtyfour: player.Thirtyfour, Thirtyeight: player.Thirtyeight, Thirtynine: player.Thirtynine, Fourty: player.Fourty, Fourtyone: player.Fourtyone, Fourtytwo: player.Fourtytwo, Fourtythree: player.Fourtythree, Fourtyfour: player.Fourtyfour, Fourtyfive: player.Fourtyfive, Fourtysix: player.Fourtysix, Fourtyseven: player.Fourtyseven, Fourtyeight: player.Fourtyeight, Fourtynine: player.Fourtynine, Fifty: player.Fifty, L1: player.L1, L2: player.L2, L3: player.L3, L4: player.L4, L5: player.L5, L6: player.L6, L7: player.L7, L8: player.L8, L9: player.L9, L10: player.L10, L11: player.L11, L12: player.L12}
 }
 
 function save2(){
@@ -56,28 +56,13 @@ function import2(){
 }
 
 function import1() {
-    if (player.Zone === -1){player = Object.assign(getStartPlayer(), JSON.parse(localStorage.getItem('-1')));
-    player.versionType = modInfo.id;
-    fixSave();
-    versionCheck();
-    NaNcheck(save)
-    player.intervaeae = false
-    player.intervaea = false
-    player.intervae = false
-    player.interva = false
-    if (player.prev === C2_LIST[2]) player.prev = C2_LIST[5], player.Fourtynine = C2_LIST[2]
-    save();
-    window.location.reload();}
+    if (player.Zone === -1){
+        player.Sprev = player.Zones[-1].Sprev, player.prev = player.Zones[-1].prev, player.East = player.Zones[-1].East, player.West = player.Zones[-1].West, player.North = player.Zones[-1].North, player.South = player.Zones[-1].South, player.Zone = player.Zones[-1].Zone, player.One = player.Zones[-1].One, player.Two = player.Zones[-1].Two, player.Three = player.Zones[-1].Three, player.Four = player.Zones[-1].Four, player.Five = player.Zones[-1].Five, player.Six = player.Zones[-1].Six, player.Seven = player.Zones[-1].Seven, player.Eight = player.Zones[-1].Eight, player.Nine = player.Zones[-1].Nine, player.Ten = player.Zones[-1].Ten, player.Eleven = player.Zones[-1].Eleven, player.Twelve = player.Zones[-1].Twelve, player.Thirteen = player.Zones[-1].Thirteen, player.Fourteen = player.Zones[-1].Fourteen, player.Fifteen = player.Zones[-1].Fifteen, player.Sixteen = player.Zones[-1].Sixteen, player.Seventeen = player.Zones[-1].Seventeen, player.Eighteen = player.Zones[-1].Eighteen, player.Nineteen = player.Zones[-1].Nineteen, player.Twenty = player.Zones[-1].Twenty, player.Twentyone = player.Zones[-1].Twentyone, player.Twentytwo = player.Zones[-1].Twentytwo, player.Twentythree = player.Zones[-1].Twentythree, player.Twentyfour = player.Zones[-1].Twentyfour, player.Twentyfive = player.Zones[-1].Twentyfive, player.Twentysix = player.Zones[-1].Twentysix, player.Twentyseven = player.Zones[-1].Twentyseven, player.Twentyeight = player.Zones[-1].Twentyeight, player.Twentynine = player.Zones[-1].Twentynine, player.Thirty = player.Zones[-1].Thirty, player.Thirtyone = player.Zones[-1].Thirtyone, player.Thirtytwo = player.Zones[-1].Thirtytwo, player.Thirtythree = player.Zones[-1].Thirtythree, player.Thirtyseven = player.Zones[-1].Thirtyfour, player.Thirtyfive = player.Zones[-1].Thirtyfive, player.Thirtysix = player.Zones[-1].Thirtysix, player.Thirtyfour = player.Zones[-1].Thirtyseven, player.Thirtyeight = player.Zones[-1].Thirtyeight, player.Thirtynine = player.Zones[-1].Thirtynine, player.Fourty = player.Zones[-1].Fourty, player.Fourtyone = player.Zones[-1].Fourtyone, player.Fourtytwo = player.Zones[-1].Fourtytwo, player.Fourtythree = player.Zones[-1].Fourtythree, player.Fourtyfour = player.Zones[-1].Fourtyfour, player.Fourtyfive = player.Zones[-1].Fourtyfive, player.Fourtysix = player.Zones[-1].Fourtysix, player.Fourtyseven = player.Zones[-1].Fourtyseven, player.Fourtyeight = player.Zones[-1].Fourtyeight, player.Fourtynine = player.Zones[-1].Fourtynine, player.Fifty = player.Zones[-1].Fifty, player.L1 = player.Zones[-1].L1, player.L2 = player.Zones[-1].L2, player.L3 = player.Zones[-1].L3, player.L4 = player.Zones[-1].L4, player.L5 = player.Zones[-1].L5, player.L6 = player.Zones[-1].L6, player.L7 = player.Zones[-1].L7, player.L8 = player.Zones[-1].L8, player.L9 = player.Zones[-1].L9, player.L10 = player.Zones[-1].L10, player.L11 = player.Zones[-1].L11, player.L12 = player.Zones[-1].L12
+if (player.prev === C2_LIST[2]) player.prev = C2_LIST[5], player.Fourtynine = C2_LIST[2]}
 
-    if (player.Zone === 1){player = Object.assign(getStartPlayer(), JSON.parse(localStorage.getItem('1')));
-        player.versionType = modInfo.id;
-        fixSave();
-        versionCheck();
-        NaNcheck(save)
-        player.intervaeae = false
-    player.intervaea = false
-    player.intervae = false
-    player.interva = false
+    if (player.Zone === 1){
+
+         player.Sprev = player.Zones[0].Sprev, player.prev = player.Zones[0].prev, player.East = player.Zones[0].East, player.West = player.Zones[0].West, player.North = player.Zones[0].North, player.South = player.Zones[0].South, player.Zone = player.Zones[0].Zone, player.One = player.Zones[0].One, player.Two = player.Zones[0].Two, player.Three = player.Zones[0].Three, player.Four = player.Zones[0].Four, player.Five = player.Zones[0].Five, player.Six = player.Zones[0].Six, player.Seven = player.Zones[0].Seven, player.Eight = player.Zones[0].Eight, player.Nine = player.Zones[0].Nine, player.Ten = player.Zones[0].Ten, player.Eleven = player.Zones[0].Eleven, player.Twelve = player.Zones[0].Twelve, player.Thirteen = player.Zones[0].Thirteen, player.Fourteen = player.Zones[0].Fourteen, player.Fifteen = player.Zones[0].Fifteen, player.Sixteen = player.Zones[0].Sixteen, player.Seventeen = player.Zones[0].Seventeen, player.Eighteen = player.Zones[0].Eighteen, player.Nineteen = player.Zones[0].Nineteen, player.Twenty = player.Zones[0].Twenty, player.Twentyone = player.Zones[0].Twentyone, player.Twentytwo = player.Zones[0].Twentytwo, player.Twentythree = player.Zones[0].Twentythree, player.Twentyfour = player.Zones[0].Twentyfour, player.Twentyfive = player.Zones[0].Twentyfive, player.Twentysix = player.Zones[0].Twentysix, player.Twentyseven = player.Zones[0].Twentyseven, player.Twentyeight = player.Zones[0].Twentyeight, player.Twentynine = player.Zones[0].Twentynine, player.Thirty = player.Zones[0].Thirty, player.Thirtyone = player.Zones[0].Thirtyone, player.Thirtytwo = player.Zones[0].Thirtytwo, player.Thirtythree = player.Zones[0].Thirtythree, player.Thirtyseven = player.Zones[0].Thirtyfour, player.Thirtyfive = player.Zones[0].Thirtyfive, player.Thirtysix = player.Zones[0].Thirtysix, player.Thirtyfour = player.Zones[0].Thirtyseven, player.Thirtyeight = player.Zones[0].Thirtyeight, player.Thirtynine = player.Zones[0].Thirtynine, player.Fourty = player.Zones[0].Fourty, player.Fourtyone = player.Zones[0].Fourtyone, player.Fourtytwo = player.Zones[0].Fourtytwo, player.Fourtythree = player.Zones[0].Fourtythree, player.Fourtyfour = player.Zones[0].Fourtyfour, player.Fourtyfive = player.Zones[0].Fourtyfive, player.Fourtysix = player.Zones[0].Fourtysix, player.Fourtyseven = player.Zones[0].Fourtyseven, player.Fourtyeight = player.Zones[0].Fourtyeight, player.Fourtynine = player.Zones[0].Fourtynine, player.Fifty = player.Zones[0].Fifty, player.L1 = player.Zones[0].L1, player.L2 = player.Zones[0].L2, player.L3 = player.Zones[0].L3, player.L4 = player.Zones[0].L4, player.L5 = player.Zones[0].L5, player.L6 = player.Zones[0].L6, player.L7 = player.Zones[0].L7, player.L8 = player.Zones[0].L8, player.L9 = player.Zones[0].L9, player.L10 = player.Zones[0].L10, player.L11 = player.Zones[0].L11, player.L12 = player.Zones[0].L12
         if (player.Thirty === C2_LIST[2] && localStorage.getItem('prev1') === '2') player.Twentynine = C2_LIST[2]
 
         if (localStorage.getItem('prev1') === '1') player.Fourty = C1_LIST[3], player.North = 0, player.South = 0
@@ -96,18 +81,10 @@ function import1() {
         if (localStorage.getItem('prev1') !== '5') player.Fourtyone = C1_LIST[1]
         
         if (localStorage.getItem('prevTab') === '1' && localStorage.getItem('prev1') === '2') player.Twentynine = C2_LIST[2], localStorage.setItem('prevTab', null)
-        if (localStorage.getItem('prevTab') === '1' && localStorage.getItem('prev1') !== '2') player.Thirty = C2_LIST[2], localStorage.setItem('prevTab', null)
-        save();
-        window.location.reload();}
-    if (player.Zone === 2){player = Object.assign(getStartPlayer(), JSON.parse(localStorage.getItem('2')));
-        player.versionType = modInfo.id;
-        fixSave();
-        versionCheck();
-        NaNcheck(save)
-        player.intervaeae = false
-    player.intervaea = false
-    player.intervae = false
-    player.interva = false
+        if (localStorage.getItem('prevTab') === '1' && localStorage.getItem('prev1') !== '2') player.Thirty = C2_LIST[2], localStorage.setItem('prevTab', null)}
+        
+    if (player.Zone === 2){
+         player.Sprev = player.Zones[1].Sprev, player.prev = player.Zones[1].prev, player.East = player.Zones[1].East, player.West = player.Zones[1].West, player.North = player.Zones[1].North, player.South = player.Zones[1].South, player.Zone = player.Zones[1].Zone, player.One = player.Zones[1].One, player.Two = player.Zones[1].Two, player.Three = player.Zones[1].Three, player.Four = player.Zones[1].Four, player.Five = player.Zones[1].Five, player.Six = player.Zones[1].Six, player.Seven = player.Zones[1].Seven, player.Eight = player.Zones[1].Eight, player.Nine = player.Zones[1].Nine, player.Ten = player.Zones[1].Ten, player.Eleven = player.Zones[1].Eleven, player.Twelve = player.Zones[1].Twelve, player.Thirteen = player.Zones[1].Thirteen, player.Fourteen = player.Zones[1].Fourteen, player.Fifteen = player.Zones[1].Fifteen, player.Sixteen = player.Zones[1].Sixteen, player.Seventeen = player.Zones[1].Seventeen, player.Eighteen = player.Zones[1].Eighteen, player.Nineteen = player.Zones[1].Nineteen, player.Twenty = player.Zones[1].Twenty, player.Twentyone = player.Zones[1].Twentyone, player.Twentytwo = player.Zones[1].Twentytwo, player.Twentythree = player.Zones[1].Twentythree, player.Twentyfour = player.Zones[1].Twentyfour, player.Twentyfive = player.Zones[1].Twentyfive, player.Twentysix = player.Zones[1].Twentysix, player.Twentyseven = player.Zones[1].Twentyseven, player.Twentyeight = player.Zones[1].Twentyeight, player.Twentynine = player.Zones[1].Twentynine, player.Thirty = player.Zones[1].Thirty, player.Thirtyone = player.Zones[1].Thirtyone, player.Thirtytwo = player.Zones[1].Thirtytwo, player.Thirtythree = player.Zones[1].Thirtythree, player.Thirtyseven = player.Zones[1].Thirtyfour, player.Thirtyfive = player.Zones[1].Thirtyfive, player.Thirtysix = player.Zones[1].Thirtysix, player.Thirtyfour = player.Zones[1].Thirtyseven, player.Thirtyeight = player.Zones[1].Thirtyeight, player.Thirtynine = player.Zones[1].Thirtynine, player.Fourty = player.Zones[1].Fourty, player.Fourtyone = player.Zones[1].Fourtyone, player.Fourtytwo = player.Zones[1].Fourtytwo, player.Fourtythree = player.Zones[1].Fourtythree, player.Fourtyfour = player.Zones[1].Fourtyfour, player.Fourtyfive = player.Zones[1].Fourtyfive, player.Fourtysix = player.Zones[1].Fourtysix, player.Fourtyseven = player.Zones[1].Fourtyseven, player.Fourtyeight = player.Zones[1].Fourtyeight, player.Fourtynine = player.Zones[1].Fourtynine, player.Fifty = player.Zones[1].Fifty, player.L1 = player.Zones[1].L1, player.L2 = player.Zones[1].L2, player.L3 = player.Zones[1].L3, player.L4 = player.Zones[1].L4, player.L5 = player.Zones[1].L5, player.L6 = player.Zones[1].L6, player.L7 = player.Zones[1].L7, player.L8 = player.Zones[1].L8, player.L9 = player.Zones[1].L9, player.L10 = player.Zones[1].L10, player.L11 = player.Zones[1].L11, player.L12 = player.Zones[1].L12
         
         if (localStorage.getItem('prevZone') === '1'){
       
@@ -128,25 +105,11 @@ function import1() {
         if (localStorage.getItem('prevTab') === '1' && localStorage.getItem('prev') !== '2') player.Twentyone = C2_LIST[2], localStorage.setItem('prevTab', null)}
 
         if (localStorage.getItem('prevZone') === '3'){
-
             if (localStorage.getItem('prevTab') === '1') player.Twentynine = C2_LIST[2], localStorage.setItem('prevTab', null)
-
-          }
-        save();
-        window.location.reload();}
-    if (player.Zone === 3){player = Object.assign(getStartPlayer(), JSON.parse(localStorage.getItem('3')));
-        player.versionType = modInfo.id;
-        fixSave();
-        versionCheck();
-        NaNcheck(save)
-        player.intervaeae = false
-    player.intervaea = false
-    player.intervae = false
-    player.interva = false
-
-        if (localStorage.getItem('prevTab') === '1') player.Twentytwo = C2_LIST[2], localStorage.setItem('prevTab', null)
-        save();
-        window.location.reload();}
+          }}
+    if (player.Zone === 3){
+         player.Sprev = player.Zones[2].Sprev, player.prev = player.Zones[2].prev, player.East = player.Zones[2].East, player.West = player.Zones[2].West, player.North = player.Zones[2].North, player.South = player.Zones[2].South, player.Zone = player.Zones[2].Zone, player.One = player.Zones[2].One, player.Two = player.Zones[2].Two, player.Three = player.Zones[2].Three, player.Four = player.Zones[2].Four, player.Five = player.Zones[2].Five, player.Six = player.Zones[2].Six, player.Seven = player.Zones[2].Seven, player.Eight = player.Zones[2].Eight, player.Nine = player.Zones[2].Nine, player.Ten = player.Zones[2].Ten, player.Eleven = player.Zones[2].Eleven, player.Twelve = player.Zones[2].Twelve, player.Thirteen = player.Zones[2].Thirteen, player.Fourteen = player.Zones[2].Fourteen, player.Fifteen = player.Zones[2].Fifteen, player.Sixteen = player.Zones[2].Sixteen, player.Seventeen = player.Zones[2].Seventeen, player.Eighteen = player.Zones[2].Eighteen, player.Nineteen = player.Zones[2].Nineteen, player.Twenty = player.Zones[2].Twenty, player.Twentyone = player.Zones[2].Twentyone, player.Twentytwo = player.Zones[2].Twentytwo, player.Twentythree = player.Zones[2].Twentythree, player.Twentyfour = player.Zones[2].Twentyfour, player.Twentyfive = player.Zones[2].Twentyfive, player.Twentysix = player.Zones[2].Twentysix, player.Twentyseven = player.Zones[2].Twentyseven, player.Twentyeight = player.Zones[2].Twentyeight, player.Twentynine = player.Zones[2].Twentynine, player.Thirty = player.Zones[2].Thirty, player.Thirtyone = player.Zones[2].Thirtyone, player.Thirtytwo = player.Zones[2].Thirtytwo, player.Thirtythree = player.Zones[2].Thirtythree, player.Thirtyseven = player.Zones[2].Thirtyfour, player.Thirtyfive = player.Zones[2].Thirtyfive, player.Thirtysix = player.Zones[2].Thirtysix, player.Thirtyfour = player.Zones[2].Thirtyseven, player.Thirtyeight = player.Zones[2].Thirtyeight, player.Thirtynine = player.Zones[2].Thirtynine, player.Fourty = player.Zones[2].Fourty, player.Fourtyone = player.Zones[2].Fourtyone, player.Fourtytwo = player.Zones[2].Fourtytwo, player.Fourtythree = player.Zones[2].Fourtythree, player.Fourtyfour = player.Zones[2].Fourtyfour, player.Fourtyfive = player.Zones[2].Fourtyfive, player.Fourtysix = player.Zones[2].Fourtysix, player.Fourtyseven = player.Zones[2].Fourtyseven, player.Fourtyeight = player.Zones[2].Fourtyeight, player.Fourtynine = player.Zones[2].Fourtynine, player.Fifty = player.Zones[2].Fifty, player.L1 = player.Zones[2].L1, player.L2 = player.Zones[2].L2, player.L3 = player.Zones[2].L3, player.L4 = player.Zones[2].L4, player.L5 = player.Zones[2].L5, player.L6 = player.Zones[2].L6, player.L7 = player.Zones[2].L7, player.L8 = player.Zones[2].L8, player.L9 = player.Zones[2].L9, player.L10 = player.Zones[2].L10, player.L11 = player.Zones[2].L11, player.L12 = player.Zones[2].L12
+        if (localStorage.getItem('prevTab') === '1') player.Twentytwo = C2_LIST[2], localStorage.setItem('prevTab', null)}
 }
 
 function moveLeft(){
@@ -871,6 +834,7 @@ addLayer("tree-tab", {
                 done() { return player.Zone === -1 && player.Twentytwo === C1_LIST[3]},
             },
         },
+        
     clickables: {
         11: {
             unlocked(){
@@ -1310,7 +1274,7 @@ addLayer("tree-tab", {
             if (player.Thirty === C1_LIST[3]){
                 save1()
                 localStorage.setItem('prevZone', 2)
-                if (localStorage.getItem('3') !== null && localStorage.getItem('3') !== 'null') return  player.Zone = 3, import1()
+                if (player.Zones[2] !== undefined) return  player.Zone = 3, import1()
                 player.Sprev = `https://i.postimg.cc/brG8QgqV/Screenshot-2022-08-12-221408-removebg-preview-1.png`
                 player.prev = `https://i.postimg.cc/brG8QgqV/Screenshot-2022-08-12-221408-removebg-preview-1.png`
                 player.East = 19,
@@ -1385,7 +1349,7 @@ addLayer("tree-tab", {
                     if (player.Fourtyone === C1_LIST[3]){
                         save1()
                         localStorage.setItem('prevZone', 1)
-                        if (localStorage.getItem('-1') !== null && localStorage.getItem('-1') !== 'null') return  player.Zone = -1, import1()
+                        if (player.Zones[-1] !== undefined) return  player.Zone = -1, import1()
                         player.Sprev = C2_LIST[5]
             player.prev = C2_LIST[5]
             player.East = -2,
@@ -1466,7 +1430,7 @@ addLayer("tree-tab", {
             if (player.Twenty === C1_LIST[3]) localStorage.setItem('prev', 3)
             if (player.L11 === C1_LIST[3]) localStorage.setItem('prev', 4)
 
-            if (localStorage.getItem('2') !== null && localStorage.getItem('2') !== 'null') return player.Zone = 2, import1()
+            if (player.Zones[1] !== undefined) return player.Zone = 2, import1()
             if (player.Fourty === C1_LIST[3]) player.Thirtyone = C1_LIST[3]
             else player.Thirtyone = C2_LIST[0]
             if (player.Thirty === C1_LIST[3]) player.Twentyone = C1_LIST[3]
@@ -1554,6 +1518,7 @@ addLayer("tree-tab", {
                 player.Zone = 2
                 localStorage.setItem('prevZone', 2)
                   save1()
+            
                   if (player.Thirtyone === C1_LIST[3]) localStorage.setItem('prev1', 1)
                   if (player.Twentyone === C1_LIST[3]) localStorage.setItem('prev1', 2)
                   if (player.Eleven === C1_LIST[3]) localStorage.setItem('prev1', 3)
