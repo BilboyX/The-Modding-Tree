@@ -868,7 +868,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "↑",
-            style: { "background-color": "#808080" },
+            style: { "background-color": "#808080", color: "#000000", "font-size": "40px"},
             onHold() {
                 player.intervaeae = true
             },
@@ -881,7 +881,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "←",
-            style: { "background-color": "#808080" },
+            style: { "background-color": "#808080", color: "#000000", "font-size": "40px"},
             onHold() {
                 player.interva = true
             },
@@ -894,7 +894,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "↓",
-            style: { "background-color": "#808080" },
+            style: { "background-color": "#808080", color: "#000000", "font-size": "40px"},
             onHold() {
                 player.intervaea = true
             },
@@ -907,7 +907,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "→",
-            style: { "background-color": "#808080" },
+            style: { "background-color": "#808080", color: "#000000", "font-size": "40px"},
             onHold() {
                 player.intervae = true
             },
@@ -920,7 +920,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "Reset Zone",
-            style: { "background-color": "#808080" },
+            style: { "background-color": "#808080", color: "#000000", "font-size": "10px"},
             onClick() {
                 player.reset = true
             },
@@ -933,7 +933,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "Undo ONE move",
-            style: { "background-color": "#808080" },
+            style: { "background-color": "#808080", color: "#000000", "font-size": "10px"},
             onClick() {
                 import2()
             },
