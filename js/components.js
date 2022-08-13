@@ -1,5 +1,6 @@
 var app;
 
+	
 function loadVue() {
 	// data = a function returning the content (actually HTML)
 	Vue.component('display-text', {
@@ -9,6 +10,14 @@ function loadVue() {
 		`
 	})
 
+// Displays an image, data is the URL
+	Vue.component('display-image', {
+		props: ['layer', 'data'],
+		template: `
+			<img class="instant" v-bind:src= "data" v-bind:alt= "data">
+		`
+	})
+	
 	Vue.component('Map-row0', {
 		props: ['layer', 'data'],
 		template: `
@@ -36,16 +45,16 @@ function loadVue() {
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span>┃</span>
-		<display-text :layer="layer" :data="player.One"/>
-		<display-text :layer="layer" :data="player.Two"/>
-		<display-text :layer="layer" :data="player.Three"/>
-		<display-text :layer="layer" :data="player.Four"/>
-		<display-text :layer="layer" :data="player.Five"/>
-		<display-text :layer="layer" :data="player.Six"/>
-		<display-text :layer="layer" :data="player.Seven"/>
-		<display-text :layer="layer" :data="player.Eight"/>
-		<display-text :layer="layer" :data="player.Nine"/>
-		<display-text :layer="layer" :data="player.Ten"/>
+		<display-image :layer="layer" :data="player.One"/>
+		<display-image :layer="layer" :data="player.Two"/>
+		<display-image :layer="layer" :data="player.Three"/>
+		<display-image :layer="layer" :data="player.Four"/>
+		<display-image :layer="layer" :data="player.Five"/>
+		<display-image :layer="layer" :data="player.Six"/>
+		<display-image :layer="layer" :data="player.Seven"/>
+		<display-image :layer="layer" :data="player.Eight"/>
+		<display-image :layer="layer" :data="player.Nine"/>
+		<display-image :layer="layer" :data="player.Ten"/>
 		<span>┃</span>
 	</div>
 		`
@@ -58,16 +67,16 @@ function loadVue() {
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span  v-if="player.Zone === 2" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 2">┃</span>
-		<display-text :layer="layer" :data="player.Eleven"/>
-		<display-text :layer="layer" :data="player.Twelve"/>
-		<display-text :layer="layer" :data="player.Thirteen"/>
-		<display-text :layer="layer" :data="player.Fourteen"/>
-		<display-text :layer="layer" :data="player.Fifteen"/>
-		<display-text :layer="layer" :data="player.Sixteen"/>
-		<display-text :layer="layer" :data="player.Seventeen"/>
-		<display-text :layer="layer" :data="player.Eighteen"/>
-		<display-text :layer="layer" :data="player.Nineteen"/>
-		<display-text :layer="layer" :data="player.Twenty"/>
+		<display-image :layer="layer" :data="player.Eleven"/>
+		<display-image :layer="layer" :data="player.Twelve"/>
+		<display-image :layer="layer" :data="player.Thirteen"/>
+		<display-image :layer="layer" :data="player.Fourteen"/>
+		<display-image :layer="layer" :data="player.Fifteen"/>
+		<display-image :layer="layer" :data="player.Sixteen"/>
+		<display-image :layer="layer" :data="player.Seventeen"/>
+		<display-image :layer="layer" :data="player.Eighteen"/>
+		<display-image :layer="layer" :data="player.Nineteen"/>
+		<display-image :layer="layer" :data="player.Twenty"/>
 		<span  v-if="player.Zone === 1" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 1">┃</span>
 	</div>
@@ -81,17 +90,17 @@ function loadVue() {
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span  v-if="player.Zone === 2 || player.Zone === 3" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 2 && player.Zone !== 3">┃</span>
-		<div v-if="player.Zone !== -1 || player.Twentytwo !== C1_LIST[3]"><display-text :layer="layer" :data="player.Twentyone"/></div>
-		<div v-if="player.Zone === -1 && player.Twentytwo === C1_LIST[3]" class="tooltipBox"><display-text :layer="layer" :data="player.Twentyone"/><div class="tooltip">→ Gerdio<div>The evergreen forest of Gerdio was once home to many wild inhabitants including moose and black bears. Lately however, their populations have been dwindling towards extinction.</div></div></div>
-		<display-text :layer="layer" :data="player.Twentytwo"/>
-		<display-text :layer="layer" :data="player.Twentythree"/>
-		<display-text :layer="layer" :data="player.Twentyfour"/>
-		<display-text :layer="layer" :data="player.Twentyfive"/>
-		<display-text :layer="layer" :data="player.Twentysix"/>
-		<display-text :layer="layer" :data="player.Twentyseven"/>
-		<display-text :layer="layer" :data="player.Twentyeight"/>
-		<display-text :layer="layer" :data="player.Twentynine"/>
-		<display-text :layer="layer" :data="player.Thirty"/>
+		<div v-if="player.Zone !== -1 || player.Twentytwo !== C1_LIST[3]"><display-image :layer="layer" :data="player.Twentyone"/></div>
+		<div v-if="player.Zone === -1 && player.Twentytwo === C1_LIST[3]" class="tooltipBox"><display-image :layer="layer" :data="player.Twentyone"/><div class="tooltip">→ Gerdio<div>The evergreen forest of Gerdio was once home to many wild inhabitants including moose and black bears. Lately however, their populations have been dwindling towards extinction.</div></div></div>
+		<display-image :layer="layer" :data="player.Twentytwo"/>
+		<display-image :layer="layer" :data="player.Twentythree"/>
+		<display-image :layer="layer" :data="player.Twentyfour"/>
+		<display-image :layer="layer" :data="player.Twentyfive"/>
+		<display-image :layer="layer" :data="player.Twentysix"/>
+		<display-image :layer="layer" :data="player.Twentyseven"/>
+		<display-image :layer="layer" :data="player.Twentyeight"/>
+		<display-image :layer="layer" :data="player.Twentynine"/>
+		<display-image :layer="layer" :data="player.Thirty"/>
 		<span  v-if="player.Zone === 1 || player.Zone === 2" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 1 && player.Zone !== 2">┃</span>
 	</div>
@@ -105,16 +114,16 @@ function loadVue() {
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span  v-if="player.Zone === 2" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 2">┃</span>
-		<display-text :layer="layer" :data="player.Thirtyone"/>
-		<display-text :layer="layer" :data="player.Thirtytwo"/>
-		<display-text :layer="layer" :data="player.Thirtythree"/>
-		<display-text :layer="layer" :data="player.Thirtyfour"/>
-		<display-text :layer="layer" :data="player.Thirtyfive"/>
-		<display-text :layer="layer" :data="player.Thirtysix"/>
-		<display-text :layer="layer" :data="player.Thirtyseven"/>
-		<display-text :layer="layer" :data="player.Thirtyeight"/>
-		<display-text :layer="layer" :data="player.Thirtynine"/>
-		<display-text :layer="layer" :data="player.Fourty"/>
+		<display-image :layer="layer" :data="player.Thirtyone"/>
+		<display-image :layer="layer" :data="player.Thirtytwo"/>
+		<display-image :layer="layer" :data="player.Thirtythree"/>
+		<display-image :layer="layer" :data="player.Thirtyfour"/>
+		<display-image :layer="layer" :data="player.Thirtyfive"/>
+		<display-image :layer="layer" :data="player.Thirtysix"/>
+		<display-image :layer="layer" :data="player.Thirtyseven"/>
+		<display-image :layer="layer" :data="player.Thirtyeight"/>
+		<display-image :layer="layer" :data="player.Thirtynine"/>
+		<display-image :layer="layer" :data="player.Fourty"/>
 		<span  v-if="player.Zone === 1" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 1">┃</span>
 	</div>
@@ -128,16 +137,16 @@ function loadVue() {
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span v-if="player.Zone === 1" style='color: #70716B'>┃</span>
 		<span v-if="player.Zone !== 1">┃</span>
-		<display-text :layer="layer" :data="player.Fourtyone"/>
-		<display-text :layer="layer" :data="player.Fourtytwo"/>
-		<display-text :layer="layer" :data="player.Fourtythree"/>
-		<display-text :layer="layer" :data="player.Fourtyfour"/>
-		<display-text :layer="layer" :data="player.Fourtyfive"/>
-		<display-text :layer="layer" :data="player.Fourtysix"/>
-		<display-text :layer="layer" :data="player.Fourtyseven"/>
-		<display-text :layer="layer" :data="player.Fourtyeight"/>
-		<display-text :layer="layer" :data="player.Fourtynine"/>
-		<display-text :layer="layer" :data="player.Fifty"/>
+		<display-image :layer="layer" :data="player.Fourtyone"/>
+		<display-image :layer="layer" :data="player.Fourtytwo"/>
+		<display-image :layer="layer" :data="player.Fourtythree"/>
+		<display-image :layer="layer" :data="player.Fourtyfour"/>
+		<display-image :layer="layer" :data="player.Fourtyfive"/>
+		<display-image :layer="layer" :data="player.Fourtysix"/>
+		<display-image :layer="layer" :data="player.Fourtyseven"/>
+		<display-image :layer="layer" :data="player.Fourtyeight"/>
+		<display-image :layer="layer" :data="player.Fourtynine"/>
+		<display-image :layer="layer" :data="player.Fifty"/>
 		<span  v-if="player.Zone === -1" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== -1">┃</span>
 	</div>
@@ -149,18 +158,18 @@ function loadVue() {
 		template: `
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
-		<span><display-text :layer="layer" :data="player.L1"/></span>
-		<span><display-text :layer="layer" :data="player.L2"/></span>
-		<span><display-text :layer="layer" :data="player.L3"/></span>
-		<span><display-text :layer="layer" :data="player.L4"/></span>
-		<span><display-text :layer="layer" :data="player.L5"/></span>
-		<span><display-text :layer="layer" :data="player.L6"/></span>
-		<span><display-text :layer="layer" :data="player.L7"/></span>
-		<span><display-text :layer="layer" :data="player.L8"/></span>
-		<span><display-text :layer="layer" :data="player.L9"/></span>
-		<span><display-text :layer="layer" :data="player.L10"/></span>
-		<span><display-text :layer="layer" :data="player.L11"/></span>
-		<span><display-text :layer="layer" :data="player.L12"/></span>
+		<span><display-image :layer="layer" :data="player.L1"/></span>
+		<span><display-image :layer="layer" :data="player.L2"/></span>
+		<span><display-image :layer="layer" :data="player.L3"/></span>
+		<span><display-image :layer="layer" :data="player.L4"/></span>
+		<span><display-image :layer="layer" :data="player.L5"/></span>
+		<span><display-image :layer="layer" :data="player.L6"/></span>
+		<span><display-image :layer="layer" :data="player.L7"/></span>
+		<span><display-image :layer="layer" :data="player.L8"/></span>
+		<span><display-image :layer="layer" :data="player.L9"/></span>
+		<span><display-image :layer="layer" :data="player.L10"/></span>
+		<span><display-image :layer="layer" :data="player.L11"/></span>
+		<span><display-image :layer="layer" :data="player.L12"/></span>
 	</div>
 		`
 	})
@@ -185,13 +194,6 @@ function loadVue() {
 		`
 	})
 
-	// Displays an image, data is the URL
-	Vue.component('display-image', {
-		props: ['layer', 'data'],
-		template: `
-			<img class="instant" v-bind:src= "data" v-bind:alt= "data">
-		`
-	})
 		
 	// data = an array of Components to be displayed in a row
 	Vue.component('row', {
