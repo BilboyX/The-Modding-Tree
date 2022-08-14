@@ -390,7 +390,7 @@ function hardReset(resetOptions) {
 	player = null
 	localStorage.setItem('Area', null),
 	localStorage.setItem('log1', null),
-	localStorage.setItem('log', null),
+	localStorage.setItem('log', 2),
 	localStorage.setItem('prevTab', null),
 	localStorage.setItem('prevZone', 1),
 	localStorage.setItem('prev', null),
