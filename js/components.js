@@ -91,7 +91,7 @@ function loadVue() {
 		<span  v-if="player.Zone === 2 || player.Zone === 3" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 2 && player.Zone !== 3">┃</span>
 		<div v-if="player.Zone !== -1 || player.Twentytwo !== C1_LIST[3]"><display-image :layer="layer" :data="player.Twentyone"/></div>
-		<div v-if="player.Zone === -1 && player.Twentytwo === C1_LIST[3]" class="tooltipBox"><display-image :layer="layer" :data="player.Twentyone"/><div class="tooltip">→ Gerdio<div>The evergreen forest of Gerdio was once home to many wild inhabitants including moose and black bears. Lately however, their populations have been dwindling towards extinction.</div></div></div>
+		<div v-if="player.Zone === -1 && player.Twentytwo === C1_LIST[3]" class="tooltipBox"><display-image :layer="layer" :data="player.Twentyone"/><div class="tooltip">→ Gerdio<div>{{ options.Lang?"The evergreen forest of Gerdio was once home to many wild inhabitants including moose and black bears. Lately however, their populations have been dwindling towards extinction.":"这片叫Gerdio的常绿森林曾是包括驼鹿与黑熊在内的许多野生动物的家。但是，最近他们的数量极速下滑，几乎就要灭绝了。" }}</div></div></div>
 		<display-image :layer="layer" :data="player.Twentytwo"/>
 		<display-image :layer="layer" :data="player.Twentythree"/>
 		<display-image :layer="layer" :data="player.Twentyfour"/>

@@ -120,26 +120,28 @@ var systemComponents = {
     'info-tab': {
         template: `
         <div>
-        <h2>{{modInfo.name}}</h2>
+        <h2>Gerdio: {{ options.Lang?"More Green":"更多绿色" }}</h2>
         <br>
         <h3>{{VERSION.withName}}</h3>
         <span v-if="modInfo.author">
             <br>
-            Made by {{modInfo.author}}	
+            {{ options.Lang?"Made by":"作者" }} {{modInfo.author}}	
         </span>
+		<br>
+		{{ options.Lang?"Translated by ajchen":"由ajchen翻译 " }}
         <br>
-        The Modding Tree <a v-bind:href="'https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '14px', 'display': 'inline'}" >{{TMT_VERSION.tmtNum}}</a> by Acamaeda
+        {{ options.Lang?"The Modding Tree":"模组树" }} <a v-bind:href="'https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '14px', 'display': 'inline'}" >{{TMT_VERSION.tmtNum}}</a> {{ options.Lang?"by":"作者为" }} Acamaeda
         <br>
-        The Prestige Tree made by Jacorb and Aarex
+        {{ options.Lang?"The Prestige Tree made by":"声望树作者" }} Jacorb {{ options.Lang?"and":"和" }} Aarex
 		<br><br>
-		<div class="link" onclick="showTab('changelog-tab')">Changelog</div><br>
+		<div class="link" onclick="showTab('changelog-tab')">{{ options.Lang?"Changelog":"模组树更新记录" }}</div><br>
         <span v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink" target="_blank">{{modInfo.discordName}}</a><br></span>
-        <a class="link" href="https://discord.gg/F3xveHV" target="_blank" v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">The Modding Tree Discord</a><br>
-        <a class="link" href="http://discord.gg/wwQfgPa" target="_blank" v-bind:style="{'font-size': '16px'}">Main Prestige Tree server</a><br>
+        <a class="link" href="https://discord.gg/F3xveHV" target="_blank" v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">{{ options.Lang?"The Modding Tree Discord":"模组树 Discord" }}</a><br>
+        <a class="link" href="http://discord.gg/wwQfgPa" target="_blank" v-bind:style="{'font-size': '16px'}">{{ options.Lang?"Main Prestige Tree server":"声望树 Discord" }}</a><br>
 		<br><br>
-        Time Played: {{ formatTime(player.timePlayed) }}<br><br>
-        <h3>Hotkeys</h3><br>
-        <span v-for="key in hotkeys" v-if="player[key.layer].unlocked && tmp[key.layer].hotkeys[key.id].unlocked"><br>{{key.description}}</span></div>
+        {{ options.Lang?"Time Played":"游玩时长" }}: {{ formatTime(player.timePlayed) }}<br><br>
+        <h3>{{ options.Lang?"Hotkeys":"快捷键" }}</h3><br>
+        <span v-for="key in hotkeys" v-if="player[key.layer].unlocked && tmp[key.layer].hotkeys[key.id].unlocked"><br><h2 v-html="options.Lang ? key.description : key.desc"></h2></span></div>
     `
     },
 
@@ -147,13 +149,17 @@ var systemComponents = {
         template: `
         <table>
             <tr>
-                <td><button class="opt" onclick="save()">Save</button></td>
-                <td><button class="opt" onclick="toggleOpt('autosave')">Autosave: {{ options.autosave?"ON":"OFF" }}</button></td>
-                <td><button class="opt" onclick="hardReset()">HARD RESET</button></td>
+                <td><button class="opt" onclick="save()">{{options.Lang?'Save':'本地存档'}}</button></td>
+                <td><button class="opt" onclick="toggleOpt('autosave')">{{options.Lang?'AutoSave':'自动存档'}}: {{ options.autosave?(options.Lang?'ON':'已开启'):(options.Lang?'OFF':'已关闭') }}</button></td>
+                <td><button class="opt" onclick="hardReset()">{{options.Lang?'HARD RESET':'硬重置'}}</button></td>
             </tr>
 			<tr> 
-			<td><button class="opt" onclick="toggleOpt('SFX')">SFX: {{ options.SFX?"ON":"OFF" }}</button></td>
-			<td><button class="opt" onclick="toggleOpt('Music')">Music: {{ options.Music?"ON":"OFF" }}</button></td>
+			<td><button class="opt" onclick="toggleOpt('SFX')">{{options.Lang?'SFX':'音效'}}: {{ options.SFX?(options.Lang?'ON':'已开启'):(options.Lang?'OFF':'已关闭') }}</button></td>
+			<td><button class="opt" onclick="toggleOpt('Music')">{{options.Lang?'Music':'音乐'}}: {{ options.Music?(options.Lang?'ON':'已开启'):(options.Lang?'OFF':'已关闭') }}</button></td>
+			<td><button class="opt" onclick="toggleOpt('Lang')">{{options.Lang?'Language':'语言'}}: {{ options.Lang?"English (英文)":"Chinese (中文)" }}</button></td>
+			</tr>
+			<tr> 
+			<td><button class="opt" onclick="localStorage.setItem('gameStarted', false), player.inOpen = true, goBack('options-tab'), localStorage.setItem('Area', 0), options.theme = themes[0], changeTheme(), tmp['tree-tab'].audioForest.pause()">{{options.Lang?'Back To Main Menu.':'回到主菜单' }}</button></td>
 			</tr>
         </table>`
     },

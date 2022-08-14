@@ -46,25 +46,24 @@
 		<canvas id="treeCanvas" class="canvas" v-if="!(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true'"></canvas>
 
 		<div v-if="false" id="loadingSection" class="fullWidth">
-			<h1>Loading... (If this takes too long it means there was a serious error!)←</h1>
+			<h1>{{ options.Lang?"Loading... (If this takes too long it means there was a serious error!)←":"加载中... (如果卡死了就是有bug!)←" }}</h1>
 		</div>
 		<div class="vl" v-if="player.navTab !== 'none' && tmp.other.splitScreen && player.tab!='none' && !(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true'"></div>
 		<div v-if="(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true'" class="fullWidth">
 			<br>
 			<h2>{{modInfo.name}} {{VERSION.withoutName}}</h2><br><br>
 			<h3 v-html="modInfo.winText"></h3><br>
-			<h3>Please check the Discord to see if there are new content updates!</h3><br><br>
-			<div v-if="!player.timePlayedReset">It took you {{formatTime(player.timePlayed)}} to beat the game.</div>
+			<h3>{{ options.Lang?"Please check the Discord to see if there are new content updates!":"请检查Discord，看看是否有新的内容更新！" }}</h3><br><br>
+			<div v-if="!player.timePlayedReset">{{ options.Lang?"It took you":"通关花了您" }} {{formatTime(player.timePlayed)}} {{ options.Lang?"to beat the game":"的时间" }}.</div>
 			<br>
-			<button class="longUpg can" onclick="hardReset(true)">Play Again</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
-				class="longUpg can" onclick="keepGoing()">Keep Going</button>
+			<button class="longUpg can" onclick="hardReset(true)"> {{ options.Lang?"Play Again":"重新游玩" }} </button>&nbsp;&nbsp;&nbsp;&nbsp;<button
+				class="longUpg can" onclick="keepGoing()">{{ options.Lang?"Keep Going":"继续游玩" }}</button>
 			<br><br><br>
 			<span v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink"
 					target="_blank">{{modInfo.discordName}}</a><br></span>
 			<a class="link" href="https://discord.gg/F3xveHV" target="_blank"
-				v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">The Modding Tree Discord</a><br>
-			<a class="link" href="http://discord.gg/wwQfgPa" target="_blank" v-bind:style="{'font-size': '16px'}">Main
-				Prestige Tree server</a><br>
+				v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">{{ options.Lang?"The Modding Tree":"模组树" }} Discord</a><br>
+			<a class="link" href="http://discord.gg/wwQfgPa" target="_blank" v-bind:style="{'font-size': '16px'}">{{ options.Lang?"Main Prestige Tree server":"声望树 Discord" }}</a><br>
 			<br><br>
 		</div>
 
@@ -76,11 +75,11 @@
 			<img src = "https://i.postimg.cc/26YBDv33/Symbo-lenture-1-removebg-preview-1.png"
 			width = "500" />
 			<br>
-			<h3>Select a mode</h3><br><br>
+			<h3>{{ options.Lang?"Select a mode":"选择一个模式" }}</h3><br><br>
 			<button class="longUpg can" onclick="localStorage.setItem('Mode', 1), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">WASD</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
-				class="longUpg can" onclick="localStorage.setItem('Mode', 2), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">Arrow Keys</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
-				class="longUpg can" onclick="localStorage.setItem('Mode', 3), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">Mobile EW</button>
-				<br><br><h3>Click anywhere but the buttons for the song (I hate google autoplay rules)</h3><br><br>
+				class="longUpg can" onclick="localStorage.setItem('Mode', 2), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">{{ options.Lang?"Arrow Keys":"方向键" }}</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
+				class="longUpg can" onclick="localStorage.setItem('Mode', 3), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">{{ options.Lang?"Mobile EW":`手机端` }}<i>{{ options.Lang?"":`噫` }}</i></button>
+				<br><br><h3>{{ options.Lang?"Click anywhere but the buttons for the song (I hate google autoplay rules) *may not apply*":"" }}</h3><br><br>
 				<img src = "https://i.postimg.cc/R0kG9kd0/slazzer-edit-image-removebg-preview.png"
 				height = "250" width = "270" /><br><br>
 		</div>
@@ -105,10 +104,11 @@
 					<li v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink"
 							target="_blank">{{modInfo.discordName}}</a><br></li>
 					<li><a class="link" href="https://discord.gg/F3xveHV" target="_blank"
-							v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">The Modding Tree
+							v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">{{ options.Lang?"The Modding Tree":"模组树" }}
 							Discord</a><br></li>
 					<li><a class="link" href="http://discord.gg/wwQfgPa" target="_blank"
-							v-bind:style="{'font-size': '16px'}">Main Prestige Tree server</a></li>
+							v-bind:style="{'font-size': '16px'}">{{ options.Lang?"Main Prestige Tree server":"声望树 Discord" }}
+						</a></li>
 				</ul>
 			</div>
 			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing) && localStorage.getItem('gameStarted') ===  'true'"></overlay-head>
@@ -129,16 +129,16 @@
 		</div>
 
 		<div v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') ===  'true'" style="position: absolute; right: 85px; top: 20px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
-			<span style="color: #ffffff">North:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.North)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
+			<span style="color: #ffffff">{{ options.Lang?"North":"北" }}:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.North)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
 			</div>
 			<div v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') ===  'true'" style="position: absolute; right: 4px; top: 40px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
-				<span style="color: #ffffff">West:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.West)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
+				<span style="color: #ffffff">{{ options.Lang?"West":"西" }}:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.West)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
 				<img id= "compass" src = "https://i.postimg.cc/6567Dxdh/compass-rose-vector-clipart.png"
 				 width = "100" />
-				 <span style="color: #ffffff">East:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.East)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
+				 <span style="color: #ffffff">{{ options.Lang?"East":"东" }}:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.East)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
 				</div>
 				<div v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') ===  'true'" style="position: absolute; right: 85px; top: 140px; margin-right: 12px; z-index: 1; display: inline-flex; align-items: center">
-					<span style="color: #ffffff">South:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.South)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
+					<span style="color: #ffffff">{{ options.Lang?"South":"南" }}:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.South)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
 					</div>
 
 		<!-- Popups -->

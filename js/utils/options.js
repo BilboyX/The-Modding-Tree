@@ -16,6 +16,7 @@ function getStartOptions() {
 		tooltipForcing: true,
 		SFX: true,
 		Music: true,
+		Lang: undefined,
 	}
 }
 

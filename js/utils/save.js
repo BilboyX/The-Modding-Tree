@@ -214,6 +214,9 @@ function load() {
 	updateTemp();
 	updateTabFormats()
 	loadVue();
+	if (options.Lang === undefined){
+		if (confirm('Click ok for english or cancel for chinese.(点ok使用英文，点取消使用中文)') == true) options.Lang = true
+		else options.Lang = false}
 }
 
 function loadOptions() {
