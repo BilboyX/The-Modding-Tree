@@ -141,6 +141,10 @@
 					<span style="color: #ffffff">{{ options.Lang?"South":"南" }}:</span><span style="color: #ffffff"><display-text :layer="'tree-tab'" :data="formatWhole(player.South)" style="text-align: right; min-height: 20px; margin: 4px"></display-text></span>
 					</div>
 
+					<img  v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') === 'true'" onclick="showTab('Skins')" id="skins" src = "https://i.postimg.cc/Vkx9y1bF/Untitled-design-3-removebg-preview.png"
+				width = "170" style="position: fixed; right: 40px; top: 200px">
+					<div id="Skintext"><p>{{ options.Lang? "Skins":"字符"}}</p></div></img>
+
 		<!-- Popups -->
 		<div class="popup-container">
 			<transition-group name="fade">

@@ -1,0 +1,148 @@
+addLayer("Skins", {
+    startData() {
+        return {
+            unlocked: false,
+            points: new Decimal(0),
+            Robber: false,
+        }
+    },
+    name: "Skins", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "Sk", // This appears on the layer's node. Default is the id with the first letter capitalized
+
+    color: "#4BDC13",
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    resource: "prestige points", // Name of prestige currency
+    baseResource: "points", // Name of resource prestige is based on
+    baseAmount() {return player.points}, // Get the current amount of baseResource
+    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.5, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+
+    layerShown(){return true},
+
+    achievements: {
+        11: {
+            tooltip(){if (options.Lang === true) return player.name + " is on a symbolenture."
+        else return player.name + " 踏上了符号冒险。"},
+        name() {if(options.Lang === true) return "A symbol on a symbolenture."
+        else return "一个符号踏上了符号冒险。"},
+            textStyle: { "color": "#000000" },
+            componentStyle() {return {"background-size": "100% 100%", "background-position": "center center", "border-color": "#008000"}},
+            image() { if (hasAchievement('Skins', 11)) return "https://i.postimg.cc/vT0sB0bX/Slate.png"
+        else return "https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png"}, //BASE IMAGE FRAME
+            done() { return player.skin === 0 && player.skinInverse === 1},
+            on() { if (player.skin === 0 && player.skinInverse === 1) return true
+            else return false},
+            onClick(){
+                if (hasAchievement('Skins', 11)) player.skin = 0, player.skinInverse = 1, player.reset = true
+            }
+        },
+        12: {
+            tooltip() {if(hasAchievement('Skins', 12) && options.Lang === true) return "Gerdio: The Forest Of Monotonous Desolation"
+        else if (hasAchievement('Skins', 12) && options.Lang === false) return "Gerdio: 荒凉单调之林"},
+        name() {if(options.Lang === true) return "Gerdio: The Forest Of Monotonous Desolation"
+        else return "Gerdio: 荒凉单调之林"},
+            textStyle: { "color": "#000000" },
+            style: { "background-size": "100% 100%", "background-position": "center center"},
+            done() { return player.Zone === -1 && C4_LIST.includes(player.Twentytwo)},
+            on() { if (player.skin === 2 && player.skinInverse === 3) return true
+            else return false},
+            image() { if (hasAchievement('Skins', 12)) return 'https://i.postimg.cc/m2mtPGw3/Slate-1.png'
+            else return 'https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png'},
+            onClick(){
+                if (hasAchievement('Skins', 12)) player.skin = 2, player.skinInverse = 3, player.reset = true
+            }
+        },
+        13: {
+            tooltip() {if(hasAchievement('Skins', 13) && options.Lang === true) return "Clowned"
+            else if (hasAchievement('Skins', 13) && options.Lang === false) return "知名的"},
+        name() {if(options.Lang === true) return "Clowned"
+        else return "知名的"},
+            textStyle: { "color": "#000000" },
+            style: { "background-size": "100% 100%", "background-position": "center center"},
+            done() { return player.Zone === -1 && C4_LIST.includes(player.Nine)},
+            on() { if (player.skin === 4 && player.skinInverse === 5) return true
+            else return false},
+            image() { if (hasAchievement('Skins', 13)) return 'https://i.postimg.cc/8zg8hZby/Slate.png'
+            else return 'https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png'},
+            onClick(){
+                if (hasAchievement('Skins', 13)) player.skin = 4, player.skinInverse = 5, player.reset = true
+            }
+        },
+        14: {
+            tooltip() {if(hasAchievement('Skins', 14) && options.Lang === true) return "Ratio Robber"
+            else if (hasAchievement('Skins', 14) && options.Lang === false) return "比例强盗"},
+            name() {if(options.Lang === true) return "Ratio Robber"
+            else return "比例强盗"},
+            textStyle: { "color": "#000000" },
+            style: { "background-size": "100% 100%", "background-position": "center center"},
+            done() { return player.Skins.Robber == true},
+            on() { if (player.skin === 6 && player.skinInverse === 7) return true
+            else return false},
+            image() { if (hasAchievement('Skins', 14)) return 'https://i.postimg.cc/65YjQzm2/Slate-1.png'
+            else return 'https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png'},
+            onClick(){
+                if (hasAchievement('Skins', 14)) player.skin = 6, player.skinInverse = 7, player.reset = true
+            }
+        },
+        15: {
+            tooltip() {if(hasAchievement('Skins', 15) && options.Lang === true) return `"yeah, it's not well coded, Bilboy's done extremely impressive work for not knowing basic coding"`
+            else if (hasAchievement('Skins', 15) && options.Lang === false) return `"对，这玩意没被好好编写。对于不懂基础编程的Bilboy（原作者）来说这玩意做的还挺不错的。"`},
+            name() {if(options.Lang === true) return "Globalist"
+            else return "全球主义者"},
+            textStyle: { "color": "#000000" },
+            style: { "background-size": "100% 100%", "background-position": "center center"},
+            done() { return player.name.toLowerCase() === 'Escapee'.toLowerCase()},
+            on() { if (player.skin === 8 && player.skinInverse === 9) return true
+            else return false},
+            image() { if (hasAchievement('Skins', 15)) return 'https://i.postimg.cc/wv5v51CP/Slate-2.png'
+            else return 'https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png'},
+            onClick(){
+                if (hasAchievement('Skins', 15)) player.skin = 8, player.skinInverse = 9, player.reset = true
+            }
+        },
+        16: {
+            tooltip() {if(hasAchievement('Skins', 16) && options.Lang === true) return `"EW"`
+            else if (hasAchievement('Skins', 16) && options.Lang === false) return `"<i>噫</i>"`},
+            name() {if(options.Lang === true) return "The Troll"
+            else return "巨魔"},
+            textStyle: { "color": "#000000" },
+            style: { "background-size": "100% 100%", "background-position": "center center"},
+            done() { return player.name.toLowerCase() === 'Jakub'.toLowerCase() && player['tree-tab'].saved === true},
+            on() { if (player.skin === 10 && player.skinInverse === 11) return true
+            else return false},
+            image() { if (hasAchievement('Skins', 16)) return 'https://i.postimg.cc/LsD6QJ4Z/Slate-3.png'
+            else return 'https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png'},
+            onClick(){
+                if (hasAchievement('Skins', 16)) player.skin = 10, player.skinInverse = 11, player.reset = true
+            }
+        },
+        17: {
+            tooltip() {if(hasAchievement('Skins', 17) && options.Lang === true) return `"you can make that adjustPopupTime (Math.min(trueDiff ,1)) or something similar"`
+            else if (hasAchievement('Skins', 17) && options.Lang === false) return `"你可以用 adjustPopupTime (Math.min(trueDiff ,1)) 或者相似的什么东西"`},
+            name() {if(options.Lang === true) return "WOW, sooooo smart."
+            else return "哇~真聪明啊（棒读）"},
+            textStyle: { "color": "#000000" },
+            style: { "background-size": "100% 100%", "background-position": "center center"},
+            done() { return player.name.toLowerCase() === 'Smiley'.toLowerCase() && player['tree-tab'].saved === true},
+            on() { if (player.skin === 12 && player.skinInverse === 13) return true
+            else return false},
+            image() { if (hasAchievement('Skins', 17)) return 'https://i.postimg.cc/htxDzR7P/Slate.png'
+            else return 'https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png'},
+            onClick(){
+                if (hasAchievement('Skins', 17)) player.skin = 12, player.skinInverse = 13, player.reset = true
+            }
+        },
+    },
+
+    tabFormat: [
+        "blank", "blank", "blank", "blank", "blank", "blank",
+        'achievements'
+    ]
+})

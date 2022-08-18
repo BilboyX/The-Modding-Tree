@@ -16,6 +16,28 @@
 	transform: rotate(1080deg);
 }
 
+#Skintext {
+	position: absolute;
+	top: 300px;
+	padding-top: 44px;
+	font-size: larger;
+	color: var(--points);
+	text-shadow: 0 0 10px var(--points);
+	right: -244px;
+	width: 200px;
+	transition: right .3s ease;
+
+}
+
+#skins:hover {
+	transform: scale(1.2, 1.2);
+}
+
+#skins:hover + #Skintext{
+	right: 10px;
+	
+}
+
 #title  {
 	width: 100px;
 	height: 100px;
@@ -38,6 +60,24 @@
 	80% {right: -30px}
 	90%  {right: -60px;}
 	100% {right: -90px;}
+  }
+
+  .hover  {
+	position: relative;
+	top: 0px;
+	animation-name: hover;
+	animation-duration: 4s;
+	animation-delay: 1s;
+	animation-direction: normal;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+	animation-fill-mode: both;
+  }
+
+@keyframes hover {
+	33% {top: 10px;}
+	66% {top: -10px;}
+	100% {top: 0px;}
   }
 
 #info {

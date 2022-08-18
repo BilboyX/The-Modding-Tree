@@ -11,7 +11,7 @@ function getStartOptions() {
 		offlineProd: true,
 		hideChallenges: false,
 		showStory: true,
-		forceOneTab: false,
+		forceOneTab: true,
 		oldStyle: false,
 		tooltipForcing: true,
 		SFX: true,
@@ -32,6 +32,7 @@ function toggleOpt(name) {
 
 
 	if	(options.Music == true && localStorage.getItem('Area') === '1') tmp['tree-tab'].Nature = true
+	if	(options.Music == true && localStorage.getItem('Area') === '2') tmp['tree-tab'].Bubbles = true
 }
 var styleCooldown = 0;
 function updateStyle() {

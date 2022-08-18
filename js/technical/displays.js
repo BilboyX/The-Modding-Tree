@@ -43,6 +43,7 @@ function achievementStyle(layer, id){
         style.push({'background-image': 'url("' + ach.image + '")'})
     } 
     if (!ach.unlocked) style.push({'visibility': 'hidden'})
+	if (ach.on) style.push({'box-shadow': '0 0 20px #008000'})
     style.push(ach.style)
     return style
 }

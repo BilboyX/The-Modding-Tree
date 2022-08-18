@@ -1,5 +1,5 @@
 // ************ Themes ************
-var themes = ["default", "brown"]
+var themes = ["default", "brown", "PurpleHaze"]
 
 var colors = {
 	default: {
@@ -20,6 +20,16 @@ var colors = {
 		points: "#ffffff",
 		locked: "#bf8f8f",
 		background: "#362419",
+		background_tooltip: "rgba(0, 0, 0, 0.75)",
+	},
+	PurpleHaze: {
+		1: "#ffffff",//Branch color 1
+		2: "#bfbfbf",//Branch color 2
+		3: "#7f7f7f",//Branch color 3
+		color: "#dfdfdf",
+		points: "#ffffff",
+		locked: "#bf8f8f",
+		background: "#4b0082",
 		background_tooltip: "rgba(0, 0, 0, 0.75)",
 	},
 }

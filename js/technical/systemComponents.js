@@ -120,7 +120,7 @@ var systemComponents = {
     'info-tab': {
         template: `
         <div>
-        <h2>Gerdio: {{ options.Lang?"More Green":"更多绿色" }}</h2>
+        <h2>Vulton: {{ options.Lang?"Toxic Decor":"毒性装饰" }}</h2>
         <br>
         <h3>{{VERSION.withName}}</h3>
         <span v-if="modInfo.author">
@@ -129,6 +129,9 @@ var systemComponents = {
         </span>
 		<br>
 		{{ options.Lang?"Translated by ajchen":"由ajchen翻译 " }}
+        <br>
+		{{ options.Lang?"Graphic design by":"图像设计：" }} <p><a v-on:click="player.Skins.Robber = true" href="https://twitter.com/ratio" target="_blank"> @ratio
+	  </a></p>
         <br>
         {{ options.Lang?"The Modding Tree":"模组树" }} <a v-bind:href="'https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '14px', 'display': 'inline'}" >{{TMT_VERSION.tmtNum}}</a> {{ options.Lang?"by":"作者为" }} Acamaeda
         <br>
@@ -160,6 +163,7 @@ var systemComponents = {
 			</tr>
 			<tr> 
 			<td><button class="opt" onclick="localStorage.setItem('gameStarted', false), player.inOpen = true, goBack('options-tab'), localStorage.setItem('Area', 0), options.theme = themes[0], changeTheme(), tmp['tree-tab'].audioForest.pause()">{{options.Lang?'Back To Main Menu.':'回到主菜单' }}</button></td>
+			<td><button class="opt" onclick="player.name = [], player['tree-tab'].saved = false, save()">{{options.Lang?'Change Name':'修改名称'}}</button></td>
 			</tr>
         </table>`
     },

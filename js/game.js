@@ -384,13 +384,14 @@ function gameLoop(diff) {
 }
 
 function hardReset(resetOptions) {
-	if (!confirm("Are you sure you want to do this? You will lose all your progress!")) return
+	if (!confirm("Are you sure you want to do this? You will lose all your progress! (你真的像这么做吗？你将失去所有的进度！)")) return
 	player.Undo = [],
 	player.Zones = [],
 	player = null
 	localStorage.setItem('Area', null),
 	localStorage.setItem('log1', 1),
 	localStorage.setItem('log', 2),
+	localStorage.setItem('prevTab1', null),
 	localStorage.setItem('prevTab', null),
 	localStorage.setItem('prevZone', 1),
 	localStorage.setItem('prev', null),
@@ -432,7 +433,7 @@ var interval = setInterval(function() {
 	updateTabFormats()
 	gameLoop(diff)
 	fixNaNs()
-	adjustPopupTime(trueDiff)
+	adjustPopupTime(Math.min(trueDiff,1))
 	updateParticles(trueDiff)
 	ticking = false
 }, 50)

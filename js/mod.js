@@ -13,11 +13,16 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.11",
+	num: "0.2",
 	name: ``,
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+<h3>v0.2</h3><br>
+- Added Even More SFX.<br>
+- Added New Area<br>
+- Updated Translation<br>
+- Now players can set the name of their symbol (I wonder if there's some secrets there...)<br>
 <h3>v0.11</h3><br>
 - Added More SFX.<br>
 - Added Undo++.<br>
@@ -26,7 +31,7 @@ let changelog = `<h1>Changelog:</h1><br>
 		- Added Trees.<br>
 		- Added Rocks.`
 
-let winText = `Congratulations! You have reached the end and beaten the demo, there may be one secret area unexplored, but for now...`
+let winText = `Congratulations! You have reached the end and beaten the mod, but for now...`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -55,6 +60,10 @@ function addedPlayerData() { return {
 	dateTime: 0,
 	Area: 0,
 	inOpen: true,
+	time: 0,
+	skin: 0,
+	skinInverse: 1,
+	name: [],
 	Undo: [],
 	Zones: [],
 	portal: false,
@@ -64,6 +73,7 @@ function addedPlayerData() { return {
 	reset: false,
 	interva: false,
 	timeX: 0,
+	Sludge: false,
 	intervae: false,
 	intervaea: false,
 	intervaeae: false,
@@ -109,7 +119,7 @@ function addedPlayerData() { return {
 	Twentynine:  C2_LIST[0],
 	Thirty:  C2_LIST[0],
 	Thirtyone:  C1_LIST[0],
-	Thirtytwo:  C1_LIST[3],
+	Thirtytwo:  C4_LIST[1],
 	Thirtythree:  C2_LIST[0],
 	Thirtyfour:  C1_LIST[1],
 	Thirtyfive:  C1_LIST[1],
@@ -148,7 +158,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.Zone === 3 && player.Fourtyseven === C1_LIST[3]
+	return player.Zone === 5 && C4_LIST.includes(player.Eleven) && player.Sludge == false
 }
 
 

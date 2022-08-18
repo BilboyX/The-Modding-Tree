@@ -24,13 +24,15 @@ function loadVue() {
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span>-</span>
+		<span v-if="player.Zone === 5" style='color: #70716B'>-</span>
+		<span v-if="player.Zone !== 5">-</span>
 		<span>-</span>
 		<span>-</span>
 		<span>-</span>
 		<span>-</span>
 		<span>-</span>
-		<span>-</span>
-		<span>-</span>
+		<span v-if="player.Zone === 4" style='color: #70716B'>-</span>
+		<span v-if="player.Zone !== 4">-</span>
 		<span>-</span>
 		<span>-</span>
 		<span>-</span>
@@ -45,16 +47,16 @@ function loadVue() {
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span>┃</span>
-		<display-image :layer="layer" :data="player.One"/>
-		<display-image :layer="layer" :data="player.Two"/>
-		<display-image :layer="layer" :data="player.Three"/>
-		<display-image :layer="layer" :data="player.Four"/>
-		<display-image :layer="layer" :data="player.Five"/>
-		<display-image :layer="layer" :data="player.Six"/>
-		<display-image :layer="layer" :data="player.Seven"/>
-		<display-image :layer="layer" :data="player.Eight"/>
-		<display-image :layer="layer" :data="player.Nine"/>
-		<display-image :layer="layer" :data="player.Ten"/>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.One)?'hover':'none'":layer="layer" :data="player.One"/><div v-if="C4_LIST.includes(player.One)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Two)?'hover':'none'":layer="layer" :data="player.Two"/><div v-if="C4_LIST.includes(player.Two)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Three)?'hover':'none'":layer="layer" :data="player.Three"/><div v-if="C4_LIST.includes(player.Three)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Four)?'hover':'none'":layer="layer" :data="player.Four"/><div v-if="C4_LIST.includes(player.Four)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Five)?'hover':'none'":layer="layer" :data="player.Five"/><div v-if="C4_LIST.includes(player.Five)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Six)?'hover':'none'":layer="layer" :data="player.Six"/><div v-if="C4_LIST.includes(player.Six)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Seven)?'hover':'none'":layer="layer" :data="player.Seven"/><div v-if="C4_LIST.includes(player.Seven)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Eight)?'hover':'none'":layer="layer" :data="player.Eight"/><div v-if="C4_LIST.includes(player.Eight)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Nine)?'hover':'none'":layer="layer" :data="player.Nine"/><div v-if="C4_LIST.includes(player.Nine)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Ten)?'hover':'none'":layer="layer" :data="player.Ten"/><div v-if="C4_LIST.includes(player.Ten)" class="tooltip">{{ player.name }}</div></div>
 		<span>┃</span>
 	</div>
 		`
@@ -66,17 +68,18 @@ function loadVue() {
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span  v-if="player.Zone === 2" style='color: #70716B'>┃</span>
-		<span  v-if="player.Zone !== 2">┃</span>
-		<display-image :layer="layer" :data="player.Eleven"/>
-		<display-image :layer="layer" :data="player.Twelve"/>
-		<display-image :layer="layer" :data="player.Thirteen"/>
-		<display-image :layer="layer" :data="player.Fourteen"/>
-		<display-image :layer="layer" :data="player.Fifteen"/>
-		<display-image :layer="layer" :data="player.Sixteen"/>
-		<display-image :layer="layer" :data="player.Seventeen"/>
-		<display-image :layer="layer" :data="player.Eighteen"/>
-		<display-image :layer="layer" :data="player.Nineteen"/>
-		<display-image :layer="layer" :data="player.Twenty"/>
+		<span  v-if="player.Zone === 5" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone !== 2 && player.Zone !== 5">┃</span>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Eleven)?'hover':'none'":layer="layer" :data="player.Eleven"/><div v-if="C4_LIST.includes(player.Eleven)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twelve)?'hover':'none'" :layer="layer" :data="player.Twelve"/><div v-if="C4_LIST.includes(player.Twelve)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirteen)?'hover':'none'":layer="layer" :data="player.Thirteen"/><div v-if="C4_LIST.includes(player.Thirteen)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourteen)?'hover':'none'":layer="layer" :data="player.Fourteen"/><div v-if="C4_LIST.includes(player.Fourteen)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fifteen)?'hover':'none'":layer="layer" :data="player.Fifteen"/><div v-if="C4_LIST.includes(player.Fifteen)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Sixteen)?'hover':'none'":layer="layer" :data="player.Sixteen"/><div v-if="C4_LIST.includes(player.Sixteen)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Seventeen)?'hover':'none'":layer="layer" :data="player.Seventeen"/><div v-if="C4_LIST.includes(player.Seventeen)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Eighteen)?'hover':'none'":layer="layer" :data="player.Eighteen"/><div v-if="C4_LIST.includes(player.Eighteen)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Nineteen)?'hover':'none'":layer="layer" :data="player.Nineteen"/><div v-if="C4_LIST.includes(player.Nineteen)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twenty)?'hover':'none'":layer="layer" :data="player.Twenty"/><div v-if="C4_LIST.includes(player.Twenty)" class="tooltip">{{ player.name }}</div></div>
 		<span  v-if="player.Zone === 1" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 1">┃</span>
 	</div>
@@ -90,17 +93,16 @@ function loadVue() {
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span  v-if="player.Zone === 2 || player.Zone === 3" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 2 && player.Zone !== 3">┃</span>
-		<div v-if="player.Zone !== -1 || player.Twentytwo !== C1_LIST[3]"><display-image :layer="layer" :data="player.Twentyone"/></div>
-		<div v-if="player.Zone === -1 && player.Twentytwo === C1_LIST[3]" class="tooltipBox"><display-image :layer="layer" :data="player.Twentyone"/><div class="tooltip">→ Gerdio<div>{{ options.Lang?"The evergreen forest of Gerdio was once home to many wild inhabitants including moose and black bears. Lately however, their populations have been dwindling towards extinction.":"这片叫Gerdio的常绿森林曾是包括驼鹿与黑熊在内的许多野生动物的家。但是，最近他们的数量极速下滑，几乎就要灭绝了。" }}</div></div></div>
-		<display-image :layer="layer" :data="player.Twentytwo"/>
-		<display-image :layer="layer" :data="player.Twentythree"/>
-		<display-image :layer="layer" :data="player.Twentyfour"/>
-		<display-image :layer="layer" :data="player.Twentyfive"/>
-		<display-image :layer="layer" :data="player.Twentysix"/>
-		<display-image :layer="layer" :data="player.Twentyseven"/>
-		<display-image :layer="layer" :data="player.Twentyeight"/>
-		<display-image :layer="layer" :data="player.Twentynine"/>
-		<display-image :layer="layer" :data="player.Thirty"/>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentyone)?'hover':'none'":layer="layer" :data="player.Twentyone"/><div v-if="C4_LIST.includes(player.Twentytwo) && player.Zone === -1" class="tooltip">→ Gerdio<div>{{ options.Lang?"The evergreen forest of Gerdio was once home to many wild inhabitants including moose and black bears. Lately however, their populations have been dwindling towards extinction.":"这片叫Gerdio的常绿森林曾是包括驼鹿与黑熊在内的许多野生动物的家。但是，最近他们的数量极速下滑，几乎就要灭绝了。" }}</div></div><div v-if="C4_LIST.includes(player.Twentyone)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentytwo)?'hover':'none'":layer="layer" :data="player.Twentytwo"/><div v-if="C4_LIST.includes(player.Twentytwo)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentythree)?'hover':'none'":layer="layer" :data="player.Twentythree"/><div v-if="C4_LIST.includes(player.Twentythree)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentyfour)?'hover':'none'":layer="layer" :data="player.Twentyfour"/><div v-if="C4_LIST.includes(player.Twentyfour)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentyfive)?'hover':'none'":layer="layer" :data="player.Twentyfive"/><div v-if="C4_LIST.includes(player.Twentyfive)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentysix)?'hover':'none'":layer="layer" :data="player.Twentysix"/><div v-if="C4_LIST.includes(player.Twentysix)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentyseven)?'hover':'none'":layer="layer" :data="player.Twentyseven"/><div v-if="C4_LIST.includes(player.Twentyseven)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentyeight)?'hover':'none'":layer="layer" :data="player.Twentyeight"/><div v-if="C4_LIST.includes(player.Twentyeight)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentynine)?'hover':'none'":layer="layer" :data="player.Twentynine"/><div v-if="C4_LIST.includes(player.Twentynine)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirty)?'hover':'none'":layer="layer" :data="player.Thirty"/><div v-if="C4_LIST.includes(player.Thirty)" class="tooltip">{{ player.name }}</div></div>
 		<span  v-if="player.Zone === 1 || player.Zone === 2" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 1 && player.Zone !== 2">┃</span>
 	</div>
@@ -114,16 +116,16 @@ function loadVue() {
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span  v-if="player.Zone === 2" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 2">┃</span>
-		<display-image :layer="layer" :data="player.Thirtyone"/>
-		<display-image :layer="layer" :data="player.Thirtytwo"/>
-		<display-image :layer="layer" :data="player.Thirtythree"/>
-		<display-image :layer="layer" :data="player.Thirtyfour"/>
-		<display-image :layer="layer" :data="player.Thirtyfive"/>
-		<display-image :layer="layer" :data="player.Thirtysix"/>
-		<display-image :layer="layer" :data="player.Thirtyseven"/>
-		<display-image :layer="layer" :data="player.Thirtyeight"/>
-		<display-image :layer="layer" :data="player.Thirtynine"/>
-		<display-image :layer="layer" :data="player.Fourty"/>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirtyone)?'hover':'none'":layer="layer" :data="player.Thirtyone"/><div v-if="C4_LIST.includes(player.Thirtyone)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirtytwo)?'hover':'none'":layer="layer" :data="player.Thirtytwo"/><div v-if="C4_LIST.includes(player.Thirtytwo)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirtythree)?'hover':'none'":layer="layer" :data="player.Thirtythree"/><div v-if="C4_LIST.includes(player.Thirtythree)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirtyfour)?'hover':'none'":layer="layer" :data="player.Thirtyfour"/><div v-if="C4_LIST.includes(player.Thirtyfour)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirtyfive)?'hover':'none'":layer="layer" :data="player.Thirtyfive"/><div v-if="C4_LIST.includes(player.Thirtyfive)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirtysix)?'hover':'none'":layer="layer" :data="player.Thirtysix"/><div v-if="C4_LIST.includes(player.Thirtysix)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirtyseven)?'hover':'none'":layer="layer" :data="player.Thirtyseven"/><div v-if="C4_LIST.includes(player.Thirtyseven)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirtyeight)?'hover':'none'":layer="layer" :data="player.Thirtyeight"/><div v-if="C4_LIST.includes(player.Thirtyeight)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Thirtynine)?'hover':'none'":layer="layer" :data="player.Thirtynine"/><div v-if="C4_LIST.includes(player.Thirtynine)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourty)?'hover':'none'":layer="layer" :data="player.Fourty"/><div v-if="C4_LIST.includes(player.Fourty)" class="tooltip">{{ player.name }}</div></div>
 		<span  v-if="player.Zone === 1" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 1">┃</span>
 	</div>
@@ -137,16 +139,16 @@ function loadVue() {
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span v-if="player.Zone === 1" style='color: #70716B'>┃</span>
 		<span v-if="player.Zone !== 1">┃</span>
-		<display-image :layer="layer" :data="player.Fourtyone"/>
-		<display-image :layer="layer" :data="player.Fourtytwo"/>
-		<display-image :layer="layer" :data="player.Fourtythree"/>
-		<display-image :layer="layer" :data="player.Fourtyfour"/>
-		<display-image :layer="layer" :data="player.Fourtyfive"/>
-		<display-image :layer="layer" :data="player.Fourtysix"/>
-		<display-image :layer="layer" :data="player.Fourtyseven"/>
-		<display-image :layer="layer" :data="player.Fourtyeight"/>
-		<display-image :layer="layer" :data="player.Fourtynine"/>
-		<display-image :layer="layer" :data="player.Fifty"/>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtyone)?'hover':'none'":layer="layer" :data="player.Fourtyone"/><div v-if="C4_LIST.includes(player.Fourtyone)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtytwo)?'hover':'none'":layer="layer" :data="player.Fourtytwo"/><div v-if="C4_LIST.includes(player.Fourtytwo)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtythree)?'hover':'none'":layer="layer" :data="player.Fourtythree"/><div v-if="C4_LIST.includes(player.Fourtythree)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtyfour)?'hover':'none'":layer="layer" :data="player.Fourtyfour"/><div v-if="C4_LIST.includes(player.Fourtyfour)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtyfive)?'hover':'none'":layer="layer" :data="player.Fourtyfive"/><div v-if="C4_LIST.includes(player.Fourtyfive)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtysix)?'hover':'none'":layer="layer" :data="player.Fourtysix"/><div v-if="C4_LIST.includes(player.Fourtysix)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtyseven)?'hover':'none'":layer="layer" :data="player.Fourtyseven"/><div v-if="C4_LIST.includes(player.Fourtyseven)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtyeight)?'hover':'none'":layer="layer" :data="player.Fourtyeight"/><div v-if="C4_LIST.includes(player.Fourtyeight)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtynine)?'hover':'none'":layer="layer" :data="player.Fourtynine"/><div v-if="C4_LIST.includes(player.Fourtynine)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fifty)?'hover':'none'":layer="layer" :data="player.Fifty"/><div v-if="C4_LIST.includes(player.Fifty)" class="tooltip">{{ player.name }}</div></div>
 		<span  v-if="player.Zone === -1" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== -1">┃</span>
 	</div>
@@ -158,18 +160,18 @@ function loadVue() {
 		template: `
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
-		<span><display-image :layer="layer" :data="player.L1"/></span>
-		<span><display-image :layer="layer" :data="player.L2"/></span>
-		<span><display-image :layer="layer" :data="player.L3"/></span>
-		<span><display-image :layer="layer" :data="player.L4"/></span>
-		<span><display-image :layer="layer" :data="player.L5"/></span>
-		<span><display-image :layer="layer" :data="player.L6"/></span>
-		<span><display-image :layer="layer" :data="player.L7"/></span>
-		<span><display-image :layer="layer" :data="player.L8"/></span>
-		<span><display-image :layer="layer" :data="player.L9"/></span>
-		<span><display-image :layer="layer" :data="player.L10"/></span>
-		<span><display-image :layer="layer" :data="player.L11"/></span>
-		<span><display-image :layer="layer" :data="player.L12"/></span>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L1)?'hover':'none'":layer="layer" :data="player.L1"/><div v-if="C4_LIST.includes(player.L1)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L2)?'hover':'none'":layer="layer" :data="player.L2"/><div v-if="C4_LIST.includes(player.L2)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L3)?'hover':'none'":layer="layer" :data="player.L3"/><div v-if="C4_LIST.includes(player.L3)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L4)?'hover':'none'":layer="layer" :data="player.L4"/><div v-if="C4_LIST.includes(player.L4)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L5)?'hover':'none'":layer="layer" :data="player.L5"/><div v-if="C4_LIST.includes(player.L5)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L6)?'hover':'none'":layer="layer" :data="player.L6"/><div v-if="C4_LIST.includes(player.L6)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L7)?'hover':'none'":layer="layer" :data="player.L7"/><div v-if="C4_LIST.includes(player.L7)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L8)?'hover':'none'":layer="layer" :data="player.L8"/><div v-if="C4_LIST.includes(player.L8)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L9)?'hover':'none'":layer="layer" :data="player.L9"/><div v-if="C4_LIST.includes(player.L9)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L10)?'hover':'none'":layer="layer" :data="player.L10"/><div v-if="C4_LIST.includes(player.L10)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L11)?'hover':'none'":layer="layer" :data="player.L11"/><div v-if="C4_LIST.includes(player.L11)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.L12)?'hover':'none'":layer="layer" :data="player.L12"/><div v-if="C4_LIST.includes(player.L12)" class="tooltip">{{ player.name }}</div></div>
 	</div>
 		`
 	})
@@ -645,15 +647,17 @@ function loadVue() {
 	Vue.component('achievement', {
 		props: ['layer', 'data'],
 		template: `
-		<div v-if="tmp[layer].achievements && tmp[layer].achievements[data]!== undefined && tmp[layer].achievements[data].unlocked" v-bind:class="{ [layer]: true, achievement: true, tooltipBox:true, locked: !hasAchievement(layer, data), bought: hasAchievement(layer, data)}"
+		<div v-on:click="onClick(layer, data)" v-if="tmp[layer].achievements && tmp[layer].achievements[data]!== undefined && tmp[layer].achievements[data].unlocked" v-bind:class="{ [layer]: true, achievement: true, tooltipBox:true, locked: !hasAchievement(layer, data), bought: hasAchievement(layer, data)}"
 			v-bind:style="achievementStyle(layer, data)">
 			<tooltip :text="
 			(tmp[layer].achievements[data].tooltip == '') ? false : hasAchievement(layer, data) ? (tmp[layer].achievements[data].doneTooltip ? tmp[layer].achievements[data].doneTooltip : (tmp[layer].achievements[data].tooltip ? tmp[layer].achievements[data].tooltip : 'You did it!'))
-			: (tmp[layer].achievements[data].goalTooltip ? tmp[layer].achievements[data].goalTooltip : (tmp[layer].achievements[data].tooltip ? tmp[layer].achievements[data].tooltip : 'LOCKED'))
+			: (tmp[layer].achievements[data].goalTooltip ? tmp[layer].achievements[data].goalTooltip : (tmp[layer].achievements[data].tooltip ? tmp[layer].achievements[data].tooltip : (options.Lang?'LOCKED':'锁定！')))
 		"></tooltip>
-			<span v-if= "tmp[layer].achievements[data].name"><br><h3 v-bind:style="tmp[layer].achievements[data].textStyle" v-html="tmp[layer].achievements[data].name"></h3><br></span>
 		</div>
-		`
+		`,
+		methods: {
+			onClick(layer, data) { if (tmp[layer].achievements[data] !== undefined) run(tmp[layer].achievements[data].onClick, tmp[layer].achievements[data]) },
+		},
 	})
 
 	// Data is an array with the structure of the tree
