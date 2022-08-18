@@ -149,6 +149,7 @@ player.portal = true
     if (player.Zone === 3){
          player.Sprev = player.Zones[2].Sprev, player.prev = player.Zones[2].prev, player.East = player.Zones[2].East, player.West = player.Zones[2].West, player.North = player.Zones[2].North, player.South = player.Zones[2].South, player.Zone = player.Zones[2].Zone, player.One = player.Zones[2].One, player.Two = player.Zones[2].Two, player.Three = player.Zones[2].Three, player.Four = player.Zones[2].Four, player.Five = player.Zones[2].Five, player.Six = player.Zones[2].Six, player.Seven = player.Zones[2].Seven, player.Eight = player.Zones[2].Eight, player.Nine = player.Zones[2].Nine, player.Ten = player.Zones[2].Ten, player.Eleven = player.Zones[2].Eleven, player.Twelve = player.Zones[2].Twelve, player.Thirteen = player.Zones[2].Thirteen, player.Fourteen = player.Zones[2].Fourteen, player.Fifteen = player.Zones[2].Fifteen, player.Sixteen = player.Zones[2].Sixteen, player.Seventeen = player.Zones[2].Seventeen, player.Eighteen = player.Zones[2].Eighteen, player.Nineteen = player.Zones[2].Nineteen, player.Twenty = player.Zones[2].Twenty, player.Twentyone = player.Zones[2].Twentyone, player.Twentytwo = player.Zones[2].Twentytwo, player.Twentythree = player.Zones[2].Twentythree, player.Twentyfour = player.Zones[2].Twentyfour, player.Twentyfive = player.Zones[2].Twentyfive, player.Twentysix = player.Zones[2].Twentysix, player.Twentyseven = player.Zones[2].Twentyseven, player.Twentyeight = player.Zones[2].Twentyeight, player.Twentynine = player.Zones[2].Twentynine, player.Thirty = player.Zones[2].Thirty, player.Thirtyone = player.Zones[2].Thirtyone, player.Thirtytwo = player.Zones[2].Thirtytwo, player.Thirtythree = player.Zones[2].Thirtythree, player.Thirtyseven = player.Zones[2].Thirtyseven, player.Thirtyfive = player.Zones[2].Thirtyfive, player.Thirtysix = player.Zones[2].Thirtysix, player.Thirtyfour = player.Zones[2].Thirtyfour, player.Thirtyeight = player.Zones[2].Thirtyeight, player.Thirtynine = player.Zones[2].Thirtynine, player.Fourty = player.Zones[2].Fourty, player.Fourtyone = player.Zones[2].Fourtyone, player.Fourtytwo = player.Zones[2].Fourtytwo, player.Fourtythree = player.Zones[2].Fourtythree, player.Fourtyfour = player.Zones[2].Fourtyfour, player.Fourtyfive = player.Zones[2].Fourtyfive, player.Fourtysix = player.Zones[2].Fourtysix, player.Fourtyseven = player.Zones[2].Fourtyseven, player.Fourtyeight = player.Zones[2].Fourtyeight, player.Fourtynine = player.Zones[2].Fourtynine, player.Fifty = player.Zones[2].Fifty, player.L1 = player.Zones[2].L1, player.L2 = player.Zones[2].L2, player.L3 = player.Zones[2].L3, player.L4 = player.Zones[2].L4, player.L5 = player.Zones[2].L5, player.L6 = player.Zones[2].L6, player.L7 = player.Zones[2].L7, player.L8 = player.Zones[2].L8, player.L9 = player.Zones[2].L9, player.L10 = player.Zones[2].L10, player.L11 = player.Zones[2].L11, player.L12 = player.Zones[2].L12
         if (localStorage.getItem('prevTab') === '1') player.Twentytwo = C2_LIST[2], localStorage.setItem('prevTab', null)
+        if (localStorage.getItem('prevTab1') === '1') player.Thirtyseven = C2_LIST[2], localStorage.setItem('prevTab1', null)
         player.portal = true
         audio()
         save2()
@@ -175,105 +176,105 @@ player.portal = true
 
 function moveLeft(){
 
-if(C4_LIST.includes(player.One)) player.Sludge = false, save2()
+if(C4_LIST.includes(player.One) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Two) && player.One === C1_LIST[2]) player.Two = player.prev, player.prev = player.One, player.One = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Two) && player.One !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Two) && player.One !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Three) && player.Two === C1_LIST[2]) player.Three = player.prev, player.prev = player.Two, player.Two = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Three) && player.Two !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Three) && player.Two !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Four) && player.Three === C1_LIST[2]) player.Four = player.prev, player.prev = player.Three, player.Three = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Four) && player.Three !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Four) && player.Three !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Five) && player.Four === C1_LIST[2]) player.Five = player.prev, player.prev = player.Four, player.Four = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Five) && player.Four !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Five) && player.Four !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Six) && player.Five === C1_LIST[2]) player.Six = player.prev, player.prev = player.Five, player.Five = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Six) && player.Five !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Six) && player.Five !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Seven) && player.Six === C1_LIST[2]) player.Seven = player.prev, player.prev = player.Six, player.Six = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Seven) && player.Six !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Seven) && player.Six !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eight) && player.Seven === C1_LIST[2]) player.Eight = player.prev, player.prev = player.Seven, player.Seven = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eight) && player.Seven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eight) && player.Seven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Nine) && player.Eight === C1_LIST[2]) player.Nine = player.prev, player.prev = player.Eight, player.Eight = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Nine) && player.Eight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Nine) && player.Eight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Ten) && player.Nine === C1_LIST[2]) player.Ten = player.prev, player.prev = player.Nine, player.Nine = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Ten) && player.Nine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Ten) && player.Nine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
-  if(C4_LIST.includes(player.Eleven)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.Eleven) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twelve) && player.Eleven === C1_LIST[2]) player.Twelve = player.prev, player.prev = player.Eleven, player.Eleven = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twelve) && player.Eleven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twelve) && player.Eleven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirteen) && player.Twelve === C1_LIST[2]) player.Thirteen = player.prev, player.prev = player.Twelve, player.Twelve = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirteen) && player.Twelve !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirteen) && player.Twelve !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourteen) && player.Thirteen === C1_LIST[2]) player.Fourteen = player.prev, player.prev = player.Thirteen, player.Thirteen = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourteen) && player.Thirteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourteen) && player.Thirteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fifteen) && player.Fourteen === C1_LIST[2]) player.Fifteen = player.prev, player.prev = player.Fourteen, player.Fourteen = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fifteen) && player.Fourteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fifteen) && player.Fourteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Sixteen) && player.Fifteen === C1_LIST[2]) player.Sixteen = player.prev, player.prev = player.Fifteen, player.Fifteen = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Sixteen) && player.Fifteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Sixteen) && player.Fifteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Seventeen) && player.Sixteen === C1_LIST[2]) player.Seventeen = player.prev, player.prev = player.Sixteen, player.Sixteen = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Seventeen) && player.Sixteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Seventeen) && player.Sixteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eighteen) && player.Seventeen === C1_LIST[2]) player.Eighteen = player.prev, player.prev = player.Seventeen, player.Seventeen = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eighteen) && player.Seventeen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eighteen) && player.Seventeen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Nineteen) && player.Eighteen === C1_LIST[2]) player.Nineteen = player.prev, player.prev = player.Eighteen, player.Eighteen = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Nineteen) && player.Eighteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Nineteen) && player.Eighteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twenty) && player.Nineteen === C1_LIST[2]) player.Twenty = player.prev, player.prev = player.Nineteen, player.Nineteen = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twenty) && player.Nineteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twenty) && player.Nineteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
-  if(C4_LIST.includes(player.Twentyone)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.Twentyone) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentytwo) && player.Twentyone === C1_LIST[2]) player.Twentytwo = player.prev, player.prev = player.Twentyone, player.Twentyone = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentytwo) && player.Twentyone !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentytwo) && player.Twentyone !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentythree) && player.Twentytwo === C1_LIST[2]) player.Twentythree = player.prev, player.prev = player.Twentytwo, player.Twentytwo = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentythree) && player.Twentytwo !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentythree) && player.Twentytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyfour) && player.Twentythree === C1_LIST[2]) player.Twentyfour = player.prev, player.prev = player.Twentythree, player.Twentythree = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyfour) && player.Twentythree !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyfour) && player.Twentythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyfive) && player.Twentyfour === C1_LIST[2]) player.Twentyfive = player.prev, player.prev = player.Twentyfour, player.Twentyfour = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyfive) && player.Twentyfour !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyfive) && player.Twentyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentysix) && player.Twentyfive === C1_LIST[2]) player.Twentysix = player.prev, player.prev = player.Twentyfive, player.Twentyfive = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentysix) && player.Twentyfive !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentysix) && player.Twentyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyseven) && player.Twentysix === C1_LIST[2]) player.Twentyseven = player.prev, player.prev = player.Twentysix, player.Twentysix = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyseven) && player.Twentysix !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyseven) && player.Twentysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyeight) && player.Twentyseven === C1_LIST[2]) player.Twentyeight = player.prev, player.prev = player.Twentyseven, player.Twentyseven = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyeight) && player.Twentyseven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyeight) && player.Twentyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentynine) && player.Twentyeight === C1_LIST[2]) player.Twentynine = player.prev, player.prev = player.Twentyeight, player.Twentyeight = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentynine) && player.Twentyeight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentynine) && player.Twentyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirty) && player.Twentynine === C1_LIST[2]) player.Thirty = player.prev, player.prev = player.Twentynine, player.Twentynine = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirty) && player.Twentynine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirty) && player.Twentynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
-  if(C4_LIST.includes(player.Thirtyone)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.Thirtyone) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtytwo) && player.Thirtyone === C1_LIST[2]) player.Thirtytwo = player.prev, player.prev = player.Thirtyone, player.Thirtyone = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtytwo) && player.Thirtyone !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtytwo) && player.Thirtyone !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtythree) && player.Thirtytwo === C1_LIST[2]) player.Thirtythree = player.prev, player.prev = player.Thirtytwo, player.Thirtytwo = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtythree) && player.Thirtytwo !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtythree) && player.Thirtytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyfour) && player.Thirtythree === C1_LIST[2]) player.Thirtyfour = player.prev, player.prev = player.Thirtythree, player.Thirtythree = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyfour) && player.Thirtythree !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyfour) && player.Thirtythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyfive) && player.Thirtyfour === C1_LIST[2]) player.Thirtyfive = player.prev, player.prev = player.Thirtyfour, player.Thirtyfour = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyfive) && player.Thirtyfour !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyfive) && player.Thirtyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtysix) && player.Thirtyfive === C1_LIST[2]) player.Thirtysix = player.prev, player.prev = player.Thirtyfive, player.Thirtyfive = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtysix) && player.Thirtyfive !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtysix) && player.Thirtyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyseven) && player.Thirtysix === C1_LIST[2]) player.Thirtyseven = player.prev, player.prev = player.Thirtysix, player.Thirtysix = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyseven) && player.Thirtysix !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyseven) && player.Thirtysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyeight) && player.Thirtyseven === C1_LIST[2]) player.Thirtyeight = player.prev, player.prev = player.Thirtyseven, player.Thirtyseven = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyeight) && player.Thirtyseven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyeight) && player.Thirtyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtynine) && player.Thirtyeight === C1_LIST[2]) player.Thirtynine = player.prev, player.prev = player.Thirtyeight, player.Thirtyeight = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtynine) && player.Thirtyeight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtynine) && player.Thirtyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourty) && player.Thirtynine === C1_LIST[2]) player.Fourty = player.prev, player.prev = player.Thirtynine, player.Thirtynine = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourty) && player.Thirtynine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourty) && player.Thirtynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
-  if(C4_LIST.includes(player.Fourtyone)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.Fourtyone) && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtytwo) && player.Fourtyone === C1_LIST[2]) player.Fourtytwo = player.prev, player.prev = player.Fourtyone, player.Fourtyone = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtytwo) && player.Fourtyone !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtytwo) && player.Fourtyone !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtythree) && player.Fourtytwo === C1_LIST[2]) player.Fourtythree = player.prev, player.prev = player.Fourtytwo, player.Fourtytwo = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtythree) && player.Fourtytwo !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtythree) && player.Fourtytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtyfour) && player.Fourtythree === C1_LIST[2]) player.Fourtyfour = player.prev, player.prev = player.Fourtythree, player.Fourtythree = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtyfour) && player.Fourtythree !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtyfour) && player.Fourtythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtyfive) && player.Fourtyfour === C1_LIST[2]) player.Fourtyfive = player.prev, player.prev = player.Fourtyfour, player.Fourtyfour = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtyfive) && player.Fourtyfour !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtyfive) && player.Fourtyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtysix) && player.Fourtyfive === C1_LIST[2]) player.Fourtysix = player.prev, player.prev = player.Fourtyfive, player.Fourtyfive = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtysix) && player.Fourtyfive !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtysix) && player.Fourtyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtyseven) && player.Fourtysix === C1_LIST[2]) player.Fourtyseven = player.prev, player.prev = player.Fourtysix, player.Fourtysix = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtyseven) && player.Fourtysix !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtyseven) && player.Fourtysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtyeight) && player.Fourtyseven === C1_LIST[2]) player.Fourtyeight = player.prev, player.prev = player.Fourtyseven, player.Fourtyseven = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtyeight) && player.Fourtyseven !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtyeight) && player.Fourtyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtynine) && player.Fourtyeight === C1_LIST[2]) player.Fourtynine = player.prev, player.prev = player.Fourtyeight, player.Fourtyeight = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtynine) && player.Fourtyeight !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtynine) && player.Fourtyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fifty) && player.Fourtynine === C1_LIST[2]) player.Fifty = player.prev, player.prev = player.Fourtynine, player.Fourtynine = C4_LIST[player.skin], player.East -= 1,  player.West += 1, audio(), player.time = setTimeout(moveLeft, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fifty) && player.Fourtynine !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fifty) && player.Fourtynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
     if (player.ML == false) return
 
@@ -505,105 +506,105 @@ if (options.SFX == true) tmp['tree-tab'].audioWater.loop = false, tmp['tree-tab'
 
 function moveRight(){
 
-  if(C4_LIST.includes(player.Ten)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.Ten) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Nine) && player.Ten === C1_LIST[2]) player.Nine = player.prev, player.prev = player.Ten, player.Ten = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Nine) && player.Ten !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Nine) && player.Ten !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eight) && player.Nine === C1_LIST[2]) player.Eight = player.prev, player.prev = player.Nine, player.Nine = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eight) && player.Nine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eight) && player.Nine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Seven) && player.Eight === C1_LIST[2]) player.Seven = player.prev, player.prev = player.Eight, player.Eight = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Seven) && player.Eight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Seven) && player.Eight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Six) && player.Seven === C1_LIST[2]) player.Six = player.prev, player.prev = player.Seven, player.Seven = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Six) && player.Seven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Six) && player.Seven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Five) && player.Six === C1_LIST[2]) player.Five = player.prev, player.prev = player.Six, player.Six = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Five) && player.Six !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Five) && player.Six !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Four) && player.Five === C1_LIST[2]) player.Four = player.prev, player.prev = player.Five, player.Five = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Four) && player.Five !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Four) && player.Five !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Three) && player.Four === C1_LIST[2]) player.Three = player.prev, player.prev = player.Four, player.Four = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Three) && player.Four !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Three) && player.Four !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Two) && player.Three === C1_LIST[2]) player.Two = player.prev, player.prev = player.Three, player.Three = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Two) && player.Three !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Two) && player.Three !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.One) && player.Two === C1_LIST[2]) player.One = player.prev, player.prev = player.Two, player.Two = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.One) && player.Two !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.One) && player.Two !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
-  if(C4_LIST.includes(player.Twenty)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.Twenty) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Nineteen) && player.Twenty === C1_LIST[2]) player.Nineteen = player.prev, player.prev = player.Twenty, player.Twenty = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Nineteen) && player.Twenty !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Nineteen) && player.Twenty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eighteen) && player.Nineteen === C1_LIST[2]) player.Eighteen = player.prev, player.prev = player.Nineteen, player.Nineteen = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eighteen) && player.Nineteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eighteen) && player.Nineteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Seventeen) && player.Eighteen === C1_LIST[2]) player.Seventeen = player.prev, player.prev = player.Eighteen, player.Eighteen = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Seventeen) && player.Eighteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Seventeen) && player.Eighteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Sixteen) && player.Seventeen === C1_LIST[2]) player.Sixteen = player.prev, player.prev = player.Seventeen, player.Seventeen = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Sixteen) && player.Seventeen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Sixteen) && player.Seventeen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fifteen) && player.Sixteen === C1_LIST[2]) player.Fifteen = player.prev, player.prev = player.Sixteen, player.Sixteen = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fifteen) && player.Sixteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fifteen) && player.Sixteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourteen) && player.Fifteen === C1_LIST[2]) player.Fourteen = player.prev, player.prev = player.Fifteen, player.Fifteen = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourteen) && player.Fifteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourteen) && player.Fifteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirteen) && player.Fourteen === C1_LIST[2]) player.Thirteen = player.prev, player.prev = player.Fourteen, player.Fourteen = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirteen) && player.Fourteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirteen) && player.Fourteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twelve) && player.Thirteen === C1_LIST[2]) player.Twelve = player.prev, player.prev = player.Thirteen, player.Thirteen = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twelve) && player.Thirteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twelve) && player.Thirteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eleven) && player.Twelve === C1_LIST[2]) player.Eleven = player.prev, player.prev = player.Twelve, player.Twelve = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eleven) && player.Twelve !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eleven) && player.Twelve !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
-  if(C4_LIST.includes(player.Thirty)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.Thirty) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentynine) && player.Thirty === C1_LIST[2]) player.Twentynine = player.prev, player.prev = player.Thirty, player.Thirty = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentynine) && player.Thirty !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentynine) && player.Thirty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyeight) && player.Twentynine === C1_LIST[2]) player.Twentyeight = player.prev, player.prev = player.Twentynine, player.Twentynine = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyeight) && player.Twentynine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyeight) && player.Twentynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyseven) && player.Twentyeight === C1_LIST[2]) player.Twentyseven = player.prev, player.prev = player.Twentyeight, player.Twentyeight = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyseven) && player.Twentyeight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyseven) && player.Twentyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentysix) && player.Twentyseven === C1_LIST[2]) player.Twentysix = player.prev, player.prev = player.Twentyseven, player.Twentyseven = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentysix) && player.Twentyseven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentysix) && player.Twentyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyfive) && player.Twentysix === C1_LIST[2]) player.Twentyfive = player.prev, player.prev = player.Twentysix, player.Twentysix = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyfive) && player.Twentysix !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyfive) && player.Twentysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyfour) && player.Twentyfive === C1_LIST[2]) player.Twentyfour = player.prev, player.prev = player.Twentyfive, player.Twentyfive = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyfour) && player.Twentyfive !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyfour) && player.Twentyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentythree) && player.Twentyfour === C1_LIST[2]) player.Twentythree = player.prev, player.prev = player.Twentyfour, player.Twentyfour = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentythree) && player.Twentyfour !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentythree) && player.Twentyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentytwo) && player.Twentythree === C1_LIST[2]) player.Twentytwo = player.prev, player.prev = player.Twentythree, player.Twentythree = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentytwo) && player.Twentythree !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentytwo) && player.Twentythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyone) && player.Twentytwo === C1_LIST[2]) player.Twentyone = player.prev, player.prev = player.Twentytwo, player.Twentytwo = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyone) && player.Twentytwo !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyone) && player.Twentytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
-  if(C4_LIST.includes(player.Fourty)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.Fourty) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtynine) && player.Fourty === C1_LIST[2]) player.Thirtynine = player.prev, player.prev = player.Fourty, player.Fourty = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtynine) && player.Fourty !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtynine) && player.Fourty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyeight) && player.Thirtynine === C1_LIST[2]) player.Thirtyeight = player.prev, player.prev = player.Thirtynine, player.Thirtynine = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyeight) && player.Thirtynine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyeight) && player.Thirtynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyseven) && player.Thirtyeight === C1_LIST[2]) player.Thirtyseven = player.prev, player.prev = player.Thirtyeight, player.Thirtyeight = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyseven) && player.Thirtyeight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyseven) && player.Thirtyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtysix) && player.Thirtyseven === C1_LIST[2]) player.Thirtysix = player.prev, player.prev = player.Thirtyseven, player.Thirtyseven = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtysix) && player.Thirtyseven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtysix) && player.Thirtyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyfive) && player.Thirtysix === C1_LIST[2]) player.Thirtyfive = player.prev, player.prev = player.Thirtysix, player.Thirtysix = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyfive) && player.Thirtysix !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyfive) && player.Thirtysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyfour) && player.Thirtyfive === C1_LIST[2]) player.Thirtyfour = player.prev, player.prev = player.Thirtyfive, player.Thirtyfive = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyfour) && player.Thirtyfive !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyfour) && player.Thirtyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtythree) && player.Thirtyfour === C1_LIST[2]) player.Thirtythree = player.prev, player.prev = player.Thirtyfour, player.Thirtyfour = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtythree) && player.Thirtyfour !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtythree) && player.Thirtyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtytwo) && player.Thirtythree === C1_LIST[2]) player.Thirtytwo = player.prev, player.prev = player.Thirtythree, player.Thirtythree = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtytwo) && player.Thirtythree !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtytwo) && player.Thirtythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyone) && player.Thirtytwo === C1_LIST[2]) player.Thirtyone = player.prev, player.prev = player.Thirtytwo, player.Thirtytwo = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyone) && player.Thirtytwo !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyone) && player.Thirtytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
-  if(C4_LIST.includes(player.Fifty)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.Fifty) && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtynine) && player.Fifty === C1_LIST[2]) player.Fourtynine = player.prev, player.prev = player.Fifty, player.Fifty = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtynine) && player.Fifty !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtynine) && player.Fifty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtyeight) && player.Fourtynine === C1_LIST[2]) player.Fourtyeight = player.prev, player.prev = player.Fourtynine, player.Fourtynine = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtyeight) && player.Fourtynine !== C1_LIST[2]) player.Sludge = false, save2()
-    if(C4_LIST.includes(player.Fourtyseven) && player.Fourtyeight === C1_LIST[2]) player.Fourtyseven = player.prev, player.prev = player.Fourtyeight, player.Fourtyeight = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtyseven) && player.Fourtyeight !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtyeight) && player.Fourtynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
+    if(C4_LIST.includes(player.Fourtyseven) && player.Fourtyeight === C1_LIST[2] && player.Sludge == true) player.Fourtyseven = player.prev, player.prev = player.Fourtyeight, player.Fourtyeight = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
+    else if (C4_LIST.includes(player.Fourtyseven) && player.Fourtyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtysix) && player.Fourtyseven === C1_LIST[2]) player.Fourtysix = player.prev, player.prev = player.Fourtyseven, player.Fourtyseven = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtysix) && player.Fourtyseven !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtysix) && player.Fourtyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtyfive) && player.Fourtysix === C1_LIST[2]) player.Fourtyfive = player.prev, player.prev = player.Fourtysix, player.Fourtysix = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtyfive) && player.Fourtysix !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtyfive) && player.Fourtysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtyfour) && player.Fourtyfive === C1_LIST[2]) player.Fourtyfour = player.prev, player.prev = player.Fourtyfive, player.Fourtyfive = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtyfour) && player.Fourtyfive !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtyfour) && player.Fourtyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtythree) && player.Fourtyfour === C1_LIST[2]) player.Fourtythree = player.prev, player.prev = player.Fourtyfour, player.Fourtyfour = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtythree) && player.Fourtyfour !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtythree) && player.Fourtyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtytwo) && player.Fourtythree === C1_LIST[2]) player.Fourtytwo = player.prev, player.prev = player.Fourtythree, player.Fourtythree = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtytwo) && player.Fourtythree !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtytwo) && player.Fourtythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
     if(C4_LIST.includes(player.Fourtyone) && player.Fourtytwo === C1_LIST[2]) player.Fourtyone = player.prev, player.prev = player.Fourtytwo, player.Fourtytwo = C4_LIST[player.skinInverse], player.East += 1,  player.West -= 1, audio(), player.time = setTimeout(moveRight, 200), player.Sludge = true
-    else if (C4_LIST.includes(player.Fourtyone) && player.Fourtytwo !== C1_LIST[2]) player.Sludge = false, save2()
+    else if (C4_LIST.includes(player.Fourtyone) && player.Fourtytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
     if (player.MR == false) return
 
@@ -837,105 +838,106 @@ function moveRight(){
 
 function moveUp(){
 
-  if(C4_LIST.includes(player.One)) player.Sludge = false, save2()
+  if(C4_LIST.includes(player.One) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eleven) && player.One === C1_LIST[2]) player.Eleven = player.prev, player.prev = player.One, player.One = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eleven) && player.One !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eleven) && player.One !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Two)) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twelve) && player.Two === C1_LIST[2]) player.Twelve = player.prev, player.prev = player.Two, player.Two = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twelve) && player.Two !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twelve) && player.Two !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Three)) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirteen) && player.Three === C1_LIST[2]) player.Thirteen = player.prev, player.prev = player.Three, player.Three = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirteen) && player.Three !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirteen) && player.Three !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Four)) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourteen) && player.Four === C1_LIST[2]) player.Fourteen = player.prev, player.prev = player.Four, player.Four = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourteen) && player.Four !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourteen) && player.Four !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Five)) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fifteen) && player.Five === C1_LIST[2]) player.Fifteen = player.prev, player.prev = player.Five, player.Five = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fifteen) && player.Five !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fifteen) && player.Five !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Six)) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Sixteen) && player.Six === C1_LIST[2]) player.Sixteen = player.prev, player.prev = player.Six, player.Six = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Sixteen) && player.Six !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Sixteen) && player.Six !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Seven)) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Seventeen) && player.Seven === C1_LIST[2]) player.Seventeen = player.prev, player.prev = player.Seven, player.Seven = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Seventeen) && player.Seven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Seventeen) && player.Seven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eight)) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eighteen) && player.Eight === C1_LIST[2]) player.Eighteen = player.prev, player.prev = player.Eight, player.Eight = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eighteen) && player.Eight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eighteen) && player.Eight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Nine)) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Nineteen) && player.Nine === C1_LIST[2]) player.Nineteen = player.prev, player.prev = player.Nine, player.Nine = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Nineteen) && player.Nine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Nineteen) && player.Nine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Ten)) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twenty) && player.Ten === C1_LIST[2]) player.Twenty = player.prev, player.prev = player.Ten, player.Ten = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twenty) && player.Ten !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twenty) && player.Ten !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
   if(C4_LIST.includes(player.Twentyone) && player.Eleven === C1_LIST[2]) player.Twentyone = player.prev, player.prev = player.Eleven, player.Eleven = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyone) && player.Eleven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyone) && player.Eleven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentytwo) && player.Twelve === C1_LIST[2]) player.Twentytwo = player.prev, player.prev = player.Twelve, player.Twelve = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentytwo) && player.Twelve !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentytwo) && player.Twelve !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentythree) && player.Thirteen === C1_LIST[2]) player.Twentythree = player.prev, player.prev = player.Thirteen, player.Thirteen = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentythree) && player.Thirteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentythree) && player.Thirteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyfour) && player.Fourteen === C1_LIST[2]) player.Twentyfour = player.prev, player.prev = player.Fourteen, player.Fourteen = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyfour) && player.Fourteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyfour) && player.Fourteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyfive) && player.Fifteen === C1_LIST[2]) player.Twentyfive = player.prev, player.prev = player.Fifteen, player.Fifteen = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyfive) && player.Fifteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyfive) && player.Fifteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentysix) && player.Sixteen === C1_LIST[2]) player.Twentysix = player.prev, player.prev = player.Sixteen, player.Sixteen = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentysix) && player.Sixteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentysix) && player.Sixteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyseven) && player.Seventeen === C1_LIST[2]) player.Twentyseven = player.prev, player.prev = player.Seventeen, player.Seventeen = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyseven) && player.Seventeen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyseven) && player.Seventeen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyeight) && player.Eighteen === C1_LIST[2]) player.Twentyeight = player.prev, player.prev = player.Eighteen, player.Eighteen = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyeight) && player.Eighteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyeight) && player.Eighteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentynine) && player.Nineteen === C1_LIST[2]) player.Twentynine = player.prev, player.prev = player.Nineteen, player.Nineteen = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentynine) && player.Nineteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentynine) && player.Nineteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirty) && player.Twenty === C1_LIST[2]) player.Thirty = player.prev, player.prev = player.Twenty, player.Twenty = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirty) && player.Twenty !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirty) && player.Twenty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
   if(C4_LIST.includes(player.Thirtyone) && player.Twentyone === C1_LIST[2]) player.Thirtyone = player.prev, player.prev = player.Twentyone, player.Twentyone = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyone) && player.Twentyone !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyone) && player.Twentyone !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtytwo) && player.Twentytwo === C1_LIST[2]) player.Thirtytwo = player.prev, player.prev = player.Twentytwo, player.Twentytwo = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtytwo) && player.Twentytwo !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtytwo) && player.Twentytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtythree) && player.Twentythree === C1_LIST[2]) player.Thirtythree = player.prev, player.prev = player.Twentythree, player.Twentythree = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtythree) && player.Twentythree !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtythree) && player.Twentythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyfour) && player.Twentyfour === C1_LIST[2]) player.Thirtyfour = player.prev, player.prev = player.Twentyfour, player.Twentyfour = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyfour) && player.Twentyfour !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyfour) && player.Twentyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyfive) && player.Twentyfive === C1_LIST[2]) player.Thirtyfive = player.prev, player.prev = player.Twentyfive, player.Twentyfive = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyfive) && player.Twentyfive !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyfive) && player.Twentyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtysix) && player.Twentysix === C1_LIST[2]) player.Thirtysix = player.prev, player.prev = player.Twentysix, player.Twentysix = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtysix) && player.Twentysix !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtysix) && player.Twentysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyseven) && player.Twentyseven === C1_LIST[2]) player.Thirtyseven = player.prev, player.prev = player.Twentyseven, player.Twentyseven = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyseven) && player.Twentyseven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyseven) && player.Twentyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyeight) && player.Twentyeight === C1_LIST[2]) player.Thirtyeight = player.prev, player.prev = player.Twentyeight, player.Twentyeight = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyeight) && player.Twentyeight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyeight) && player.Twentyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtynine) && player.Twentynine === C1_LIST[2]) player.Thirtynine = player.prev, player.prev = player.Twentynine, player.Twentynine = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtynine) && player.Twentynine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtynine) && player.Twentynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourty) && player.Thirty === C1_LIST[2]) player.Fourty = player.prev, player.prev = player.Thirty, player.Thirty = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourty) && player.Thirty !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourty) && player.Thirty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
   if(C4_LIST.includes(player.Fourtyone) && player.Thirtyone === C1_LIST[2]) player.Fourtyone = player.prev, player.prev = player.Thirtyone, player.Thirtyone = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourtyone) && player.Thirtyone !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourtyone) && player.Thirtyone !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourtytwo) && player.Thirtytwo === C1_LIST[2]) player.Fourtytwo = player.prev, player.prev = player.Thirtytwo, player.Thirtytwo = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourtytwo) && player.Thirtytwo !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourtytwo) && player.Thirtytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourtythree) && player.Thirtythree === C1_LIST[2]) player.Fourtythree = player.prev, player.prev = player.Thirtythree, player.Thirtythree = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourtythree) && player.Thirtythree !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourtythree) && player.Thirtythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourtyfour) && player.Thirtyfour === C1_LIST[2]) player.Fourtyfour = player.prev, player.prev = player.Thirtyfour, player.Thirtyfour = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourtyfour) && player.Thirtyfour !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourtyfour) && player.Thirtyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourtyfive) && player.Thirtyfive === C1_LIST[2]) player.Fourtyfive = player.prev, player.prev = player.Thirtyfive, player.Thirtyfive = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourtyfive) && player.Thirtyfive !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourtyfive) && player.Thirtyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourtysix) && player.Thirtysix === C1_LIST[2]) player.Fourtysix = player.prev, player.prev = player.Thirtysix, player.Thirtysix = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourtysix) && player.Thirtysix !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourtysix) && player.Thirtysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourtyseven) && player.Thirtyseven === C1_LIST[2]) player.Fourtyseven = player.prev, player.prev = player.Thirtyseven, player.Thirtyseven = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourtyseven) && player.Thirtyseven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourtyseven) && player.Thirtyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourtyeight) && player.Thirtyeight === C1_LIST[2]) player.Fourtyeight = player.prev, player.prev = player.Thirtyeight, player.Thirtyeight = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourtyeight) && player.Thirtyeight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourtyeight) && player.Thirtyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourtynine) && player.Thirtynine === C1_LIST[2]) player.Fourtynine = player.prev, player.prev = player.Thirtynine, player.Thirtynine = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourtynine) && player.Thirtynine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourtynine) && player.Thirtynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fifty) && player.Fourty === C1_LIST[2]) player.Fifty = player.prev, player.prev = player.Fourty, player.Fourty = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), player.time = setTimeout(moveUp, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fifty) && player.Fourty !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fifty) && player.Fourty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
       if (player.MU == false) return 
 
     if (C4_LIST.includes(player.Twenty) && player.Ten !== C1_LIST[0] && player.Ten !== C1_LIST[4]) player.Twenty = player.prev, player.prev = player.Ten, player.Ten = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), save2()
     if (C4_LIST.includes(player.Nineteen) && player.Nine !== C1_LIST[0] && player.Nine !== C1_LIST[4]) player.Nineteen = player.prev, player.prev = player.Nine, player.Nine = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), save2()
     if (C4_LIST.includes(player.Eighteen) && player.Eight !== C1_LIST[0] && player.Eight !== C1_LIST[4]) player.Eighteen = player.prev, player.prev = player.Eight, player.Eight = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), save2()
+    if (C4_LIST.includes(player.Seventeen) && player.Seven === C2_LIST[2] && player.Zone === 4) localStorage.setItem('prevTab1', 1), player.Seven = C2_LIST[0]
     if (C4_LIST.includes(player.Seventeen) && player.Seven !== C1_LIST[0] && player.Seven !== C1_LIST[4]) player.Seventeen = player.prev, player.prev = player.Seven, player.Seven = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), save2()
     if (C4_LIST.includes(player.Sixteen) && player.Six !== C1_LIST[0] && player.Six !== C1_LIST[4]) player.Sixteen = player.prev, player.prev = player.Six, player.Six = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), save2()
     if (C4_LIST.includes(player.Fifteen) && player.Five !== C1_LIST[0] && player.Five  !== C1_LIST[4]) player.Fifteen = player.prev, player.prev = player.Five, player.Five = C4_LIST[player.skin], player.North += 1,  player.South -= 1, audio(), save2()
@@ -1112,99 +1114,99 @@ function moveUp(){
 
 function moveDown(){
     
-  if (C4_LIST.includes(player.Fifty)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fifty) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourty) && player.Fifty === C1_LIST[2]) player.Fourty = player.prev, player.prev = player.Fifty, player.Fifty = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
   else if (C4_LIST.includes(player.Fourty) && player.Fifty !== C1_LIST[2]) player.Sludge = false, save2()
-  if (C4_LIST.includes(player.Fourtynine)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fourtynine) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtynine) && player.Fourtynine === C1_LIST[2]) player.Thirtynine = player.prev, player.prev = player.Fourtynine, player.Fourtynine = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
   else if (C4_LIST.includes(player.Thirtynine) && player.Fourtynine !== C1_LIST[2]) player.Sludge = false, save2()
-  if (C4_LIST.includes(player.Fourtyeight)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fourtyeight) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyeight) && player.Fourtyeight === C1_LIST[2]) player.Thirtyeight = player.prev, player.prev = player.Fourtyeight, player.Fourtyeight = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
   else if (C4_LIST.includes(player.Thirtyeight) && player.Fourtyeight !== C1_LIST[2]) player.Sludge = false, save2()
-  if (C4_LIST.includes(player.Fourtyseven)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fourtyseven) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyseven) && player.Fourtyseven === C1_LIST[2]) player.Thirtyseven = player.prev, player.prev = player.Fourtyseven, player.Fourtyseven = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
   else if (C4_LIST.includes(player.Thirtyseven) && player.Fourtyseven !== C1_LIST[2]) player.Sludge = false, save2()
-  if (C4_LIST.includes(player.Fourtysix)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fourtysix) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtysix) && player.Fourtysix === C1_LIST[2]) player.Thirtysix = player.prev, player.prev = player.Fourtysix, player.Fourtysix = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
   else if (C4_LIST.includes(player.Thirtysix) && player.Fourtysix !== C1_LIST[2]) player.Sludge = false, save2()
-  if (C4_LIST.includes(player.Fourtyfive)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fourtyfive) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyfive) && player.Fourtyfive === C1_LIST[2]) player.Thirtyfive = player.prev, player.prev = player.Fourtyfive, player.Fourtyfive = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
   else if (C4_LIST.includes(player.Thirtyfive) && player.Fourtyfive !== C1_LIST[2]) player.Sludge = false, save2()
-  if (C4_LIST.includes(player.Fourtyfour)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fourtyfour) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyfour) && player.Fourtyfour === C1_LIST[2]) player.Thirtyfour = player.prev, player.prev = player.Fourtyfour, player.Fourtyfour = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
   else if (C4_LIST.includes(player.Thirtyfour) && player.Fourtyfour !== C1_LIST[2]) player.Sludge = false, save2()
-  if (C4_LIST.includes(player.Fourtythree)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fourtythree) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtythree) && player.Fourtythree === C1_LIST[2]) player.Thirtythree = player.prev, player.prev = player.Fourtythree, player.Fourtythree = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
   else if (C4_LIST.includes(player.Thirtythree) && player.Fourtythree !== C1_LIST[2]) player.Sludge = false, save2()
-  if (C4_LIST.includes(player.Fourtytwo)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fourtytwo) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtytwo) && player.Fourtytwo === C1_LIST[2]) player.Thirtytwo = player.prev, player.prev = player.Fourtytwo, player.Fourtytwo = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
   else if (C4_LIST.includes(player.Thirtytwo) && player.Fourtytwo !== C1_LIST[2]) player.Sludge = false, save2()
-  if (C4_LIST.includes(player.Fourtyone)) player.Sludge = false, save2()
+  if (C4_LIST.includes(player.Fourtyone) && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirtyone) && player.Fourtyone === C1_LIST[2]) player.Thirtyone = player.prev, player.prev = player.Fourtyone, player.Fourtyone = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirtyone) && player.Fourtyone !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirtyone) && player.Fourtyone !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
   if(C4_LIST.includes(player.Thirty) && player.Fourty === C1_LIST[2]) player.Thirty = player.prev, player.prev = player.Fourty, player.Fourty = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirty) && player.Fourty !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirty) && player.Fourty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentynine) && player.Thirtynine === C1_LIST[2]) player.Twentynine = player.prev, player.prev = player.Thirtynine, player.Thirtynine = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentynine) && player.Thirtynine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentynine) && player.Thirtynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyeight) && player.Thirtyeight === C1_LIST[2]) player.Twentyeight = player.prev, player.prev = player.Thirtyeight, player.Thirtyeight = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyeight) && player.Thirtyeight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyeight) && player.Thirtyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyseven) && player.Thirtyseven === C1_LIST[2]) player.Twentyseven = player.prev, player.prev = player.Thirtyseven, player.Thirtyseven = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyseven) && player.Thirtyseven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyseven) && player.Thirtyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentysix) && player.Thirtysix === C1_LIST[2]) player.Twentysix = player.prev, player.prev = player.Thirtysix, player.Thirtysix = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentysix) && player.Thirtysix !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentysix) && player.Thirtysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyfive) && player.Thirtyfive === C1_LIST[2]) player.Twentyfive = player.prev, player.prev = player.Thirtyfive, player.Thirtyfive = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyfive) && player.Thirtyfive !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyfive) && player.Thirtyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyfour) && player.Thirtyfour === C1_LIST[2]) player.Twentyfour = player.prev, player.prev = player.Thirtyfour, player.Thirtyfour = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyfour) && player.Thirtyfour !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyfour) && player.Thirtyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentythree) && player.Thirtythree === C1_LIST[2]) player.Twentythree = player.prev, player.prev = player.Thirtythree, player.Thirtythree = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentythree) && player.Thirtythree !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentythree) && player.Thirtythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentytwo) && player.Thirtytwo === C1_LIST[2]) player.Twentytwo = player.prev, player.prev = player.Thirtytwo, player.Thirtytwo = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentytwo) && player.Thirtytwo !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentytwo) && player.Thirtytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twentyone) && player.Thirtyone === C1_LIST[2]) player.Twentyone = player.prev, player.prev = player.Thirtyone, player.Thirtyone = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twentyone) && player.Thirtyone !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twentyone) && player.Thirtyone !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
   if(C4_LIST.includes(player.Twenty) && player.Thirty === C1_LIST[2]) player.Twenty = player.prev, player.prev = player.Thirty, player.Thirty = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twenty) && player.Thirty !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twenty) && player.Thirty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Nineteen) && player.Twentynine === C1_LIST[2]) player.Nineteen = player.prev, player.prev = player.Twentynine, player.Twentynine = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Nineteen) && player.Twentynine !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Nineteen) && player.Twentynine !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eighteen) && player.Twentyeight === C1_LIST[2]) player.Eighteen = player.prev, player.prev = player.Twentyeight, player.Twentyeight = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eighteen) && player.Twentyeight !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eighteen) && player.Twentyeight !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Seventeen) && player.Twentyseven === C1_LIST[2]) player.Seventeen = player.prev, player.prev = player.Twentyseven, player.Twentyseven = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Seventeen) && player.Twentyseven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Seventeen) && player.Twentyseven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Sixteen) && player.Twentysix === C1_LIST[2]) player.Sixteen = player.prev, player.prev = player.Twentysix, player.Twentysix = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Sixteen) && player.Twentysix !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Sixteen) && player.Twentysix !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fifteen) && player.Twentyfive === C1_LIST[2]) player.Fifteen = player.prev, player.prev = player.Twentyfive, player.Twentyfive = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirty) && player.Twentyfive !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirty) && player.Twentyfive !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Fourteen) && player.Twentyfour === C1_LIST[2]) player.Fourteen = player.prev, player.prev = player.Twentyfour, player.Twentyfour = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Fourteen) && player.Twentyfour !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Fourteen) && player.Twentyfour !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Thirteen) && player.Twentythree === C1_LIST[2]) player.Thirteen = player.prev, player.prev = player.Twentythree, player.Twentythree = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Thirteen) && player.Twentythree !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Thirteen) && player.Twentythree !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Twelve) && player.Twentytwo === C1_LIST[2]) player.Twelve = player.prev, player.prev = player.Twentytwo, player.Twentytwo = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twelve) && player.Twentytwo !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twelve) && player.Twentytwo !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eleven) && player.Twentyone === C1_LIST[2]) player.Eleven = player.prev, player.prev = player.Twentyone, player.Twentyone = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eleven) && player.Twentyone !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eleven) && player.Twentyone !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
   if(C4_LIST.includes(player.Ten) && player.Twenty === C1_LIST[2]) player.Ten = player.prev, player.prev = player.Twenty, player.Twenty = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Ten) && player.Twenty !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Ten) && player.Twenty !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Nine) && player.Nineteen === C1_LIST[2]) player.Nine = player.prev, player.prev = player.Nineteen, player.Nineteen = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Nine) && player.Nineteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Nine) && player.Nineteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Eight) && player.Eighteen === C1_LIST[2]) player.Eight = player.prev, player.prev = player.Eighteen, player.Eighteen = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Eight) && player.Eighteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Eight) && player.Eighteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Seven) && player.Seventeen === C1_LIST[2]) player.Seven = player.prev, player.prev = player.Seventeen, player.Seventeen = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Seven) && player.Seventeen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Seven) && player.Seventeen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Six) && player.Sixteen === C1_LIST[2]) player.Six = player.prev, player.prev = player.Sixteen, player.Sixteen = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Six) && player.Sixteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Six) && player.Sixteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Five) && player.Fifteen === C1_LIST[2]) player.Five = player.prev, player.prev = player.Fifteen, player.Fifteen = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Five) && player.Fifteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Five) && player.Fifteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Four) && player.Fourteen === C1_LIST[2]) player.Four = player.prev, player.prev = player.Fourteen, player.Fourteen = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Four) && player.Fourteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Four) && player.Fourteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Three) && player.Thirteen === C1_LIST[2]) player.Three = player.prev, player.prev = player.Thirteen, player.Thirteen = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Three) && player.Thirteen !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Three) && player.Thirteen !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.Two) && player.Twelve === C1_LIST[2]) player.Two = player.prev, player.prev = player.Twelve, player.Twelve = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.Twi) && player.Twelve !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.Twi) && player.Twelve !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
   if(C4_LIST.includes(player.One) && player.Eleven === C1_LIST[2]) player.One = player.prev, player.prev = player.Eleven, player.Eleven = C4_LIST[player.skin], player.North -= 1,  player.South += 1, audio(), player.time = setTimeout(moveDown, 200), player.Sludge = true
-  else if (C4_LIST.includes(player.One) && player.Eleven !== C1_LIST[2]) player.Sludge = false, save2()
+  else if (C4_LIST.includes(player.One) && player.Eleven !== C1_LIST[2] && player.Sludge == true) player.Sludge = false, save2()
 
     if (player.MD == false) return
 
@@ -1615,13 +1617,13 @@ addLayer("tree-tab", {
        if (player.prev === C1_LIST[1] || player.prev === C2_LIST[2] || player.prev === C3_LIST[1]) player.Level = 2
 
 
-      if (C4_LIST.includes(player.One)&& C2_LIST.includes(player.Two ) || C4_LIST.includes(player.Two) && C2_LIST.includes(player.Three ) || C4_LIST.includes(player.Three) && C2_LIST.includes(player.Four ) || C4_LIST.includes(player.Four) && C2_LIST.includes(player.Five ) || C4_LIST.includes(player.Five) && C2_LIST.includes(player.Six ) || C4_LIST.includes(player.Six) && C2_LIST.includes(player.Seven ) || C4_LIST.includes(player.Seven) && C2_LIST.includes(player.Eight ) || C4_LIST.includes(player.Eight) && C2_LIST.includes(player.Nine ) || C4_LIST.includes(player.Nine) && C2_LIST.includes(player.Ten ) ||   C4_LIST.includes(player.Eleven) && C2_LIST.includes(player.Twelve ) || C4_LIST.includes(player.Twelve) && C2_LIST.includes(player.Thirteen ) || C4_LIST.includes(player.Thirteen) && C2_LIST.includes(player.Fourteen ) || C4_LIST.includes(player.Fourteen) && C2_LIST.includes(player.Fifteen ) || C4_LIST.includes(player.Fifteen) && C2_LIST.includes(player.Sixteen ) || C4_LIST.includes(player.Sixteen) && C2_LIST.includes(player.Seventeen ) || C4_LIST.includes(player.Seventeen) && C2_LIST.includes(player.Eighteen ) || C4_LIST.includes(player.Eighteen) && C2_LIST.includes(player.Nineteen ) || C4_LIST.includes(player.Nineteen) && C2_LIST.includes(player.Twenty ) || C4_LIST.includes(player.Twentyone) && C2_LIST.includes(player.Twentytwo ) || C4_LIST.includes(player.Twentytwo) && C2_LIST.includes(player.Twentythree ) || C4_LIST.includes(player.Twentythree) && C2_LIST.includes(player.Twentyfour ) || C4_LIST.includes(player.Twentyfour) && C2_LIST.includes(player.Twentyfive ) || C4_LIST.includes(player.Twentyfive) && C2_LIST.includes(player.Twentysix ) || C4_LIST.includes(player.Twentysix) && C2_LIST.includes(player.Twentyseven ) || C4_LIST.includes(player.Twentyseven) && C2_LIST.includes(player.Twentyeight ) || C4_LIST.includes(player.Twentyeight) && C2_LIST.includes(player.Twentynine ) || C4_LIST.includes(player.Twentynine) && C2_LIST.includes(player.Thirty ) || C4_LIST.includes(player.Thirtyone) && C2_LIST.includes(player.Thirtytwo ) || C4_LIST.includes(player.Thirtytwo) && C2_LIST.includes(player.Thirtythree ) || C4_LIST.includes(player.Thirtythree) && C2_LIST.includes(player.Thirtyfour ) || C4_LIST.includes(player.Thirtyfour) && C2_LIST.includes(player.Thirtyfive ) || C4_LIST.includes(player.Thirtyfive) && C2_LIST.includes(player.Thirtysix ) || C4_LIST.includes(player.Thirtysix) && C2_LIST.includes(player.Thirtyseven ) || C4_LIST.includes(player.Thirtyseven) && C2_LIST.includes(player.Thirtyeight ) || C4_LIST.includes(player.Thirtyeight) && C2_LIST.includes(player.Thirtynine ) || C4_LIST.includes(player.Thirtynine) && C2_LIST.includes(player.Fourty ) || C4_LIST.includes(player.Fourtyone) && C2_LIST.includes(player.Fourtytwo ) || C4_LIST.includes(player.Fourtytwo) && C2_LIST.includes(player.Fourtythree ) || C4_LIST.includes(player.Fourtythree) && C2_LIST.includes(player.Fourtyfour ) || C4_LIST.includes(player.Fourtyfour) && C2_LIST.includes(player.Fourtyfive ) || C4_LIST.includes(player.Fourtyfive) && C2_LIST.includes(player.Fourtysix ) || C4_LIST.includes(player.Fourtysix) && C2_LIST.includes(player.Fourtyseven ) || C4_LIST.includes(player.Fourtyseven) && C2_LIST.includes(player.Fourtyeight ) || C4_LIST.includes(player.Fourtyeight) && C2_LIST.includes(player.Fourtynine ) || C4_LIST.includes(player.Fourtynine) && C2_LIST.includes(player.Fifty) || player.Level === 2) player.MR = true
+      if (C4_LIST.includes(player.One) && C2_LIST.includes(player.Two ) || C4_LIST.includes(player.Two) && C2_LIST.includes(player.Three ) || C4_LIST.includes(player.Three) && C2_LIST.includes(player.Four ) || C4_LIST.includes(player.Four) && C2_LIST.includes(player.Five ) || C4_LIST.includes(player.Five) && C2_LIST.includes(player.Six ) || C4_LIST.includes(player.Six) && C2_LIST.includes(player.Seven ) || C4_LIST.includes(player.Seven) && C2_LIST.includes(player.Eight ) || C4_LIST.includes(player.Eight) && C2_LIST.includes(player.Nine ) || C4_LIST.includes(player.Nine) && C2_LIST.includes(player.Ten ) ||   C4_LIST.includes(player.Eleven) && C2_LIST.includes(player.Twelve ) || C4_LIST.includes(player.Twelve) && C2_LIST.includes(player.Thirteen ) || C4_LIST.includes(player.Thirteen) && C2_LIST.includes(player.Fourteen ) || C4_LIST.includes(player.Fourteen) && C2_LIST.includes(player.Fifteen ) || C4_LIST.includes(player.Fifteen) && C2_LIST.includes(player.Sixteen ) || C4_LIST.includes(player.Sixteen) && C2_LIST.includes(player.Seventeen ) || C4_LIST.includes(player.Seventeen) && C2_LIST.includes(player.Eighteen ) || C4_LIST.includes(player.Eighteen) && C2_LIST.includes(player.Nineteen ) || C4_LIST.includes(player.Nineteen) && C2_LIST.includes(player.Twenty ) || C4_LIST.includes(player.Twentyone) && C2_LIST.includes(player.Twentytwo ) || C4_LIST.includes(player.Twentytwo) && C2_LIST.includes(player.Twentythree ) || C4_LIST.includes(player.Twentythree) && C2_LIST.includes(player.Twentyfour ) || C4_LIST.includes(player.Twentyfour) && C2_LIST.includes(player.Twentyfive ) || C4_LIST.includes(player.Twentyfive) && C2_LIST.includes(player.Twentysix ) || C4_LIST.includes(player.Twentysix) && C2_LIST.includes(player.Twentyseven ) || C4_LIST.includes(player.Twentyseven) && C2_LIST.includes(player.Twentyeight ) || C4_LIST.includes(player.Twentyeight) && C2_LIST.includes(player.Twentynine ) || C4_LIST.includes(player.Twentynine) && C2_LIST.includes(player.Thirty ) || C4_LIST.includes(player.Thirtyone) && C2_LIST.includes(player.Thirtytwo ) || C4_LIST.includes(player.Thirtytwo) && C2_LIST.includes(player.Thirtythree ) || C4_LIST.includes(player.Thirtythree) && C2_LIST.includes(player.Thirtyfour ) || C4_LIST.includes(player.Thirtyfour) && C2_LIST.includes(player.Thirtyfive ) || C4_LIST.includes(player.Thirtyfive) && C2_LIST.includes(player.Thirtysix ) || C4_LIST.includes(player.Thirtysix) && C2_LIST.includes(player.Thirtyseven ) || C4_LIST.includes(player.Thirtyseven) && C2_LIST.includes(player.Thirtyeight ) || C4_LIST.includes(player.Thirtyeight) && C2_LIST.includes(player.Thirtynine ) || C4_LIST.includes(player.Thirtynine) && C2_LIST.includes(player.Fourty ) || C4_LIST.includes(player.Fourtyone) && C2_LIST.includes(player.Fourtytwo ) || C4_LIST.includes(player.Fourtytwo) && C2_LIST.includes(player.Fourtythree ) || C4_LIST.includes(player.Fourtythree) && C2_LIST.includes(player.Fourtyfour ) || C4_LIST.includes(player.Fourtyfour) && C2_LIST.includes(player.Fourtyfive ) || C4_LIST.includes(player.Fourtyfive) && C2_LIST.includes(player.Fourtysix ) || C4_LIST.includes(player.Fourtysix) && C2_LIST.includes(player.Fourtyseven ) || C4_LIST.includes(player.Fourtyseven) && C2_LIST.includes(player.Fourtyeight ) || C4_LIST.includes(player.Fourtyeight) && C2_LIST.includes(player.Fourtynine ) || C4_LIST.includes(player.Fourtynine) && C2_LIST.includes(player.Fifty) || player.Level === 2) player.MR = true
         else player.MR = false
 
         if (C2_LIST.includes(player.One) && C4_LIST.includes(player.Two) || C2_LIST.includes(player.Two) && C4_LIST.includes(player.Three) || C2_LIST.includes(player.Three) && C4_LIST.includes(player.Four) || C2_LIST.includes(player.Four) && C4_LIST.includes(player.Five) || C2_LIST.includes(player.Five) && C4_LIST.includes(player.Six) || C2_LIST.includes(player.Six) && C4_LIST.includes(player.Seven) || C2_LIST.includes(player.Seven) && C4_LIST.includes(player.Eight) || C2_LIST.includes(player.Eight) && C4_LIST.includes(player.Nine) || C2_LIST.includes(player.Nine) && C4_LIST.includes(player.Ten) || C2_LIST.includes(  player.Eleven) && C4_LIST.includes(player.Twelve) || C2_LIST.includes(player.Twelve) && C4_LIST.includes(player.Thirteen) || C2_LIST.includes(player.Thirteen) && C4_LIST.includes(player.Fourteen) || C2_LIST.includes(player.Fourteen) && C4_LIST.includes(player.Fifteen) || C2_LIST.includes(player.Fifteen) && C4_LIST.includes(player.Sixteen) || C2_LIST.includes(player.Sixteen) && C4_LIST.includes(player.Seventeen) || C2_LIST.includes(player.Seventeen) && C4_LIST.includes(player.Eighteen) || C2_LIST.includes(player.Eighteen) && C4_LIST.includes(player.Nineteen) || C2_LIST.includes(player.Nineteen) && C4_LIST.includes(player.Twenty) || C2_LIST.includes(player.Twentyone) && C4_LIST.includes(player.Twentytwo) || C2_LIST.includes(player.Twentytwo) && C4_LIST.includes(player.Twentythree) || C2_LIST.includes(player.Twentythree) && C4_LIST.includes(player.Twentyfour) || C2_LIST.includes(player.Twentyfour) && C4_LIST.includes(player.Twentyfive) || C2_LIST.includes(player.Twentyfive) && C4_LIST.includes(player.Twentysix) || C2_LIST.includes(player.Twentysix) && C4_LIST.includes(player.Twentyseven) || C2_LIST.includes(player.Twentyseven) && C4_LIST.includes(player.Twentyeight) || C2_LIST.includes(player.Twentyeight) && C4_LIST.includes(player.Twentynine) || C2_LIST.includes(player.Twentynine) && C4_LIST.includes(player.Thirty) || C2_LIST.includes(player.Thirtyone) && C4_LIST.includes(player.Thirtytwo) || C2_LIST.includes(player.Thirtytwo) && C4_LIST.includes(player.Thirtythree) || C2_LIST.includes(player.Thirtythree) && C4_LIST.includes(player.Thirtyfour) || C2_LIST.includes(player.Thirtyfour) && C4_LIST.includes(player.Thirtyfive) || C2_LIST.includes(player.Thirtyfive) && C4_LIST.includes(player.Thirtysix) || C2_LIST.includes(player.Thirtysix) && C4_LIST.includes(player.Thirtyseven) || C2_LIST.includes(player.Thirtyseven) && C4_LIST.includes(player.Thirtyeight) || C2_LIST.includes(player.Thirtyeight) && C4_LIST.includes(player.Thirtynine) || C2_LIST.includes(player.Thirtynine) && C4_LIST.includes(player.Fourty) || C2_LIST.includes(player.Fourtyone) && C4_LIST.includes(player.Fourtytwo) || C2_LIST.includes(player.Fourtytwo) && C4_LIST.includes(player.Fourtythree) || C2_LIST.includes(player.Fourtythree) && C4_LIST.includes(player.Fourtyfour) || C2_LIST.includes(player.Fourtyfour) && C4_LIST.includes(player.Fourtyfive) || C2_LIST.includes(player.Fourtyfive) && C4_LIST.includes(player.Fourtysix) || C2_LIST.includes(player.Fourtysix) && C4_LIST.includes(player.Fourtyseven) || C2_LIST.includes(player.Fourtyseven) && C4_LIST.includes(player.Fourtyeight) || C2_LIST.includes(player.Fourtyeight) && C4_LIST.includes(player.Fourtynine) || C2_LIST.includes(player.Fourtynine) && C4_LIST.includes(player.Fifty) || player.Level === 2) player.ML = true
         else player.ML = false
 
-      if (C4_LIST.includes(player.One)&& C2_LIST.includes(player.Eleven) || C4_LIST.includes(player.Two) && C2_LIST.includes(player.Twelve ) || C4_LIST.includes(player.Three) && C2_LIST.includes(player.Thirteen ) || C4_LIST.includes(player.Four) && C2_LIST.includes(player.Fourteen ) || C4_LIST.includes(player.Five) && C2_LIST.includes(player.Fifteen ) || C4_LIST.includes(player.Six) && C2_LIST.includes(player.Sixteen ) || C4_LIST.includes(player.Seven) && C2_LIST.includes(player.Seventeen ) || C4_LIST.includes(player.Eight) && C2_LIST.includes(player.Eighteen ) || C4_LIST.includes(player.Nine) && C2_LIST.includes(player.Nineteen ) ||  C4_LIST.includes(player.Ten) && C2_LIST.includes(player.Twenty ) || C4_LIST.includes(player.Eleven) && C2_LIST.includes(player.Twentyone ) || C4_LIST.includes(player.Twelve) && C2_LIST.includes(player.Twentytwo ) || C4_LIST.includes(player.Thirteen) && C2_LIST.includes(player.Twentythree ) || C4_LIST.includes(player.Fourteen) && C2_LIST.includes(player.Twentyfour ) || C4_LIST.includes(player.Fifteen) && C2_LIST.includes(player.Twentyfive ) || C4_LIST.includes(player.Sixteen) && C2_LIST.includes(player.Twentysix ) || C4_LIST.includes(player.Seventeen) && C2_LIST.includes(player.Twentyseven ) || C4_LIST.includes(player.Eighteen) && C2_LIST.includes(player.Twentyeight ) || C4_LIST.includes(player.Nineteen) && C2_LIST.includes(player.Twentynine ) || C4_LIST.includes(player.Twenty) && C2_LIST.includes(player.Thirty ) || C4_LIST.includes(player.Twentyone) && C2_LIST.includes(player.Thirtyone ) || C4_LIST.includes(player.Twentytwo) && C2_LIST.includes(player.Thirtytwo ) || C4_LIST.includes(player.Twentythree) && C2_LIST.includes(player.Thirtythree ) || C4_LIST.includes(player.Twentyfour) && C2_LIST.includes(player.Thirtyfour ) || C4_LIST.includes(player.Twentyfive) && C2_LIST.includes(player.Thirtyfive ) || C4_LIST.includes(player.Twentysix) && C2_LIST.includes(player.Thirtysix ) || C4_LIST.includes(player.Twentyseven) && C2_LIST.includes(player.Thirtyseven ) || C4_LIST.includes(player.Twentyeight) && C2_LIST.includes(player.Thirtyeight ) || C4_LIST.includes(player.Twentynine) && C2_LIST.includes(player.Thirtynine ) || C4_LIST.includes(player.Thirty) && C2_LIST.includes(player.Fourty ) || C4_LIST.includes(player.Thirtyone) && C2_LIST.includes(player.Fourtyone ) || C4_LIST.includes(player.Thirtytwo) && C2_LIST.includes(player.Fourtytwo ) || C4_LIST.includes(player.Thirtythree) && C2_LIST.includes(player.Fourtythree ) || C4_LIST.includes(player.Thirtyfour) && C2_LIST.includes(player.Fourtyfour ) || C4_LIST.includes(player.Thirtyfive) && C2_LIST.includes(player.Fourtyfive ) || C4_LIST.includes(player.Thirtysix) && C2_LIST.includes(player.Fourtysix ) || C4_LIST.includes(player.Thirtyseven) && C2_LIST.includes(player.Fourtyseven ) || C4_LIST.includes(player.Thirtyeight) && C2_LIST.includes(player.Fourtyeight ) || C4_LIST.includes(player.Thirtynine) && C2_LIST.includes(player.Fourtynine ) || C4_LIST.includes(player.Fourty) && C2_LIST.includes(player.Fifty) || player.Level === 2) player.MD = true
+      if (C4_LIST.includes(player.One) && C2_LIST.includes(player.Eleven) || C4_LIST.includes(player.Two) && C2_LIST.includes(player.Twelve ) || C4_LIST.includes(player.Three) && C2_LIST.includes(player.Thirteen ) || C4_LIST.includes(player.Four) && C2_LIST.includes(player.Fourteen ) || C4_LIST.includes(player.Five) && C2_LIST.includes(player.Fifteen ) || C4_LIST.includes(player.Six) && C2_LIST.includes(player.Sixteen ) || C4_LIST.includes(player.Seven) && C2_LIST.includes(player.Seventeen ) || C4_LIST.includes(player.Eight) && C2_LIST.includes(player.Eighteen ) || C4_LIST.includes(player.Nine) && C2_LIST.includes(player.Nineteen ) ||  C4_LIST.includes(player.Ten) && C2_LIST.includes(player.Twenty ) || C4_LIST.includes(player.Eleven) && C2_LIST.includes(player.Twentyone ) || C4_LIST.includes(player.Twelve) && C2_LIST.includes(player.Twentytwo ) || C4_LIST.includes(player.Thirteen) && C2_LIST.includes(player.Twentythree ) || C4_LIST.includes(player.Fourteen) && C2_LIST.includes(player.Twentyfour ) || C4_LIST.includes(player.Fifteen) && C2_LIST.includes(player.Twentyfive ) || C4_LIST.includes(player.Sixteen) && C2_LIST.includes(player.Twentysix ) || C4_LIST.includes(player.Seventeen) && C2_LIST.includes(player.Twentyseven ) || C4_LIST.includes(player.Eighteen) && C2_LIST.includes(player.Twentyeight ) || C4_LIST.includes(player.Nineteen) && C2_LIST.includes(player.Twentynine ) || C4_LIST.includes(player.Twenty) && C2_LIST.includes(player.Thirty ) || C4_LIST.includes(player.Twentyone) && C2_LIST.includes(player.Thirtyone ) || C4_LIST.includes(player.Twentytwo) && C2_LIST.includes(player.Thirtytwo ) || C4_LIST.includes(player.Twentythree) && C2_LIST.includes(player.Thirtythree ) || C4_LIST.includes(player.Twentyfour) && C2_LIST.includes(player.Thirtyfour ) || C4_LIST.includes(player.Twentyfive) && C2_LIST.includes(player.Thirtyfive ) || C4_LIST.includes(player.Twentysix) && C2_LIST.includes(player.Thirtysix ) || C4_LIST.includes(player.Twentyseven) && C2_LIST.includes(player.Thirtyseven ) || C4_LIST.includes(player.Twentyeight) && C2_LIST.includes(player.Thirtyeight ) || C4_LIST.includes(player.Twentynine) && C2_LIST.includes(player.Thirtynine ) || C4_LIST.includes(player.Thirty) && C2_LIST.includes(player.Fourty ) || C4_LIST.includes(player.Thirtyone) && C2_LIST.includes(player.Fourtyone ) || C4_LIST.includes(player.Thirtytwo) && C2_LIST.includes(player.Fourtytwo ) || C4_LIST.includes(player.Thirtythree) && C2_LIST.includes(player.Fourtythree ) || C4_LIST.includes(player.Thirtyfour) && C2_LIST.includes(player.Fourtyfour ) || C4_LIST.includes(player.Thirtyfive) && C2_LIST.includes(player.Fourtyfive ) || C4_LIST.includes(player.Thirtysix) && C2_LIST.includes(player.Fourtysix ) || C4_LIST.includes(player.Thirtyseven) && C2_LIST.includes(player.Fourtyseven ) || C4_LIST.includes(player.Thirtyeight) && C2_LIST.includes(player.Fourtyeight ) || C4_LIST.includes(player.Thirtynine) && C2_LIST.includes(player.Fourtynine ) || C4_LIST.includes(player.Fourty) && C2_LIST.includes(player.Fifty) || player.Level === 2) player.MD = true
         else player.MD = false
 
         if (C2_LIST.includes(player.One) && C4_LIST.includes(player.Eleven) || C2_LIST.includes(player.Two) && C4_LIST.includes(player.Twelve) || C2_LIST.includes(player.Three) && C4_LIST.includes(player.Thirteen) || C2_LIST.includes(player.Four) && C4_LIST.includes(player.Fourteen) || C2_LIST.includes(player.Five) && C4_LIST.includes(player.Fifteen) || C2_LIST.includes(player.Six) && C4_LIST.includes(player.Sixteen) || C2_LIST.includes(player.Seven) && C4_LIST.includes(player.Seventeen) || C2_LIST.includes(player.Eight) && C4_LIST.includes(player.Eighteen) || C2_LIST.includes(player.Nine) && C4_LIST.includes(player.Nineteen) || C2_LIST.includes( player.Ten) && C4_LIST.includes(player.Twenty) || C2_LIST.includes(player.Eleven) && C4_LIST.includes(player.Twentyone) || C2_LIST.includes(player.Twelve) && C4_LIST.includes(player.Twentytwo) || C2_LIST.includes(player.Thirteen) && C4_LIST.includes(player.Twentythree) || C2_LIST.includes(player.Fourteen) && C4_LIST.includes(player.Twentyfour) || C2_LIST.includes(player.Fifteen) && C4_LIST.includes(player.Twentyfive) || C2_LIST.includes(player.Sixteen) && C4_LIST.includes(player.Twentysix) || C2_LIST.includes(player.Seventeen) && C4_LIST.includes(player.Twentyseven) || C2_LIST.includes(player.Eighteen) && C4_LIST.includes(player.Twentyeight) || C2_LIST.includes(player.Nineteen) && C4_LIST.includes(player.Twentynine) || C2_LIST.includes(player.Twenty) && C4_LIST.includes(player.Thirty) || C2_LIST.includes(player.Twentyone) && C4_LIST.includes(player.Thirtyone) || C2_LIST.includes(player.Twentytwo) && C4_LIST.includes(player.Thirtytwo) || C2_LIST.includes(player.Twentythree) && C4_LIST.includes(player.Thirtythree) || C2_LIST.includes(player.Twentyfour) && C4_LIST.includes(player.Thirtyfour) || C2_LIST.includes(player.Twentyfive) && C4_LIST.includes(player.Thirtyfive) || C2_LIST.includes(player.Twentysix) && C4_LIST.includes(player.Thirtysix) || C2_LIST.includes(player.Twentyseven) && C4_LIST.includes(player.Thirtyseven) || C2_LIST.includes(player.Twentyeight) && C4_LIST.includes(player.Thirtyeight) || C2_LIST.includes(player.Twentynine) && C4_LIST.includes(player.Thirtynine) || C2_LIST.includes(player.Thirty) && C4_LIST.includes(player.Fourty) || C2_LIST.includes(player.Thirtyone) && C4_LIST.includes(player.Fourtyone) || C2_LIST.includes(player.Thirtytwo) && C4_LIST.includes(player.Fourtytwo) || C2_LIST.includes(player.Thirtythree) && C4_LIST.includes(player.Fourtythree) || C2_LIST.includes(player.Thirtyfour) && C4_LIST.includes(player.Fourtyfour) || C2_LIST.includes(player.Thirtyfive) && C4_LIST.includes(player.Fourtyfive) || C2_LIST.includes(player.Thirtysix) && C4_LIST.includes(player.Fourtysix) || C2_LIST.includes(player.Thirtyseven) && C4_LIST.includes(player.Fourtyseven) || C2_LIST.includes(player.Thirtyeight) && C4_LIST.includes(player.Fourtyeight) || C2_LIST.includes(player.Thirtynine) && C4_LIST.includes(player.Fourtynine) || C2_LIST.includes(player.Fourty) && C4_LIST.includes(player.Fifty) || player.Level === 2) player.MU = true
@@ -1784,9 +1786,9 @@ addLayer("tree-tab", {
           player.Zone = 4,
           player.One = C1_LIST[4],
           player.Two = C2_LIST[2],
-          player.Three = C1_LIST[4],
+          player.Three = C2_LIST[0],
           player.Four = C2_LIST[0],
-          player.Five = C2_LIST[0],
+          player.Five = C1_LIST[4],
           player.Six = C2_LIST[2],
           player.Seven = C4_LIST[player.skin],
           player.Eight = C1_LIST[0],
@@ -2177,9 +2179,9 @@ addLayer("tree-tab", {
     player.Zone = 4,
     player.One = C1_LIST[4],
     player.Two = C2_LIST[2],
-    player.Three = C1_LIST[4],
+    player.Three = C2_LIST[0],
     player.Four = C2_LIST[0],
-    player.Five = C2_LIST[0],
+    player.Five = C1_LIST[4],
     player.Six = C2_LIST[2],
     player.Seven = C4_LIST[player.skin],
     player.Eight = C1_LIST[0],
