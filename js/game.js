@@ -388,14 +388,18 @@ function hardReset(resetOptions) {
 	player.Undo = [],
 	player.Zones = [],
 	player = null
+	localStorage.setItem('No', null)
 	localStorage.setItem('Area', null),
+	localStorage.setItem('log3', 1),
 	localStorage.setItem('log1', 1),
 	localStorage.setItem('log', 2),
+	localStorage.setItem('prevTab2', null),
 	localStorage.setItem('prevTab1', null),
 	localStorage.setItem('prevTab', null),
 	localStorage.setItem('prevZone', 1),
 	localStorage.setItem('prev', null),
 	localStorage.setItem('prev1', null),
+	localStorage.setItem('prev2', null)
 	localStorage.setItem('gameStarted', false),
 	options.theme = themes[0]
 	if(resetOptions) options = null

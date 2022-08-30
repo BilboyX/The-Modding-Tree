@@ -139,10 +139,124 @@ addLayer("Skins", {
                 if (hasAchievement('Skins', 17)) player.skin = 12, player.skinInverse = 13, player.reset = true
             }
         },
+        18: {
+            tooltip() {if(hasAchievement('Skins', 18) && options.Lang === true) return `Vulton: Toxic Decor`
+            else if (hasAchievement('Skins', 18) && options.Lang === false) return `Vulton: 毒性装饰`},
+            name() {if(options.Lang === true) return "Vulton: Toxic Decor"
+            else return "Vulton: 毒性装饰"},
+            textStyle: { "color": "#000000" },
+            style: { "background-size": "100% 100%", "background-position": "center center"},
+            done() { return player.Zone === 7 && C4_LIST.includes(player.Twentytwo)},
+            on() { if (player.skin === 14 && player.skinInverse === 15) return true
+            else return false},
+            image() { if (hasAchievement('Skins', 18)) return 'https://i.postimg.cc/3RNVHpdC/Slate-1.png'
+            else return 'https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png'},
+            onClick(){
+                if (hasAchievement('Skins', 18)) player.skin = 14, player.skinInverse = 15, player.reset = true
+            }
+        },
+        19: {
+            tooltip() {if(hasAchievement('Skins', 19) && options.Lang === true) return `"increlution is goated"`
+            else if (hasAchievement('Skins', 19) && options.Lang === false) return `"increlution是今年的最佳游戏"`},
+            name() {if(options.Lang === true) return "The Paper Manlet"
+            else return "纸壮汉"},
+            textStyle: { "color": "#000000" },
+            style: { "background-size": "100% 100%", "background-position": "center center"},
+            done() { return player.name.toLowerCase() === 'The Paper Pilot'.toLowerCase() && player['tree-tab'].saved === true},
+            on() { if (player.skin === 16 && player.skinInverse === 17) return true
+            else return false},
+            image() { if (hasAchievement('Skins', 19)) return 'https://i.postimg.cc/kgP0tBpq/Slate.png'
+            else return 'https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png'},
+            onClick(){
+                if (hasAchievement('Skins', 19)) player.skin = 16, player.skinInverse = 17, player.reset = true
+            }
+        },
+        21: {
+            tooltip() {if(hasAchievement('Skins', 21) && options.Lang === true) return `What A Dark Knight`
+            else if (hasAchievement('Skins', 21) && options.Lang === false) return `如此黑暗的骑士`},
+            name() {if(options.Lang === true) return "The Batman"
+            else return "蝙蝠侠"},
+            textStyle: { "color": "#000000" },
+            style: { "background-size": "100% 100%", "background-position": "center center"},
+            done() { return player.Zone === 4 && C4_LIST.includes(player.Fifty)},
+            on() { if (player.skin === 18 && player.skinInverse === 19) return true
+            else return false},
+            image() { if (hasAchievement('Skins', 21)) return 'https://i.postimg.cc/MTzVL2Kh/Slate-2.png'
+            else return 'https://i.postimg.cc/9fwcMztv/pixil-frame-0-3-1.png'},
+            onClick(){
+                if (hasAchievement('Skins', 21)) player.skin = 18, player.skinInverse = 19, player.reset = true
+            }
+        },
     },
 
     tabFormat: [
         "blank", "blank", "blank", "blank", "blank", "blank",
         'achievements'
+    ]
+})
+
+addLayer("Letters", {
+    startData() {
+        return {
+            unlocked: true,
+            points: new Decimal(0),
+            Letters: [],
+            hasLetter: false,
+        }
+    },
+
+    songOn: false,
+    Song: new Audio('resources/Hymn.wav'),
+
+    name: "Letters", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "L", // This appears on the layer's node. Default is the id with the first letter capitalized
+    color: "#ff0000",
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    resource: "prestige points", // Name of prestige currency
+    baseResource: "points", // Name of resource prestige is based on
+    baseAmount() {return player.points}, // Get the current amount of baseResource
+    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.5, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+
+    clickables: {
+        11: {
+            unlocked(){
+                if (player.Letters.Letters[1] === 1) return true
+            },
+            canClick(){
+                return true
+            },
+            title() {if (tmp.Letters.songOn === true) return "♫ ▶"
+        else return "♫ ||"},
+            style: { "background-color": "#ff0000", color: "#000000", "font-size": "40px"},
+            onClick() {
+                if (tmp.Letters.songOn === false) tmp.Letters.Song.loop = true,  tmp.Letters.Song.play(), tmp.Letters.songOn = true
+                else tmp.Letters.Song.pause(), tmp.Letters.songOn = false
+            },
+        },
+    },
+
+    layerShown(){return true},
+
+    update() {
+        if (player.Letters.Letters[0] === 1 || player.Letters.Letters[1] === 1) player.Letters.hasLetter = true
+    },
+
+    tabFormat: [
+        "blank", "blank", "blank", "blank", "blank", "blank",
+        ['display-image',
+        function(){ if (player.Letters.Letters[0] === 1 && options.Lang == true) return 'resources/Letter1.png'
+        if (player.Letters.Letters[0] === 1 && options.Lang == false) return 'resources/Letter1ch.png'}],
+    ['display-image',
+    function(){ if (player.Letters.Letters[1] === 1 && options.Lang == true) return 'resources/Letter2.png'
+    if (player.Letters.Letters[1] === 1 && options.Lang == false) return '未翻译'}],
+    ['clickable', 11],
     ]
 })

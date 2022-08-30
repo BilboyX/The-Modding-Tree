@@ -16,6 +16,48 @@
 	transform: rotate(1080deg);
 }
 
+#Envelope {
+	display: block;
+}
+
+#EnvelopeOpen {
+	display: none;
+}
+
+#Lettertext {
+	display: none;
+	position: absolute;
+	top: 35px;
+	padding-top: 44px;
+	font-size: larger;
+	color: var(--points);
+	text-shadow: 0 0 10px var(--points);
+	right: -164px;
+	width: 200px;
+	z-index: 0;
+}
+
+#TE {
+	opacity: 1;
+	z-index: 7;
+	cursor: pointer;
+}
+
+#TE:hover #Lettertext{
+	right: 40px;
+display: block;
+}
+
+#TE:hover #Envelope{
+	display: none;
+}
+
+#TE:hover #EnvelopeOpen {
+	display: block;
+	
+}
+
+
 #Skintext {
 	position: absolute;
 	top: 300px;
@@ -31,6 +73,8 @@
 
 #skins:hover {
 	transform: scale(1.2, 1.2);
+	cursor: pointer;
+	z-index: 7;
 }
 
 #skins:hover + #Skintext{

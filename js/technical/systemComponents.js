@@ -120,7 +120,7 @@ var systemComponents = {
     'info-tab': {
         template: `
         <div>
-        <h2>Vulton: {{ options.Lang?"Toxic Decor":"毒性装饰" }}</h2>
+        <h2>{{ options.Lang?"Letters":"信字" }}</h2>
         <br>
         <h3>{{VERSION.withName}}</h3>
         <span v-if="modInfo.author">
@@ -156,14 +156,21 @@ var systemComponents = {
                 <td><button class="opt" onclick="toggleOpt('autosave')">{{options.Lang?'AutoSave':'自动存档'}}: {{ options.autosave?(options.Lang?'ON':'已开启'):(options.Lang?'OFF':'已关闭') }}</button></td>
                 <td><button class="opt" onclick="hardReset()">{{options.Lang?'HARD RESET':'硬重置'}}</button></td>
             </tr>
+			<tr>
+			<td><button class="opt" onclick="exportSave()">{{options.Lang?'Export to clipboard':'导出存档(复制到黏贴板)'}}</button></td>
+			</tr>
 			<tr> 
+			<td><button class="opt" onclick="importSave()">{{options.Lang?'Import':'导入存档'}}</button></td>
 			<td><button class="opt" onclick="toggleOpt('SFX')">{{options.Lang?'SFX':'音效'}}: {{ options.SFX?(options.Lang?'ON':'已开启'):(options.Lang?'OFF':'已关闭') }}</button></td>
 			<td><button class="opt" onclick="toggleOpt('Music')">{{options.Lang?'Music':'音乐'}}: {{ options.Music?(options.Lang?'ON':'已开启'):(options.Lang?'OFF':'已关闭') }}</button></td>
-			<td><button class="opt" onclick="toggleOpt('Lang')">{{options.Lang?'Language':'语言'}}: {{ options.Lang?"English (英文)":"Chinese (中文)" }}</button></td>
 			</tr>
 			<tr> 
 			<td><button class="opt" onclick="localStorage.setItem('gameStarted', false), player.inOpen = true, goBack('options-tab'), localStorage.setItem('Area', 0), options.theme = themes[0], changeTheme(), tmp['tree-tab'].audioForest.pause()">{{options.Lang?'Back To Main Menu.':'回到主菜单' }}</button></td>
+			</tr>
+			<tr>
 			<td><button class="opt" onclick="player.name = [], player['tree-tab'].saved = false, save()">{{options.Lang?'Change Name':'修改名称'}}</button></td>
+			<td><button class="opt" onclick="toggleOpt('Lang')">{{options.Lang?'Language':'语言'}}: {{ options.Lang?"English (英文)":"Chinese (中文)" }}</button></td>
+			<td><button class="opt">E</button></td>
 			</tr>
         </table>`
     },

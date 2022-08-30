@@ -19,7 +19,7 @@ var colors = {
 		color: "#dfdfdf",
 		points: "#ffffff",
 		locked: "#bf8f8f",
-		background: "#362419",
+		background: "#362419 url('Tree.gif') fixed no-repeat bottom",
 		background_tooltip: "rgba(0, 0, 0, 0.75)",
 	},
 	PurpleHaze: {
@@ -29,7 +29,7 @@ var colors = {
 		color: "#dfdfdf",
 		points: "#ffffff",
 		locked: "#bf8f8f",
-		background: "#4b0082",
+		background: "#4b0082 url('Cauldron.gif') fixed no-repeat bottom",
 		background_tooltip: "rgba(0, 0, 0, 0.75)",
 	},
 }

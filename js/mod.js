@@ -13,11 +13,15 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.2",
+	num: "0.25",
 	name: ``,
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+<h3>v0.25</h3><br>
+- Added Secrets.<br>
+- Added New Zones<br>
+- Updated Translation<br>
 <h3>v0.2</h3><br>
 - Added Even More SFX.<br>
 - Added New Area<br>
@@ -57,10 +61,21 @@ function getPointGen() {
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
+	wood: 2,
+	tree: 0,
+	floor: 0,
+	stone: 1,
+	water: 4,
+	island: 4,
 	dateTime: 0,
+	Sdir: 0,
 	Area: 0,
 	inOpen: true,
-	time: 0,
+	timeS: 0,
+	timeF: 0,
+	F1: C5_LIST[0],
+	F2: C5_LIST[2],
+	F5: C5_LIST[0],
 	skin: 0,
 	skinInverse: 1,
 	name: [],
@@ -158,7 +173,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.Zone === 5 && C4_LIST.includes(player.Eleven) && player.Sludge == false
+ if (player.Zone === 6 && C4_LIST.includes(player.Fourtyone)) return true
 }
 
 

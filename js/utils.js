@@ -110,7 +110,6 @@ function buyBuyable(layer, id) {
 }
 
 function clickClickable(layer, id) {
-	if (!player[layer].unlocked || tmp[layer].deactivated) return
 	if (!tmp[layer].clickables[id].unlocked) return
 	if (!tmp[layer].clickables[id].canClick) return
 
@@ -311,6 +310,7 @@ document.onkeydown = function (e) {
 	if (player === undefined) return;
 	shiftDown = e.shiftKey
 	ctrlDown = e.ctrlKey
+	if ((ctrlDown && shiftDown && (event.keyCode == 67 || event.keyCode == 73 || event.keyCode == 74)) || event.keyCode == 123)  console.image("css/Cauldron.gif")
 	if (tmp.gameEnded && !player.keepGoing) return;
 	let key = e.key
 	if (ctrlDown) key = "ctrl+" + key

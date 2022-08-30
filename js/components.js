@@ -34,9 +34,12 @@ function loadVue() {
 		<span v-if="player.Zone === 4" style='color: #70716B'>-</span>
 		<span v-if="player.Zone !== 4">-</span>
 		<span>-</span>
-		<span>-</span>
-		<span>-</span>
-		<span>-</span>
+		<span v-if="player.Zone === 5" style='color: #70716B'>-</span>
+		<span v-if="player.Zone !== 5">-</span>
+		<span v-if="player.Zone === 5 || player.Zone === 7" style='color: #70716B'>-</span>
+		<span v-if="player.Zone !== 5 && player.Zone !== 7">-</span>
+		<span v-if="player.Zone === 5" style='color: #70716B'>-</span>
+		<span v-if="player.Zone !== 5">-</span>
 	</div>
 		`
 	})
@@ -57,7 +60,7 @@ function loadVue() {
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Eight)?'hover':'none'":layer="layer" :data="player.Eight"/><div v-if="C4_LIST.includes(player.Eight)" class="tooltip">{{ player.name }}</div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Nine)?'hover':'none'":layer="layer" :data="player.Nine"/><div v-if="C4_LIST.includes(player.Nine)" class="tooltip">{{ player.name }}</div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Ten)?'hover':'none'":layer="layer" :data="player.Ten"/><div v-if="C4_LIST.includes(player.Ten)" class="tooltip">{{ player.name }}</div></div>
-		<span>┃</span>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.F1)?'hover':'none'":layer="layer" :data="player.F1"/><div v-if="C4_LIST.includes(player.F1)" class="tooltip">{{ player.name }}</div></div>
 	</div>
 		`
 	})
@@ -67,8 +70,7 @@ function loadVue() {
 		template: `
 		<div class="wrapper">
 		<blank :layer="layer" :data="['20px', '17px']"/>
-		<span  v-if="player.Zone === 2" style='color: #70716B'>┃</span>
-		<span  v-if="player.Zone === 5" style='color: #70716B'>┃</span>
+		<span  v-if="player.Zone === 2 || player.Zone === 5" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 2 && player.Zone !== 5">┃</span>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Eleven)?'hover':'none'":layer="layer" :data="player.Eleven"/><div v-if="C4_LIST.includes(player.Eleven)" class="tooltip">{{ player.name }}</div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twelve)?'hover':'none'" :layer="layer" :data="player.Twelve"/><div v-if="C4_LIST.includes(player.Twelve)" class="tooltip">{{ player.name }}</div></div>
@@ -80,8 +82,7 @@ function loadVue() {
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Eighteen)?'hover':'none'":layer="layer" :data="player.Eighteen"/><div v-if="C4_LIST.includes(player.Eighteen)" class="tooltip">{{ player.name }}</div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Nineteen)?'hover':'none'":layer="layer" :data="player.Nineteen"/><div v-if="C4_LIST.includes(player.Nineteen)" class="tooltip">{{ player.name }}</div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twenty)?'hover':'none'":layer="layer" :data="player.Twenty"/><div v-if="C4_LIST.includes(player.Twenty)" class="tooltip">{{ player.name }}</div></div>
-		<span  v-if="player.Zone === 1" style='color: #70716B'>┃</span>
-		<span  v-if="player.Zone !== 1">┃</span>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.F2)?'hover':'none'":layer="layer" :data="player.F2"/><div v-if="C4_LIST.includes(player.F2)" class="tooltip">{{ player.name }}</div></div>
 	</div>
 		`
 	})
@@ -93,7 +94,7 @@ function loadVue() {
 		<blank :layer="layer" :data="['20px', '17px']"/>
 		<span  v-if="player.Zone === 2 || player.Zone === 3" style='color: #70716B'>┃</span>
 		<span  v-if="player.Zone !== 2 && player.Zone !== 3">┃</span>
-		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentyone)?'hover':'none'":layer="layer" :data="player.Twentyone"/><div v-if="C4_LIST.includes(player.Twentytwo) && player.Zone === -1" class="tooltip">→ Gerdio<div>{{ options.Lang?"The evergreen forest of Gerdio was once home to many wild inhabitants including moose and black bears. Lately however, their populations have been dwindling towards extinction.":"这片叫Gerdio的常绿森林曾是包括驼鹿与黑熊在内的许多野生动物的家。但是，最近他们的数量极速下滑，几乎就要灭绝了。" }}</div></div><div v-if="C4_LIST.includes(player.Twentyone)" class="tooltip">{{ player.name }}</div></div>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentyone)?'hover':'none'":layer="layer" :data="player.Twentyone"/><div v-if="C4_LIST.includes(player.Twentytwo) && player.Zone === -1" class="tooltip">→ Gerdio<div>{{ options.Lang?"The evergreen forest of Gerdio was once home to many wild inhabitants including moose and black bears. Lately however, their populations have been dwindling towards extinction.":"这片叫Gerdio的常绿森林曾是包括驼鹿与黑熊在内的许多野生动物的家。但是，最近他们的数量极速下滑，几乎就要灭绝了。" }}</div></div><div v-if="C4_LIST.includes(player.Twentyone)" class="tooltip">{{ player.name }}</div><div v-if="C4_LIST.includes(player.Twentytwo) && player.Zone === 7" class="tooltip">↑ Vulton<div>{{ options.Lang?"The sprawling city of Vulton is a great tourist destination filled with friendly locals and decadent foods. This sign directly points to town square.":"庞大的Vulton市以友善的居民和多样的食物吸引着许多游客。这个牌子指向城市广场。" }}</div></div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentytwo)?'hover':'none'":layer="layer" :data="player.Twentytwo"/><div v-if="C4_LIST.includes(player.Twentytwo)" class="tooltip">{{ player.name }}</div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentythree)?'hover':'none'":layer="layer" :data="player.Twentythree"/><div v-if="C4_LIST.includes(player.Twentythree)" class="tooltip">{{ player.name }}</div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Twentyfour)?'hover':'none'":layer="layer" :data="player.Twentyfour"/><div v-if="C4_LIST.includes(player.Twentyfour)" class="tooltip">{{ player.name }}</div></div>
@@ -149,8 +150,7 @@ function loadVue() {
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtyeight)?'hover':'none'":layer="layer" :data="player.Fourtyeight"/><div v-if="C4_LIST.includes(player.Fourtyeight)" class="tooltip">{{ player.name }}</div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fourtynine)?'hover':'none'":layer="layer" :data="player.Fourtynine"/><div v-if="C4_LIST.includes(player.Fourtynine)" class="tooltip">{{ player.name }}</div></div>
 		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.Fifty)?'hover':'none'":layer="layer" :data="player.Fifty"/><div v-if="C4_LIST.includes(player.Fifty)" class="tooltip">{{ player.name }}</div></div>
-		<span  v-if="player.Zone === -1" style='color: #70716B'>┃</span>
-		<span  v-if="player.Zone !== -1">┃</span>
+		<div class="tooltipBox"><display-image :class="C4_LIST.includes(player.F5)?'hover':'none'":layer="layer" :data="player.F5"/><div v-if="C4_LIST.includes(player.F5)" class="tooltip">{{ player.name }}</div></div>
 	</div>
 		`
 	})
@@ -512,7 +512,7 @@ function loadVue() {
 				if (!this.interval && layers[this.layer].clickables[this.data].onHold) {
 					this.interval = setInterval((function() {
 						let c = layers[this.layer].clickables[this.data]
-						if(this.time >= 1 && run(c.canClick, c)) {
+						if(this.time >= 0 && run(c.canClick, c)) {
 							run(c.onHold, c)
 						}	
 						this.time = this.time+1

@@ -25,6 +25,7 @@
 	<script src="js/technical/temp.js"></script>
 	<script src="js/technical/displays.js"></script>
 	
+	<script src="js/console.image.min.js"></script>
 	<script src="js/game.js"></script>
 	<script src="js/utils.js"></script>
 	<script src="js/utils/easyAccess.js"></script>
@@ -76,9 +77,9 @@
 			width = "500" />
 			<br>
 			<h3>{{ options.Lang?"Select a mode":"选择一个模式" }}</h3><br><br>
-			<button class="longUpg can" onclick="localStorage.setItem('Mode', 1), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">WASD</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
-				class="longUpg can" onclick="localStorage.setItem('Mode', 2), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">{{ options.Lang?"Arrow Keys":"方向键" }}</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
-				class="longUpg can" onclick="localStorage.setItem('Mode', 3), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', 1), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">{{ options.Lang?"Mobile EW":`手机端` }}<i>{{ options.Lang?"":`噫` }}</i></button>
+			<button class="longUpg can" onclick="localStorage.setItem('Mode', 1), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', player['tree-tab'].prevArea), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">WASD</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
+				class="longUpg can" onclick="localStorage.setItem('Mode', 2), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', player['tree-tab'].prevArea), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">{{ options.Lang?"Arrow Keys":"方向键" }}</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
+				class="longUpg can" onclick="localStorage.setItem('Mode', 3), localStorage.setItem('gameStarted', true), player.inOpen = false, localStorage.setItem('Area', player['tree-tab'].prevArea), tmp['tree-tab'].audioOpening.pause(), location.reload(true)">{{ options.Lang?"Mobile EW":`手机端` }}<i>{{ options.Lang?"":`噫` }}</i></button>
 				<br><br><h3>{{ options.Lang?"Click anywhere but the buttons for the song (I hate google autoplay rules) *may not apply*":"" }}</h3><br><br>
 				<img src = "https://i.postimg.cc/R0kG9kd0/slazzer-edit-image-removebg-preview.png"
 				height = "250" width = "270" /><br><br>
@@ -143,16 +144,30 @@
 
 					<img  v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') === 'true'" onclick="showTab('Skins')" id="skins" src = "https://i.postimg.cc/Vkx9y1bF/Untitled-design-3-removebg-preview.png"
 				width = "170" style="position: fixed; right: 40px; top: 200px">
-					<div id="Skintext"><p>{{ options.Lang? "Skins":"字符"}}</p></div></img>
+					<div id="Skintext"><p>{{ options.Lang? "Skins":"字符"}}</p></div></img> <!--Skins-->
+
+
+
+						<div  v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') === 'true'  && player.Letters.hasLetter == true" onclick="showTab('Letters')" id="TE"
+					width = "200" style="position: fixed; right: -10px; top: 430px">
+		<div id="Lettertext"><p>{{ options.Lang? "Letters":"信字"}}</p></div>
+					<img  v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') === 'true'  && player.Letters.hasLetter == true" id="Envelope" src = "https://i.postimg.cc/YSgvsxVW/output-onlinegiftools-1.png"
+					width = "300" style="position: fixed; right: -20px; top: 400px"></img> <!--Letters-->
+				<img  v-if="player.tab === 'none' && tmp.gameEnded == false && localStorage.getItem('gameStarted') === 'true' && player.Letters.hasLetter == true"  id="EnvelopeOpen" src = "css/Envelope.gif"
+					width = "300" style="position: fixed; right: -20px; top: 400px"></img></div>
+
+			
+					
 
 		<!-- Popups -->
 		<div class="popup-container">
 			<transition-group name="fade">
-				<div v-for="popup,index in activePopups" class="popup" v-bind:class="popup.type"
-					v-bind:key="'p' + popup.id" v-on:click="() => {activePopups.splice(index, 1)}" v-bind:style="popup.color ? {'background-color': popup.color} : {}">
-					<h3>{{popup.title}}</h3><br>
-					<h2 v-html="popup.message"></h2>
-				</div>
+				<div v-for="popup,index in activePopups" class="popup"
+					v-bind:key="'p' + popup.id" v-on:click="() => {activePopups.splice(index, 1)}">
+					<h3 id="UP">{{popup.title}}</h3><br>
+					<h2 v-html="popup.message" id="UP"></h2>	
+					<img src="https://i.postimg.cc/x8Y9qnCt/Pattern-Background-Texture-Background-Texture-2445561.jpg"  position="relative" width="300px" top="100px" height="100px"></img>
+			</div>
 			</transition-group>
 		</div>
 		<div class="particle-container">
