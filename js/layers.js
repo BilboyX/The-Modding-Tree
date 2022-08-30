@@ -233,8 +233,8 @@ addLayer("Letters", {
             canClick(){
                 return true
             },
-            title() {if (tmp.Letters.songOn === true) return "♫ ▶"
-        else return "♫ ||"},
+            title() {if (tmp.Letters.songOn === true) return "♫ ||"
+        else return "♫ ▶"},
             style: { "background-color": "#ff0000", color: "#000000", "font-size": "40px"},
             onClick() {
                 if (tmp.Letters.songOn === false) tmp.Letters.Song.loop = true,  tmp.Letters.Song.play(), tmp.Letters.songOn = true
