@@ -71,6 +71,7 @@ function addedPlayerData() { return {
 	Sdir: 0,
 	Area: 0,
 	inOpen: true,
+	inConsole: false,
 	timeS: 0,
 	timeF: 0,
 	F1: C5_LIST[0],

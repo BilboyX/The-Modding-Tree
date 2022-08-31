@@ -310,7 +310,8 @@ document.onkeydown = function (e) {
 	if (player === undefined) return;
 	shiftDown = e.shiftKey
 	ctrlDown = e.ctrlKey
-	if ((ctrlDown && shiftDown && (event.keyCode == 67 || event.keyCode == 73 || event.keyCode == 74)) || event.keyCode == 123)  console.image("css/Cauldron.gif")
+	if ((ctrlDown && shiftDown && (event.keyCode == 67 || event.keyCode == 73 || event.keyCode == 74)) || event.keyCode == 123){ console.clear(), player.inConsole = 0, console.logs = []
+	console.log("Hello, fancy seeing you here.... Well this is awkward.... Say, why don't we make this even more meta! How about this, I'll give you prompts and you'll answer them using console.log('Answer'). So what do you say? Well I guess I'll know that if you fill out this prompt. I need a noun. Also, it may help to think of a theme for these answers like romance or mystery."), player.inConsole = true}
 	if (tmp.gameEnded && !player.keepGoing) return;
 	let key = e.key
 	if (ctrlDown) key = "ctrl+" + key

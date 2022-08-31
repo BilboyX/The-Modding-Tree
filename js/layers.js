@@ -246,6 +246,17 @@ addLayer("Letters", {
     layerShown(){return true},
 
     update() {
+        if (player.inConsole === 11 && console.logs[21] !== undefined) player.inConsole = 12, console.log("So basically, this one time " + console.logs[1] + " decided it would be a good idea to " + console.logs[3] + " " + console.logs[5] + " and " + console.logs[7] + "! I know, " + console.logs[9] + " is pretty " + console.logs[11] + ". Then this " + console.logs[13] + " came along and was all like " + console.logs[15] + ". That really made " + console.logs[1] + " " + console.logs[17] + ". All of a sudden, " + console.logs[1] + " and " + console.logs[13] + " were both " + console.logs[19] + " and it was " + console.logs[21] + ".  That's all I can remember. I am currently yelling at the top of my lungs because I have a broken s key and my internet connectivity fails every few days. Thanks for sticking through till the end. <._.> Now, as the great amogus would say, go to hell!")
+        if (player.inConsole === 10 && console.logs[19] !== undefined) player.inConsole = 11, console.log("Just one final emotion to sum it all up is needed. An adjective please.")
+        if (player.inConsole === 9 && console.logs[17] !== undefined) player.inConsole = 10, console.log("Ok, so the two nouns meet and what happens? A present continuous verb is in order.")
+        if (player.inConsole === 8 && console.logs[15] !== undefined) player.inConsole = 9, console.log("So how did the first noun react to the quote? Give me an adjective.")
+        if (player.inConsole === 7 && console.logs[13] !== undefined) player.inConsole = 8, console.log("Oh and what about a quote, what did the noun say? A QUOTE PLEASE.")
+        if (player.inConsole === 6 && console.logs[11] !== undefined) player.inConsole = 7, console.log("Ok let's introduce something or someone new into the mix. I'll need another noun.")
+        if (player.inConsole === 5 && console.logs[9] !== undefined) player.inConsole = 6, console.log("And how did their verbs make you feel? Give me an adjective... Please?")
+        if (player.inConsole === 4 && console.logs[7] !== undefined) player.inConsole = 5, console.log("Oh and I almost forgot, we need a pronoun for our original noun.")
+        if (player.inConsole === 3 && console.logs[5] !== undefined) player.inConsole = 4, console.log("There must be another present tense verb here... right?")
+        if (player.inConsole === 2 && console.logs[3] !== undefined) player.inConsole = 3, console.log("Cool, cool. Now think about that adjective and apply a present tense verb.")
+        if (player.inConsole == true && console.logs[1] !== undefined) player.inConsole = 2, console.log("Alright, you're on board. Next, I'll need a adjective.")
         if (player.Letters.Letters[0] === 1 || player.Letters.Letters[1] === 1) player.Letters.hasLetter = true
     },
 
@@ -260,3 +271,13 @@ addLayer("Letters", {
     ['clickable', 11],
     ]
 })
+
+
+console.stdlog = console.log.bind(console);
+console.logs = [];
+
+console.log = function(){  
+    console.stdlog.apply(console, arguments);
+    console.logs.push(Array.from(arguments));
+  
+}
