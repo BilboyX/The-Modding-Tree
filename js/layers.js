@@ -256,7 +256,7 @@ addLayer("Letters", {
         if (player.inConsole === 4 && console.logs[7] !== undefined) player.inConsole = 5, console.log("Oh and I almost forgot, we need a pronoun for our original noun.")
         if (player.inConsole === 3 && console.logs[5] !== undefined) player.inConsole = 4, console.log("There must be another present tense verb here... right?")
         if (player.inConsole === 2 && console.logs[3] !== undefined) player.inConsole = 3, console.log("Cool, cool. Now think about that adjective and apply a present tense verb.")
-        if (player.inConsole == true && console.logs[1] !== undefined) player.inConsole = 2, console.log("Alright, you're on board. Next, I'll need a adjective.")
+        if (player.inConsole == true && console.logs[1] !== undefined) player.inConsole = 2, console.log("Alright, you're on board. Next, I'll need a adverb.")
         if (player.Letters.Letters[0] === 1 || player.Letters.Letters[1] === 1) player.Letters.hasLetter = true
     },
 
