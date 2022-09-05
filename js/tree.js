@@ -212,7 +212,7 @@ if (localStorage.getItem('prevZone') === '4'){
 
 if (localStorage.getItem('prevZone') === '6'){
   if(localStorage.getItem('prevTab2') === '1') player.Nineteen = C1_LIST[6], localStorage.setItem('log3', 2), localStorage.setItem('prevTab2', null)
- if (!C4_LIST.includes(player.Twelve)) player.Eleven = C4_LIST[player.skinInverse]
+ if (!C4_LIST.includes(player.Twelve) && !C4_LIST.includes(player.Thirteen) && !C4_LIST.includes(player.Fourteen) && !C4_LIST.includes(player.Fifteen) && !C4_LIST.includes(player.Sixteen) && !C4_LIST.includes(player.Seventeen) && !C4_LIST.includes(player.Eighteen) && !C4_LIST.includes(player.Nineteen)) player.Eleven = C4_LIST[player.skinInverse]
 moveRight()}
         audio()
     save2()
@@ -2989,6 +2989,7 @@ addLayer("tree-tab", {
             if (player.timeX >= 3 && player.intervaea == true) moveDown(), player.timeX = 0
         }
 
+        if (player.Zone === 6 && player.Nineteen === C1_LIST[2]) player.Nineteen = C2_LIST[1]
         if (player.Zone === -1 && player.prev === C2_LIST[8]) player.prev = C2_LIST[5], player.Letters.Letters[0] = 1, player.Undo.length = 0, save2()
         if (player.Zone === 7 && player.prev === C2_LIST[8]) player.prev = C2_LIST[1], player.Letters.Letters[1] = 1, player.Undo.length = 0, save2()
         if (player.Zone === 4 && player.Fourtynine !== C1_LIST[6]) localStorage.setItem('No', null)
