@@ -512,7 +512,7 @@ function loadVue() {
 				if (!this.interval && layers[this.layer].clickables[this.data].onHold) {
 					this.interval = setInterval((function() {
 						let c = layers[this.layer].clickables[this.data]
-						if(this.time >= 0 && run(c.canClick, c)) {
+						if(this.time >= 2 && run(c.canClick, c)) {
 							run(c.onHold, c)
 						}	
 						this.time = this.time+1

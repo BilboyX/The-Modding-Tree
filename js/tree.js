@@ -2793,7 +2793,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "↑",
-            style: { "background-color": "#808080", color: "#000000", "font-size": "40px"},
+            style: { "background-color": "#808080", color: "#000000", "font-size": "40px", height: "300px", width: "300px"},
             onHold() {
                 player.intervaeae = true
             },
@@ -2806,7 +2806,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "←",
-            style: { "background-color": "#808080", color: "#000000", "font-size": "40px"},
+            style: { "background-color": "#808080", color: "#000000", "font-size": "40px", height: "300px", width: "300px"},
             onHold() {
                 player.interva = true
             },
@@ -2819,7 +2819,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "↓",
-            style: { "background-color": "#808080", color: "#000000", "font-size": "40px"},
+            style: { "background-color": "#808080", color: "#000000", "font-size": "40px", height: "300px", width: "300px"},
             onHold() {
                 player.intervaea = true
             },
@@ -2832,7 +2832,7 @@ addLayer("tree-tab", {
                 return true
             },
             title: "→",
-            style: { "background-color": "#808080", color: "#000000", "font-size": "40px"},
+            style: { "background-color": "#808080", color: "#000000", "font-size": "40px", height: "300px", width: "300px"},
             onHold() {
                 player.intervae = true
             },
@@ -2845,7 +2845,7 @@ addLayer("tree-tab", {
                 return true
             },
             title() {return (options.Lang?'Reset Zone':'重置区域')},
-            style: { "background-color": "#808080", color: "#000000", "font-size": "10px"},
+            style: { "background-color": "#808080", color: "#000000", "font-size": "10px", height: "300px", width: "300px"},
             onClick() {
                 player.reset = true
             },
@@ -2858,10 +2858,10 @@ addLayer("tree-tab", {
                 return true
             },
             title() {return (options.Lang?'Reset One Move':'撤回一步')},
-            style: { "background-color": "#808080", color: "#000000", "font-size": "10px"},
-            onClick() {
-                import2()
-            },
+            style: { "background-color": "#808080", color: "#000000", "font-size": "10px", height: "300px", width: "300px"},
+            onHold() {
+              import2()
+            }
         },
     },
 
